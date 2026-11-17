@@ -1,0 +1,15 @@
+{
+  "greeting":"Hello! Refolks can help you choose a bag, check prices, donate clothing, join a workshop or care for your purchase.",
+  "quick":["Choose a bag","Prices & offers","Donate clothing","Join a workshop","Care & Refolks Care"],
+  "price":"The four bags range from 1,790,000₫ to 2,190,000₫. The Vanguard is 1,890,000₫; the remaining prices are demo estimates. New members get the demo first-order code NEW15 for 15% off.",
+  "donation":"You can bring old clothing to the Hoan Kiem collection point or complete the form in Community. After registering a donation you receive the demo voucher DONATE15.",
+  "workshop":"The Giving Fabric New Life workshop is limited to 20 seats. Register under Events on the Community page.",
+  "care":"Wipe canvas and brocade gently with a damp cloth and avoid soaking. Refolks Care introduces maintenance and zipper/strap replacement in year one; final terms are pending.",
+  "askGender":"Are you looking for a men's or women's bag?",
+  "askLaptop":"Do you need space for a laptop, or prefer to travel light?",
+  "womenLaptop":"The Herald and The Vanguard suit workdays. The Vanguard has a version styled with a silk scarf.",
+  "womenLight":"The Navigator has a versatile long strap. The Herald is a good choice if you prefer a cream textile base.",
+  "menLaptop":"The Curator has a structured square shape; The Vanguard is a versatile unisex bag with a cardholder version.",
+  "menLight":"The Navigator has a trapezoid shape and long strap. The Curator offers a more tailored work look.",
+  "fallback":"I didn't quite understand. Choose one of the topics below, or leave your email for Refolks to contact you."
+}

@@ -1,0 +1,15 @@
+{
+  "greeting":"Xin chào! Refolks có thể giúp bạn chọn túi, xem giá, quyên góp, tham gia workshop hoặc bảo quản sản phẩm.",
+  "quick":["Tư vấn chọn túi","Giá & khuyến mãi","Quyên góp quần áo","Đăng ký workshop","Bảo quản & Refolks Care"],
+  "price":"Bốn mẫu túi có giá từ 1.790.000₫ đến 2.190.000₫. Giá The Vanguard là 1.890.000₫; các giá còn lại đang là giá demo. Thành viên mới nhận voucher demo NEW15 giảm 15% cho đơn đầu tiên.",
+  "donation":"Bạn có thể mang quần áo cũ đến điểm nhận tại Hoàn Kiếm hoặc điền biểu mẫu trong mục Cộng đồng. Sau khi đăng ký quyên góp, bạn sẽ nhận mã voucher demo DONATE15.",
+  "workshop":"Workshop “Tái sinh nếp vải – Tự tay làm túi Mini” có giới hạn 20 chỗ. Bạn có thể đăng ký trong mục Sự kiện của trang Cộng đồng.",
+  "care":"Lau nhẹ canvas và thổ cẩm bằng khăn ẩm, tránh ngâm nước. Refolks Care giới thiệu dịch vụ bảo dưỡng và thay khóa/quai trong năm đầu; điều khoản chính thức đang chờ xác nhận.",
+  "askGender":"Bạn đang tìm túi cho nam hay nữ?",
+  "askLaptop":"Bạn cần đựng laptop hay muốn mang đồ gọn nhẹ?",
+  "womenLaptop":"The Herald và The Vanguard là hai lựa chọn cho ngày làm việc. The Vanguard có phiên bản phối khăn lụa.",
+  "womenLight":"The Navigator có dây đeo dài linh hoạt cho ngày di chuyển. The Herald phù hợp nếu bạn thích nền vải kem.",
+  "menLaptop":"The Curator có phom vuông vức; The Vanguard là mẫu unisex linh hoạt với phiên bản kèm cardholder.",
+  "menLight":"The Navigator có phom hình thang và dây đeo dài. The Curator là lựa chọn chỉn chu hơn cho công sở.",
+  "fallback":"Mình chưa hiểu câu hỏi. Bạn chọn một chủ đề bên dưới hoặc để lại email để Refolks liên hệ nhé."
+}

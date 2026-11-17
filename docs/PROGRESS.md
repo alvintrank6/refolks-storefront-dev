@@ -1,0 +1,138 @@
+# Refvlks V2 progress
+
+## 2026-10-30 · Retrofit audit
+
+Existing checkout: Next.js App Router compatibility through Vinext, TypeScript, bilingual paths, original brand assets, five product cards, server-rendered catalog, cart, COD and bank-transfer checkout, studio and contact forms, D1 persistence, basic metadata and sitemap. The existing private Site remains published at its V1 commit; this V2 run is local only.
+
+### Gaps against `10-UPDATE-V2.md`
+
+| V2 slice | Existing work                                               | Remaining work                                                                                    |
+| -------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| F1–F2    | Locale routes, assets, catalog and D1 schema                | Five-item navigation, Donation Event routes and seed, claim gate, local/Supabase adapter contract |
+| F3–F4    | Header, footer, hero, product cards, product pages and cart | V2 page structure, card interaction, hotspots, product detail sections                            |
+| F5–F6    | Simple reveal section and CSS transitions                   | E1–E5, E8–E10, E17–E20 with full/lite/off tiers; Home H-04 and H-05                               |
+| F7       | Server-rendered shop filters                                | S-01–S-03, marquee, tier comparison, motion                                                       |
+| F8       | Working cart, checkout, transfer QR and stock transaction   | V2 copy, field-level errors, copy actions, email integration when configured                      |
+| F9       | Studio and contact forms persist to D1                      | Three-section studio, slot availability, full contact topics, optional email                      |
+| F10–F11  | Basic Craft and About                                       | Three-section V2 content, Donation Event and registration                                         |
+| F12–F14  | Basic Help/Legal, metadata and sitemap                      | Complete content, 404, structured data, automation and browser QA evidence                        |
+
+### Run plan
+
+Work through F1–F14 in order, retaining working commerce code. Add verified tests and commit after each completed slice. Do not push or deploy. Record unresolved claims, absent owner data, and any checks that cannot be completed instead of presenting them as passed.
+
+## F1 · Foundation retrofit
+
+- Added five-item navigation, localized Donation Event routes, footer link and sitemap entries.
+- Added design token sheet and Tailwind theme mapping. `next-intl` now provides client translation context through a client boundary; its pathname configuration records the EN/VI route contract.
+- Retained the working Sites/Vinext runtime and commerce flow. The user-supplied V2 content and product seed are staged for F2.
+- Format: `npx prettier --check` on changed source — pass.
+- `npm run lint` — pass. `npm run typecheck` — pass. `npm run test` — 2 passed. `npm run build` — pass.
+- `npm run test:e2e -- foundation.spec.ts` — 11 passed on local preview, including 360/390/768/1024/1440 pixels in normal and reduced-motion modes and an axe check for serious/critical issues. Screenshots: `test-results/screens/F1/`.
+- Local HTTP checks: `/en`, `/en/donation-event`, `/vi/su-kien-quyen-gop`, `/sitemap.xml` returned 200. Browser console errors: none on `/en`.
+- Next: F2 data contract, donation persistence and claims gate.
+
+## F2 · Data and claims retrofit
+
+- Added the approved-claim gate, updated five-variant product seed with material hotspots and null fields for unconfirmed specifications, and a null-safe Donation Event seed. The owner approved seed prices, stock and ordering in the current task.
+- Added a shared store repository with D1, local file and optional Supabase adapters. Local orders reserve stock in an atomic file update; D1 retains the order-item stock trigger. Supabase has schema, row-level security, a transactional `create_order` RPC and a repeatable seed generator. No Supabase credentials were provided, so that adapter and migration have not been run against a remote instance.
+- Added D1 and Supabase donation tables and local/D1/Supabase signup persistence. Donation consent and three signups per hour per IP are enforced in the form route/adapters. The local adapter serializes rate checks and appends.
+- Format: `npx prettier --write` for changed source — pass. `npm run lint` — pass. `npm run typecheck` — pass. `npm run test` — 8 passed. `npm run build` — pass.
+- Local HTTP checks on built Worker: valid order redirected to order page and reduced `RV-SP03-BLK` stock from 10 to 9; an overstock order redirected with `error=stock`; studio and contact forms redirected with success. Donation form checks from this slice: missing recycling consent rejected; three valid signups saved and fourth rate limited.
+- Open decisions/data remain hidden: Donation Event date, collection window, destination and impact; pending claims CL-19, CL-20, CL-22 and CL-23. The Supabase adapter is optional and unverified against a hosted database.
+- Next: F3 shell, Home H-01 and H-03.
+
+## F3 · Shell and Home introduction/collection
+
+- Updated shared navigation and footer links with accessible rolling text, localized controls and the curtain-style sticky footer. The Home hero now uses the exact V2 EN/VI text, responsive reference imagery and a Weft pattern layer. The collection has five variant cards, tier chips, staggered desktop layout, hover image reveals and pointer tilt.
+- Added scoped GSAP matchMedia motion for the hero and cards: desktop parallax/tilt, touch parallax only, reduced motion off. Moved plugin registration into the browser effect after a production SSR check exposed a server error; the built Worker now serves `/en` successfully.
+- Format — pass. `npm run lint` — pass. `npm run typecheck` — pass. `npm run test` — 8 passed. `npm run build` — pass. `npm run test:e2e -- home-shell.spec.ts` — 11 passed at 360/390/768/1024/1440 in normal and reduced motion, including no overflow, no console errors, no hidden sections and no serious/critical axe violations. Screenshots: `test-results/screens/F3/`.
+- The remaining legacy Home sections stay in place until H-02 (F5) and H-04/H-05 (F6) replace them. The final five-section count belongs to F6.
+- Next: F4 product detail, hotspots and cart interaction.
+
+## F4 · Product detail and cart
+
+- Reworked the product template into exactly P-01 gallery/buy, P-02 inside/materials and P-03 before-you-buy. The gallery has image indices; the buy box retains colour, stock and studio actions. P-02 has accessible, keyboard-operable hotspots from the seed, a material profile and the approved 70/30 share. Unconfirmed specifications stay hidden. P-03 has five native accordions and four related cards.
+- Added the 0.7s Flip image-to-bag transition on add; reduced motion submits immediately. Cart now has localized add success, plus/minus quantity and remove controls, and its API caps quantities at live D1 inventory. Corrected two image alt descriptions that made an unapproved hand-weaving claim.
+- Format — pass. `npm run lint` — pass. `npm run typecheck` — pass. `npm run test` — 8 passed. `npm run build` — pass. `npm run test:e2e -- product-cart.spec.ts` — 13 passed at 360/390/768/1024/1440 in normal and reduced motion, including no overflow, hidden sections or console errors, hotspot and cart interaction, and no serious/critical axe violations. Screenshots: `test-results/screens/F4/`.
+- Applied the React component review checklist to the new client code. The heavier Flip module loads only after an add action.
+- Next: F5 motion core and Home H-02 Reveal.
+
+## F5 · Motion core and Home Reveal
+
+- Added first-visit preloader, page curtain, product card to gallery View Transition, desktop Lenis with scroll progress, heading SplitText, magnetic primary buttons and a contextual desktop cursor. Motion runs in full, touch/light and reduced/off tiers. The original logo SVG remains the only wordmark.
+- Replaced the legacy Home reveal with the V2 H-02 story and exact EN/VI copy. Desktop loads eight frames when the section approaches, then pins and scrubs through them over 200% scroll; touch, reduced motion and no JavaScript show three static cards. A skip link lands on the collection. The frame loader leaves the readable cards visible if an image fails.
+- A production browser check exposed an RSC prefetch error from Vinext with `next-view-transitions`; disabled prefetch on the product card link. The subsequent card-to-product and back navigation check has no browser errors.
+- `npm run lint` — pass. `npm run typecheck` — pass. `npm run test` — 8 passed. `npm run build` — pass. `npm run test:e2e` — 49 passed, including F5 at 360/390/768/1024/1440 pixels in normal and reduced motion, no-JavaScript content and navigation, keyboard travel through the pin, View Transition navigation, and axe serious/critical checks. Screenshots: `test-results/screens/F5/`.
+- Next: F6 Home H-04 and H-05.
+
+## F6 · Home gallery and invitations
+
+- Replaced the remaining legacy Home sections with H-04 Carried in Hanoi and H-05 Two invitations, giving Home exactly five V2 sections. H-04 uses the eight specified images in order, product-linked captions and an ending panel with approved delivery, repair and studio promises. H-05 uses the specified product and lifestyle images, original Weft pattern, exact EN/VI copy and Donation Event/studio actions.
+- Desktop H-04 pins a horizontal gallery with progress, image parallax and bounded velocity skew. Touch uses a swipeable snap rail; reduced motion uses a two-column static grid. H-05 shifts its surrounding background to Cocoa in the viewport and reveals images on full/light tiers; reduced motion changes background instantly.
+- Fixed a contrast issue in the F5 Reveal: inactive story text remains fully legible, with the active step marked by border and inset. SplitText now moves headings without fading them, avoiding transient low contrast during motion.
+- `npm run typecheck` — pass. `npm run lint` — pass. `npm run test` — 8 passed. `npm run build` — pass. `npm run test:e2e` — 62 passed, including F6 at 360/390/768/1024/1440 pixels in normal/reduced motion, gallery end reach, caption/invitation navigation, no browser errors and serious/critical axe checks. Screenshots: `test-results/screens/F6/`.
+- Next: F7 Shop S-01–S-03.
+
+## F7 · Shop
+
+- Rebuilt Shop as S-01 header/marquee, S-02 sticky tier/colour/price/sort filters and S-03 three-tier explainer. The marquee responds to desktop scroll direction, stays steady on touch and stops for reduced motion. Tier images and copy follow the V2 spec; displayed starting prices come from the product seed.
+- Filters remain server-rendered GET forms without JavaScript. With JavaScript, results, H1, count, title and URL update in place; GSAP Flip animates retained/reordered cards. Mobile has a native-details bottom drawer with a live result count. Browser history restores prior filters.
+- Tier-filtered URLs use the Shop canonical and noindex metadata. Applied the React component checklist: client receives compact item metadata and card nodes; GSAP Flip loads only after filter interaction.
+- `npm run typecheck` — pass. `npm run lint` — pass. `npm run test` — 8 passed. `npm run build` — pass. `npx playwright test tests/e2e/shop-v2.spec.ts` — 13 passed at 360/390/768/1024/1440 pixels in normal/reduced motion, desktop filter/sort/history, mobile drawer, no-JavaScript GET filtering and axe serious/critical checks. Screenshots: `test-results/screens/F7/`.
+- Next: F8 checkout.
+
+## F8 · Checkout and order confirmation
+
+- Added localized field-level checkout validation with an accessible error summary, approved delivery rates and both COD and transfer order paths. Removed the unapproved two-item COD limit and transfer deadline from customer-facing copy.
+- Transfer confirmation displays a server-generated VietQR SVG, bank details and copy controls for account, amount and reference. The transfer acknowledgement remains a manual reconciliation signal. The card preview has disabled fields and no payment handler.
+- Orders continue through the D1/local atomic stock transaction. Optional Resend customer and operator notices use environment configuration and do not block order completion; no email keys were provided, so live delivery remains unverified.
+- `npm run typecheck` — pass. `npm run lint` — pass. `npm run test` — pass. `npm run build` — pass. `npx playwright test tests/e2e/checkout-v2.spec.ts` — 13 passed across five widths in normal/reduced motion, including COD, transfer, validation and axe serious/critical checks. Local D1 showed `RV-SP01-BRN` stock at 5 after order tests, down from the 10-unit seed and previous order runs.
+- Next: F9 Studio and Contact.
+
+## F9 · Studio and Contact
+
+- Rebuilt Studio into ST-01 through ST-03 with exact V2 hero copy, the LIFE-04 photograph, booking form and a static Weft-like location illustration linking to Google Maps. The form offers 30-minute slots from 08:00 to 21:00 and reads booked times through the shared D1/local/Supabase repository; database uniqueness still blocks races. Same-day past slots are rejected server-side.
+- Expanded Contact to all six requested topics, showing order number only for Order or Repair. Both forms persist to the repository, have honeypots, inline native-validation messages and accessible status alerts. Optional admin email is wired through Resend when configured; no live credentials were available.
+- Added hashed IP limits of three studio requests and five messages per hour to all three adapters, with D1 and Supabase migrations. Applied the D1 migration to the local preview. The hosted Supabase migration and email delivery remain unverified without owner credentials.
+- `npm run typecheck`, `npm run lint`, `npm run test` (8 tests), `npm run build` — pass. `npx playwright test tests/e2e/studio-contact-v2.spec.ts` — 15 passed at five widths in normal/reduced motion, including slot visibility, duplicate blocking, topic switching, persistence, rate limits, inline errors and axe checks.
+- Next: F10 Craft and About.
+
+## F10 · Craft and About
+
+- Replaced the legacy pages with three sections each. Craft shows the 70/30 material share, five visual process cards, and a transparent note about unverified batch QR and measurement claims. About shows the origin story, three promises, future plans and the linked 2022 Tuổi Trẻ source. Pending named-weaver and pattern claims remain hidden.
+- Added reusable full/lite/off story motion: ratio count-up and thread drawing on scroll, with desktop card stacking. Content remains readable when motion is reduced or JavaScript is off. Used only mapped product and lifestyle assets.
+- `npm run typecheck`, `npm run lint`, `npm run test` (8 tests), `npm run build` — pass. `npx playwright test tests/e2e/craft-about-v2.spec.ts` — 14 passed across five widths and reduced/normal motion, including section counts, claim gating, source/donation links, no-JavaScript content and axe checks. Inspected a full-page About screenshot at 1440 pixels.
+- Next: F11 Donation Event.
+
+## F11 · Donation Event
+
+- Replaced the placeholder with DE-01 through DE-03: an illustrated Hanoi–Northwest route, four process cards, accepted/not-accepted textile lists, two claim-safe FAQs and registration. The page uses no documentary people photos. Event date, collection window, destination and impact metrics stay hidden while their seed values and claim approvals are absent.
+- Signup records donor, volunteer or both; donation requires recycling consent while volunteer-only signup does not. The success message uses a short-lived HTTP-only name cookie, avoiding personal data in the URL. The pre-existing per-IP donation limit remains active. Optional admin email uses `DONATION_NOTIFY_EMAIL`; no live key was supplied. Event JSON-LD is gated until an actual event date exists.
+- Added route drawing, process card stacking and a light Cocoa background transition with reduced/no-JavaScript fallbacks. `npm run typecheck`, `npm run lint`, `npm run test` (8), `npm run build` — pass. `npx playwright test tests/e2e/donation-v2.spec.ts` — 14 passed across five widths and motion modes, donor/volunteer consent, no-JavaScript registration, rate limit and axe checks. Inspected a full-page desktop screenshot.
+- Next: F12 Help, Legal and 404.
+
+## F12 · Help, Legal and 404
+
+- Added Size & fit, Shipping/inspection/returns, Care/repair and FAQ guides, plus Privacy, Terms and Payment pages in EN/VI. Size and fit shows explicit "coming soon" values for all unconfirmed product measurements; the other pages use approved fees, payment methods and service facts without draft deadlines, warranty periods or return windows.
+- Corrected the Vietnamese help/legal URL mapping throughout the footer, checkout, Donation Event, Home invitations, sitemap and language switch. Unknown topics now return a localized 404 with status 404 and collection/home paths.
+- The legal pages are implementation drafts from the supplied policy source; business details and legal review remain pending. [Vietnam's Law 91/2025/QH15 on personal data protection](https://vanban.chinhphu.vn/?classid=1&docid=214590&pageid=27160&typegroup=) took effect on 1 January 2026, so the supplied 2023-oriented draft should be reviewed before any public release. No analytics or ad pixels were added.
+- `npm run typecheck`, `npm run lint`, `npm run test` (8), `npm run build` — pass. `npx playwright test tests/e2e/help-legal-v2.spec.ts` — 15 passed at five widths and normal/reduced motion, including all seven Vietnamese localized URLs and switches, 404 status, omitted assumptions and axe checks.
+- Next: F13 metadata, structured data and asset metadata.
+
+## F13 · SEO and share assets
+
+- Added localized page titles, descriptions, absolute canonical URLs, EN/VI/x-default alternates, Open Graph and Twitter metadata. Filtered Shop URLs and private cart, checkout and order routes are noindex. Product colour URLs canonicalize to the product path.
+- Added Organization, Studio Store, Product/Offer, FAQPage and BreadcrumbList structured data. Donation Event schema is emitted only when an actual event date exists; the current null event date produces none. Product availability reads the current D1 inventory when present.
+- Generated 1200 × 630 share images for the site and four product designs from mapped photography and the original Refvlks vector wordmark. Updated sitemap, robots and PWA manifest with the supplied maskable icon. Analytics was deliberately omitted under the user's direct instruction.
+- `npm run typecheck`, `npm run lint`, `npm run test` (8), `npm run build` — pass. `npx playwright test tests/e2e/seo-v2.spec.ts` — 4 passed against the local production preview. Visually inspected the generic OG card.
+- Next: F14 full QA and final handoff. No source push or deployment.
+
+## F14 · Full QA and local handoff
+
+- Ran the complete local production-preview suite: 150/150 Playwright tests passed. After optimizing LCP images, reran the affected Home, Shop, Product and SEO suites: 54/54 passed across 360/390/768/1024/1440 pixels and normal/reduced motion. `npm run lint`, `npm run typecheck`, `npm run test` (8) and `npm run build` passed on final source.
+- Improved LCP by preloading the responsive hero and initial product image, prioritizing the first Shop and Product frame, using the existing card-resolution image for the first Product mobile gallery frame, and deriving a 780 × 1170, 55 KB mobile hero from the mapped original photo. The crop was visually inspected. Other gallery images have low fetch priority.
+- Under an Edge headless 390 × 844 sample with simulated 4× CPU and 1.6 Mbps / 150 ms RTT, reduced motion: Home LCP 1.40 s / CLS 0.022 / initial JS 213 KB gzip; Shop 1.43 s / 0.018 / 212 KB; Product 1.40 s / 0.028 / 211 KB; Donation Event 1.05 s / 0.030 / 212 KB. These are one-run local lab measurements; INP and sustained frame rate remain unmeasured.
+- Edge and WebKit passed the core four routes at 390/1440 pixels plus desktop add-to-cart, no page errors or horizontal overflow. Firefox Playwright installed but its Windows binary failed to launch due incorrect side-by-side configuration, so Firefox remains unverified. Real iOS Safari is unverified.
+- Updated `README.md` and added `HANDOVER.md`, including setup, measured results, data migrations, remaining owner/launch decisions and no-deploy boundary. `npm run dev` served `/en` and `/vi` at `http://localhost:3000` with HTTP 200.
+- Final screenshots, traces and measurement JSON are in ignored `test-results/screens/F14/`. Slice screenshots are in `test-results/screens/F1/` and `F3/` through `F12/` (F2 was data only). Production email, hosted Supabase/RLS, real QR scans and live orders remain unverified without credentials or a release decision.
