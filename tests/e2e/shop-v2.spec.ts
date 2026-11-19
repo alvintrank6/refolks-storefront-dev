@@ -96,7 +96,7 @@ test("F7 GET filters render without JavaScript and Shop passes axe", async ({
     viewport: { width: 390, height: 844 },
   });
   const noJs = await context.newPage();
-  await noJs.goto("http://127.0.0.1:4173/en/shop");
+  await noJs.goto("http://127.0.0.1:4175/en/shop");
   await noJs.locator(".shop-mobile-filters summary").click();
   await noJs.locator("#mobile-tier").selectOption("signature");
   await noJs.locator(".shop-mobile-filters button").click();

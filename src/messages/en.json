@@ -253,7 +253,7 @@
     "markedDone": "Transfer noted. We will verify it when the funds arrive."
   },
   "studio": {
-    "eyebrow": "REFVLKS STUDIO · HANOI",
+    "eyebrow": "REFOLKS STUDIO · HANOI",
     "title": "Try it on before you decide.",
     "intro": "22 Le Quy Don, Hai Ba Trung Ward, Hanoi. Every day, 8:00 to 21:30, by appointment.",
     "bring": "Bring your laptop and what you carry every day.",
@@ -290,13 +290,13 @@
     "body": "The body combines dense jacquard canvas or felt with recovered material at the handles, flaps, straps and scarf. The materials of every part are listed on each product page."
   },
   "about": {
-    "eyebrow": "ABOUT REFVLKS",
+    "eyebrow": "ABOUT REFOLKS",
     "title": "A working bag, with another story inside.",
-    "intro": "Refvlks is a Hanoi work-bag brand shaped around the pace of city days. Tailored forms sit beside woven details, made to be noticed up close.",
+    "intro": "Refolks is a Hanoi work-bag brand shaped around the pace of city days. Tailored forms sit beside woven details, made to be noticed up close.",
     "cta": "Find your bag"
   },
   "contact": {
-    "title": "Contact Refvlks",
+    "title": "Contact Refolks",
     "intro": "Questions about a bag, an order, or a studio visit? Send a message here.",
     "topic": "Topic",
     "order": "Order",
@@ -337,7 +337,7 @@
     "openMenu": "Open menu",
     "mainNav": "Main",
     "mobileNav": "Mobile",
-    "logoHome": "Refvlks home",
+    "logoHome": "Refolks home",
     "itemCount": "{n} items"
   }
 }

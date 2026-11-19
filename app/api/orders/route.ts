@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cartCookie, cartDetails, parseCart } from "../../../src/lib/cart";
+import {
+  cartCookie,
+  cartDetails,
+  orderLines,
+  parseCart,
+} from "../../../src/lib/cart";
 import { isLocale, paths } from "../../../src/lib/catalog";
 import { storeRepository } from "../../../src/lib/data";
 import { sendTransactionalEmail } from "../../../src/lib/email";
@@ -46,7 +51,7 @@ export async function POST(request: NextRequest) {
   try {
     const repository = await storeRepository();
     const created = await repository.placeOrder({
-      cart,
+      lines: orderLines(cart, locale),
       locale,
       name,
       phone,
@@ -64,8 +69,8 @@ export async function POST(request: NextRequest) {
           to: email,
           subject:
             locale === "vi"
-              ? `Refvlks đã nhận đơn ${created.number}`
-              : `Refvlks order ${created.number} received`,
+              ? `Refolks đã nhận đơn ${created.number}`
+              : `Refolks order ${created.number} received`,
           text:
             locale === "vi"
               ? `Đơn ${created.number} đã được ghi nhận. Tổng cộng: ${created.total.toLocaleString("vi-VN")} ₫. Xem chi tiết và hướng dẫn thanh toán: ${new URL(`${p.order}/${created.token}`, request.url)}`
@@ -77,7 +82,7 @@ export async function POST(request: NextRequest) {
       emailTasks.push(
         sendTransactionalEmail({
           to: notify,
-          subject: `New Refvlks order ${created.number}`,
+          subject: `New Refolks order ${created.number}`,
           text: `Order ${created.number}\nName: ${name}\nPhone: ${phone}\nPayment: ${payment}\nTotal: ${created.total.toLocaleString("vi-VN")} ₫\nDetails: ${new URL(`${p.order}/${created.token}`, request.url)}`,
           idempotencyKey: `order-${created.number}-admin`,
         }),

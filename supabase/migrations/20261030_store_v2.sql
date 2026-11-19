@@ -1,4 +1,4 @@
--- Optional Supabase adapter for the local-first Refvlks storefront.
+-- Optional Supabase adapter for the local-first Refolks storefront.
 -- Apply this and 20261030_donation_v2.sql, then run seed.sql.
 create table if not exists public.products (
   handle text primary key,

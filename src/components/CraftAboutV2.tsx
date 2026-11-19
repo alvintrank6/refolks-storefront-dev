@@ -7,7 +7,7 @@ const story = {
     craft: {
       eyebrow: "CRAFT & MATERIALS",
       title: "Seventy, thirty.",
-      lead: "Every Refvlks bag is built from two kinds of cloth, each where it works best.",
+      lead: "Every Refolks bag is built from two kinds of cloth, each where it works best.",
       new: "New technical textile for the body: dense jacquard canvas and 3 mm felt that hold their shape and take daily wear.",
       recovered:
         "Recovered cotton, denim and synthetics for handles, flaps, straps and scarves, finished with a matte water-based coating so they stay smooth and easy to wipe.",
@@ -50,8 +50,8 @@ const story = {
       donate: "Join the donation event",
     },
     about: {
-      eyebrow: "ABOUT REFVLKS",
-      title: "Why we started Refvlks.",
+      eyebrow: "ABOUT REFOLKS",
+      title: "Why we started Refolks.",
       intro:
         "Two things kept coming up. Donated clothes left in piles by the roadside in Ky Son, Nghe An, because nobody had asked what was needed. And skilled weavers with fewer orders every year. We could not fix either alone, but we could make something people actually want to carry, and build it from both.",
       promises: "What we promise.",
@@ -84,7 +84,7 @@ const story = {
     craft: {
       eyebrow: "THỦ CÔNG & VẬT LIỆU",
       title: "Bảy mươi, ba mươi.",
-      lead: "Mỗi chiếc túi Refvlks làm từ hai loại vải, mỗi loại ở đúng chỗ của nó.",
+      lead: "Mỗi chiếc túi Refolks làm từ hai loại vải, mỗi loại ở đúng chỗ của nó.",
       new: "Vải chuyên dụng mới cho thân túi: canvas jacquard dày và nỉ 3 mm, giữ phom và chịu được mài mòn hằng ngày.",
       recovered:
         "Cotton, jeans và vải tổng hợp tái chế cho quai, nắp, dải quai và khăn, phủ lớp hoàn thiện mờ gốc nước để mịn và dễ lau.",
@@ -127,8 +127,8 @@ const story = {
       donate: "Tham gia quyên góp",
     },
     about: {
-      eyebrow: "VỀ REFVLKS",
-      title: "Vì sao chúng tôi làm Refvlks.",
+      eyebrow: "VỀ REFOLKS",
+      title: "Vì sao chúng tôi làm Refolks.",
       intro:
         "Có hai điều cứ lặp lại. Quần áo quyên góp bị bỏ thành đống bên đường ở Kỳ Sơn, Nghệ An, vì không ai hỏi người dân thực sự cần gì. Và những người thợ dệt giỏi có ít đơn hàng hơn mỗi năm. Chúng tôi không thể tự giải quyết cả hai, nhưng có thể làm ra thứ người ta thật sự muốn mang theo, và làm nó từ cả hai.",
       promises: "Điều chúng tôi cam kết.",

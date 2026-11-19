@@ -22,6 +22,20 @@
       "when": 1793381051214,
       "tag": "0002_rapid_randall",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1795091746443,
+      "tag": "0003_large_earthquake",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1795095307603,
+      "tag": "0004_aromatic_monster_badoon",
+      "breakpoints": true
     }
   ]
 }

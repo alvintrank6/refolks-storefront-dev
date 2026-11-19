@@ -57,7 +57,7 @@ const copy = {
       note: "Note (optional)",
       privacy: "I agree to the Privacy Policy",
       recycle:
-        "I understand that clothes unfit to wear may be recycled into textile for Refvlks products.",
+        "I understand that clothes unfit to wear may be recycled into textile for Refolks products.",
       submit: "Count me in",
     },
     thanks:
@@ -71,7 +71,7 @@ const copy = {
       ],
       [
         "Do you sell the clothes we donate?",
-        "No. Wearable clothes are given away for free. Only pieces too worn to wear are recycled into fabric, and that fabric is used in Refvlks bags.",
+        "No. Wearable clothes are given away for free. Only pieces too worn to wear are recycled into fabric, and that fabric is used in Refolks bags.",
       ],
     ],
   },
@@ -120,7 +120,7 @@ const copy = {
       note: "Ghi chú",
       privacy: "Tôi đồng ý với Chính sách bảo mật",
       recycle:
-        "Tôi hiểu rằng quần áo không còn mặc được có thể được tái chế thành vải cho sản phẩm của Refvlks.",
+        "Tôi hiểu rằng quần áo không còn mặc được có thể được tái chế thành vải cho sản phẩm của Refolks.",
       submit: "Đăng ký tham gia",
     },
     thanks:
@@ -133,8 +133,8 @@ const copy = {
         "Có. Chúng sẽ không được mang lên vùng cao, nhưng sẽ trở thành vải tái chế trong túi của chúng tôi.",
       ],
       [
-        "Refvlks có bán quần áo quyên góp không?",
-        "Không. Quần áo còn mặc được đều được tặng miễn phí. Chỉ những chiếc quá cũ mới được tái chế thành vải, và vải đó được dùng trong túi Refvlks.",
+        "Refolks có bán quần áo quyên góp không?",
+        "Không. Quần áo còn mặc được đều được tặng miễn phí. Chỉ những chiếc quá cũ mới được tái chế thành vải, và vải đó được dùng trong túi Refolks.",
       ],
     ],
   },

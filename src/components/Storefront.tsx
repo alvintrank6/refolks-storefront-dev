@@ -112,7 +112,7 @@ export function Logo({ reversed = false }: { reversed?: boolean }) {
           ? "/brand/refvlks_logo_wordmark_reversed_on-cocoa.svg"
           : "/brand/refvlks_logo_wordmark_primary.svg"
       }
-      alt="Refvlks"
+      alt="Refolks"
       width={142}
       height={32}
       unoptimized
@@ -214,7 +214,7 @@ export function Footer({ locale }: { locale: Locale }) {
             />
           </div>
           <div>
-            <h2>Refvlks</h2>
+            <h2>Refolks</h2>
             <RollingLink href={p.craft} text={d.nav.craft} />
             <RollingLink href={p.donation} text={d.nav.donation} />
             <RollingLink href={p.about} text={d.nav.about} />
@@ -258,7 +258,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <span>{d.footer.representative}</span>
         <span>{d.footer.studio}</span>
         <span>{d.footer.payment}</span>
-        <span>© {new Date().getFullYear()} Refvlks</span>
+        <span>© {new Date().getFullYear()} Refolks</span>
       </div>
     </footer>
   );

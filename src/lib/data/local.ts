@@ -8,7 +8,6 @@ import {
 import { join } from "node:path";
 import raw from "../../content/donation-events.json";
 import { products, productByHandle } from "../catalog";
-import { cartDetails } from "../cart";
 import { policy } from "../../content/policy";
 import type { DonationRepository, DonationSignup } from "./donation";
 import type {
@@ -20,7 +19,7 @@ import type {
 } from "./types";
 
 let writeQueue: Promise<void> = Promise.resolve();
-async function serialized<T>(action: () => Promise<T>): Promise<T> {
+export async function serialized<T>(action: () => Promise<T>): Promise<T> {
   const previous = writeQueue;
   let release!: () => void;
   writeQueue = new Promise<void>((resolve) => {
@@ -88,7 +87,7 @@ export class LocalStoreRepository
 
   async placeOrder(input: OrderDraft): Promise<OrderCreated> {
     return serialized(async () => {
-      const rows = cartDetails(input.cart);
+      const rows = input.lines;
       if (!rows.length) throw new Error("EMPTY_CART");
       await mkdir(this.directory, { recursive: true });
       const storeFile = join(this.directory, "store.json");
@@ -104,11 +103,14 @@ export class LocalStoreRepository
       };
       const stock = store.inventory;
       for (const row of rows) {
-        const available = stock[row.variant.sku] ?? row.variant.stock;
+        const available = stock[row.sku] ?? row.stock;
         if (available < row.qty) throw new Error("OUT_OF_STOCK");
-        stock[row.variant.sku] = available - row.qty;
+        stock[row.sku] = available - row.qty;
       }
-      const subtotal = rows.reduce((sum, row) => sum + row.total, 0);
+      const subtotal = rows.reduce(
+        (sum, row) => sum + row.unitPrice * row.qty,
+        0,
+      );
       const shipping =
         input.delivery === "pickup"
           ? 0
@@ -130,6 +132,8 @@ export class LocalStoreRepository
         subtotal,
         shipping,
         total,
+        status:
+          input.payment === "cod" ? "pending_confirmation" : "pending_payment",
         createdAt: new Date().toISOString(),
       });
       const storeTemp = `${storeFile}.${crypto.randomUUID()}.tmp`;

@@ -101,7 +101,7 @@ const content = {
         ],
         [
           "The account name is a person's name. Is that right?",
-          "Yes. The Techcombank account is held by Refvlks' representative, Nguyen Tung Anh.",
+          "Yes. The Techcombank account is held by Refolks' representative, Nguyen Tung Anh.",
         ],
         ["Where is the studio?", "22 Le Quy Don, Hai Ba Trung Ward, Hanoi."],
         [
@@ -116,7 +116,7 @@ const content = {
         sections: [
           [
             "Who handles your information",
-            "Refvlks, represented by Nguyễn Tùng Anh, handles the information submitted through this store. You can send privacy questions through the contact form.",
+            "Refolks, represented by Nguyễn Tùng Anh, handles the information submitted through this store. You can send privacy questions through the contact form.",
           ],
           [
             "What we collect",
@@ -145,7 +145,7 @@ const content = {
         sections: [
           [
             "Seller and orders",
-            "Refvlks is represented by Nguyễn Tùng Anh. The studio is at 22 Le Quy Don, Hai Ba Trung Ward, Hanoi. An online order is recorded when you submit checkout; we contact you to confirm it.",
+            "Refolks is represented by Nguyễn Tùng Anh. The studio is at 22 Le Quy Don, Hai Ba Trung Ward, Hanoi. An online order is recorded when you submit checkout; we contact you to confirm it.",
           ],
           [
             "Prices and stock",
@@ -174,7 +174,7 @@ const content = {
           ],
           [
             "Bank transfer",
-            "Transfer the exact total shown on your order confirmation to Techcombank, account 19070671343017, recipient NGUYEN TUNG ANH (Refvlks). Use your order number as the transfer reference. We review the payment before handling the order.",
+            "Transfer the exact total shown on your order confirmation to Techcombank, account 19070671343017, recipient NGUYEN TUNG ANH (Refolks). Use your order number as the transfer reference. We review the payment before handling the order.",
           ],
           [
             "Cash on delivery",
@@ -182,7 +182,7 @@ const content = {
           ],
           [
             "Payment safety",
-            "Refvlks will not ask for your password, OTP or card number through a call, message or email.",
+            "Refolks will not ask for your password, OTP or card number through a call, message or email.",
           ],
         ],
       },
@@ -266,7 +266,7 @@ const content = {
         ],
         [
           "Nắp túi có phải da không?",
-          "Không. Túi Refvlks không dùng da. Quai và nắp dùng canvas cotton-jeans tái chế với lớp hoàn thiện mờ.",
+          "Không. Túi Refolks không dùng da. Quai và nắp dùng canvas cotton-jeans tái chế với lớp hoàn thiện mờ.",
         ],
         [
           "Vì sao hai chiếc túi hơi khác nhau?",
@@ -282,7 +282,7 @@ const content = {
         ],
         [
           "Tên chủ tài khoản là tên cá nhân, có đúng không?",
-          "Đúng. Tài khoản Techcombank do người đại diện Refvlks, Nguyễn Tùng Anh, đứng tên.",
+          "Đúng. Tài khoản Techcombank do người đại diện Refolks, Nguyễn Tùng Anh, đứng tên.",
         ],
         ["Studio ở đâu?", "22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội."],
         [
@@ -297,7 +297,7 @@ const content = {
         sections: [
           [
             "Bên xử lý thông tin",
-            "Refvlks, do Nguyễn Tùng Anh đại diện, xử lý thông tin bạn gửi qua cửa hàng. Bạn có thể hỏi về dữ liệu qua biểu mẫu Liên hệ.",
+            "Refolks, do Nguyễn Tùng Anh đại diện, xử lý thông tin bạn gửi qua cửa hàng. Bạn có thể hỏi về dữ liệu qua biểu mẫu Liên hệ.",
           ],
           [
             "Dữ liệu thu thập",
@@ -326,7 +326,7 @@ const content = {
         sections: [
           [
             "Người bán và đơn hàng",
-            "Refvlks do Nguyễn Tùng Anh đại diện. Studio tại 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội. Đơn hàng trực tuyến được ghi nhận khi bạn gửi thanh toán; chúng tôi sẽ liên hệ xác nhận.",
+            "Refolks do Nguyễn Tùng Anh đại diện. Studio tại 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội. Đơn hàng trực tuyến được ghi nhận khi bạn gửi thanh toán; chúng tôi sẽ liên hệ xác nhận.",
           ],
           [
             "Giá và tồn kho",
@@ -355,7 +355,7 @@ const content = {
           ],
           [
             "Chuyển khoản",
-            "Chuyển đúng tổng tiền trên trang xác nhận đơn vào Techcombank, số tài khoản 19070671343017, người thụ hưởng NGUYEN TUNG ANH (Refvlks). Ghi mã đơn hàng trong nội dung chuyển khoản. Chúng tôi kiểm tra khoản tiền trước khi xử lý đơn.",
+            "Chuyển đúng tổng tiền trên trang xác nhận đơn vào Techcombank, số tài khoản 19070671343017, người thụ hưởng NGUYEN TUNG ANH (Refolks). Ghi mã đơn hàng trong nội dung chuyển khoản. Chúng tôi kiểm tra khoản tiền trước khi xử lý đơn.",
           ],
           [
             "Thanh toán khi nhận hàng",
@@ -363,7 +363,7 @@ const content = {
           ],
           [
             "An toàn thanh toán",
-            "Refvlks không yêu cầu mật khẩu, mã OTP hoặc số thẻ qua điện thoại, tin nhắn hay email.",
+            "Refolks không yêu cầu mật khẩu, mã OTP hoặc số thẻ qua điện thoại, tin nhắn hay email.",
           ],
         ],
       },

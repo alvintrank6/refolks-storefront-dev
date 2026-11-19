@@ -21,7 +21,7 @@ Mọi câu gắn claim `pending` không render ở production. Section có ghi "
 
 | Phần tử | EN | VI |
 |---|---|---|
-| Logo | Refvlks (link về trang chủ của locale) | Refvlks |
+| Logo | Refolks (link về trang chủ của locale) | Refolks |
 | Menu | Shop · Craft · About · Visit the studio | Cửa hàng · Thủ công · Về chúng tôi · Ghé studio |
 | Shop panel | All bags · Heritage · Signature · Essential | Tất cả · Heritage · Signature · Essential |
 | Ngôn ngữ | EN \| VI | EN \| VI |
@@ -33,10 +33,10 @@ Mọi câu gắn claim `pending` không render ở production. Section có ghi "
 | Cột | EN | VI |
 |---|---|---|
 | Shop | All bags, Heritage, Signature, Essential | Tất cả, Heritage, Signature, Essential |
-| Refvlks | Craft & materials, About, Visit the studio | Thủ công & vật liệu, Về chúng tôi, Ghé studio |
+| Refolks | Craft & materials, About, Visit the studio | Thủ công & vật liệu, Về chúng tôi, Ghé studio |
 | Help | Size & fit, Shipping & returns, Care & repair, FAQ, Contact | Kích thước, Giao hàng & đổi trả, Bảo quản & sửa chữa, Câu hỏi thường gặp, Liên hệ |
 | Legal | Privacy, Terms of sale, Payment | Bảo mật, Điều khoản bán hàng, Thanh toán |
-| Dòng doanh nghiệp | Refvlks · Representative: Nguyễn Tùng Anh · 22 Le Quy Don, Hai Ba Trung Ward, Hanoi · [Tax code] · [Phone] · [Email] | Refvlks · Người đại diện: Nguyễn Tùng Anh · 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội · [MST] · [Điện thoại] · [Email] |
+| Dòng doanh nghiệp | Refolks · Representative: Nguyễn Tùng Anh · 22 Le Quy Don, Hai Ba Trung Ward, Hanoi · [Tax code] · [Phone] · [Email] | Refolks · Người đại diện: Nguyễn Tùng Anh · 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội · [MST] · [Điện thoại] · [Email] |
 | Thanh toán | We accept: Cash on delivery · Bank transfer | Chấp nhận: Thanh toán khi nhận hàng · Chuyển khoản |
 
 Trường thiếu (MST, điện thoại, email, mạng xã hội) không render cho đến khi có dữ liệu.
@@ -57,7 +57,7 @@ Trường thiếu (MST, điện thoại, email, mạng xã hội) không render 
 
 | | EN | VI |
 |---|---|---|
-| Title (≤60) | Refvlks \| Work Bags, Quiet Outside, Woven Inside | Refvlks \| Túi đi làm, ngoài tĩnh, trong dệt tay |
+| Title (≤60) | Refolks \| Work Bags, Quiet Outside, Woven Inside | Refolks \| Túi đi làm, ngoài tĩnh, trong dệt tay |
 | Meta (≤155) | Work totes with hand-woven details from a small studio in Hanoi. Inspect before you pay, or book a visit to try them on. | Túi đi làm có chi tiết dệt tay từ một studio nhỏ ở Hà Nội. Kiểm hàng trước khi trả tiền, hoặc đặt lịch đến thử túi. |
 | H1 | Quiet on the outside. A story on the inside. | Ngoài tĩnh lặng. Trong là câu chuyện. |
 
@@ -166,7 +166,7 @@ Thẻ sản phẩm: một thẻ cho mỗi màu (5 thẻ). Thẻ gồm ảnh, tê
 
 | | EN | VI |
 |---|---|---|
-| Title | Shop Work Bags & Totes \| Refvlks | Túi đi làm và túi tote \| Refvlks |
+| Title | Shop Work Bags & Totes \| Refolks | Túi đi làm và túi tote \| Refolks |
 | Meta | Tailored work totes from 1.290.000 ₫, with hand-woven details. Cash on delivery: inspect your bag before you pay. | Túi đi làm may đo từ 1.290.000 ₫, có chi tiết dệt tay. Thanh toán khi nhận hàng: kiểm túi trước khi trả tiền. |
 | H1 | All bags | Tất cả sản phẩm |
 
@@ -186,7 +186,7 @@ Khi chọn tầng, H1 đổi thành tên tầng và `<title>` đổi theo; canon
 
 ## 3. PRODUCT DETAIL (template) · `/en/products/{handle}` · `/vi/san-pham/{handle}`
 
-**SEO:** Title `{Name}, {Colour} | Refvlks` · Meta `{Short description} Cash on delivery, inspect before you pay.` · H1 = tên. Structured data `Product` (giá, tình trạng còn hàng, ảnh); không có `AggregateRating`.
+**SEO:** Title `{Name}, {Colour} | Refolks` · Meta `{Short description} Cash on delivery, inspect before you pay.` · H1 = tên. Structured data `Product` (giá, tình trạng còn hàng, ảnh); không có `AggregateRating`.
 
 ### Các section
 
@@ -262,9 +262,9 @@ Mỗi dòng lấy từ dữ liệu sản phẩm; dòng thiếu dữ liệu khôn
 
 | | EN | VI |
 |---|---|---|
-| Title | Craft & Materials: Inside Every Refvlks Bag | Thủ công & vật liệu: bên trong túi Refvlks |
-| Meta | What our bags are made of: 70% new technical textile for the body, 30% recovered textile in handles and flaps, and woven details. | Túi Refvlks làm từ gì: 70% vải chuyên dụng mới cho thân túi, 30% vải tái chế ở quai và nắp, cùng chi tiết dệt. |
-| H1 | What goes into a Refvlks bag. | Trong một chiếc túi Refvlks có gì. |
+| Title | Craft & Materials: Inside Every Refolks Bag | Thủ công & vật liệu: bên trong túi Refolks |
+| Meta | What our bags are made of: 70% new technical textile for the body, 30% recovered textile in handles and flaps, and woven details. | Túi Refolks làm từ gì: 70% vải chuyên dụng mới cho thân túi, 30% vải tái chế ở quai và nắp, cùng chi tiết dệt. |
+| H1 | What goes into a Refolks bag. | Trong một chiếc túi Refolks có gì. |
 
 | ID | Nội dung EN | Nội dung VI | Điều kiện |
 |---|---|---|---|
@@ -282,9 +282,9 @@ Mỗi dòng lấy từ dữ liệu sản phẩm; dòng thiếu dữ liệu khôn
 
 | | EN | VI |
 |---|---|---|
-| Title | About Refvlks \| Why We Started | Về Refvlks \| Vì sao chúng tôi bắt đầu |
-| Meta | Refvlks started in Hanoi with two problems: donated clothes going to waste, and weavers losing their market. Our answer is a well-made work bag. | Refvlks bắt đầu ở Hà Nội từ hai vấn đề: quần áo quyên góp bị lãng phí và nghề dệt mất dần đầu ra. Câu trả lời là một chiếc túi đi làm chỉn chu. |
-| H1 | Why we started Refvlks. | Vì sao chúng tôi làm Refvlks. |
+| Title | About Refolks \| Why We Started | Về Refolks \| Vì sao chúng tôi bắt đầu |
+| Meta | Refolks started in Hanoi with two problems: donated clothes going to waste, and weavers losing their market. Our answer is a well-made work bag. | Refolks bắt đầu ở Hà Nội từ hai vấn đề: quần áo quyên góp bị lãng phí và nghề dệt mất dần đầu ra. Câu trả lời là một chiếc túi đi làm chỉn chu. |
+| H1 | Why we started Refolks. | Vì sao chúng tôi làm Refolks. |
 
 | ID | EN | VI | Điều kiện |
 |---|---|---|---|
@@ -301,8 +301,8 @@ Mỗi dòng lấy từ dữ liệu sản phẩm; dòng thiếu dữ liệu khôn
 
 | | EN | VI |
 |---|---|---|
-| Title | Visit the Refvlks Studio in Hanoi | Ghé Refvlks Studio tại Hà Nội |
-| Meta | Try any Refvlks bag before you buy. Open every day, 8:00 to 21:30, by appointment, at 22 Le Quy Don, Hai Ba Trung Ward, Hanoi. | Thử mọi mẫu túi Refvlks trước khi mua. Mở cửa hằng ngày 8:00 đến 21:30 theo lịch hẹn, tại 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội. |
+| Title | Visit the Refolks Studio in Hanoi | Ghé Refolks Studio tại Hà Nội |
+| Meta | Try any Refolks bag before you buy. Open every day, 8:00 to 21:30, by appointment, at 22 Le Quy Don, Hai Ba Trung Ward, Hanoi. | Thử mọi mẫu túi Refolks trước khi mua. Mở cửa hằng ngày 8:00 đến 21:30 theo lịch hẹn, tại 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội. |
 | H1 | Try it on before you decide. | Đeo thử rồi hãy quyết định. |
 
 | ID | EN | VI |
@@ -380,8 +380,8 @@ Quy tắc COD: tối đa 2 sản phẩm mỗi đơn; nhiều hơn thì ẩn COD 
 |---|---|---|
 | QR | VietQR theo đơn (số tiền và nội dung điền sẵn) | |
 | Bank | Techcombank | Techcombank |
-| Account name | NGUYEN TUNG ANH (Refvlks) | NGUYEN TUNG ANH (Refvlks) |
-| Ghi chú tên | The account is held by Refvlks' legal representative. | Tài khoản đứng tên người đại diện pháp lý của Refvlks. |
+| Account name | NGUYEN TUNG ANH (Refolks) | NGUYEN TUNG ANH (Refolks) |
+| Ghi chú tên | The account is held by Refolks' legal representative. | Tài khoản đứng tên người đại diện pháp lý của Refolks. |
 | Account number | 19070671343017 · Copy | 19070671343017 · Sao chép |
 | Amount | 3.210.000 ₫ · Copy | |
 | Reference | RV1024 · Copy · "Please use this exact reference so we can match your payment." | "Vui lòng ghi đúng nội dung này để chúng tôi đối chiếu." |
@@ -398,7 +398,7 @@ Mã VietQR (BIN 970407) điền sẵn số tài khoản, số tiền và nội d
 ## 11. HELP
 
 ### Size & fit · `/help/size-fit` · `/vi/ho-tro/kich-thuoc`
-- Title: Size & Fit Guide | Refvlks · Meta: How big each Refvlks bag is, what fits inside on a working day, and how to measure your laptop.
+- Title: Size & Fit Guide | Refolks · Meta: How big each Refolks bag is, what fits inside on a working day, and how to measure your laptop.
 - H1: Size & fit / Kích thước
 - SF-01: "Every bag is about the footprint of a 13 to 14-inch laptop. Exact measurements are below." (CL-07) / "Mỗi chiếc túi có kích thước khoảng bằng laptop 13 đến 14 inch. Số đo chính xác ở bên dưới."
 - SF-02: bảng tất cả mẫu: W × H × D, Weight, Laptop fit, Handle drop, Compartments (hàng thiếu dữ liệu hiện "Coming soon" thay vì để trống, chỉ ở trang này)
@@ -406,7 +406,7 @@ Mã VietQR (BIN 970407) điền sẵn số tài khoản, số tiền và nội d
 - SF-04: "Not sure? Bring your laptop to the studio." → `/studio#book`
 
 ### Care & repair · `/help/care-repair` · `/vi/ho-tro/bao-quan-sua-chua`
-- Title: Care & Repair | Refvlks · Meta: How to look after jacquard canvas, technical felt, recovered handles and woven details, and how to send your bag back to us for repair.
+- Title: Care & Repair | Refolks · Meta: How to look after jacquard canvas, technical felt, recovered handles and woven details, and how to send your bag back to us for repair.
 - Care theo vật liệu (EN):
   - **Body, jacquard canvas (Weft Structured Tote, Trám Shopper):** spot clean with a damp cloth and mild soap; blot, don't rub; no machine wash, bleach or tumble dry.
   - **Body, technical felt (Loom Flap Tote, Loom Carryall):** lift lint with a soft brush or lint roller; spot clean with cold water; dry flat, away from heat.
@@ -430,7 +430,7 @@ Mã VietQR (BIN 970407) điền sẵn số tài khoản, số tiền và nội d
 | Ordering | How do I pay? | Cash on delivery or bank transfer. Card payments are coming soon. | |
 | Ordering | Can I check the bag before paying? | Yes. With cash on delivery you can open the parcel and inspect the bag in front of the courier before paying. | |
 | Ordering | I paid by transfer. When will you ship? | As soon as the payment arrives. Orders are prepared within 1 to 2 working days. | |
-| Ordering | The account name is a person's name. Is that right? | Yes. Our account is held by Refvlks' legal representative, Nguyen Tung Anh. | |
+| Ordering | The account name is a person's name. Is that right? | Yes. Our account is held by Refolks' legal representative, Nguyen Tung Anh. | |
 | Delivery | How long does delivery take? | Hanoi: 1 to 2 working days. Elsewhere in Vietnam: 3 to 5 working days. | |
 | Returns | Can I return a bag I don't like? | You can exchange an unused bag within 7 days. Refunds are for defects or wrong items. | |
 | Studio | Where is the studio? | 22 Le Quy Don, Hai Ba Trung Ward, Hanoi. | |
@@ -439,7 +439,7 @@ Mã VietQR (BIN 970407) điền sẵn số tài khoản, số tiền và nội d
 VI: dịch tương đương trong `vi.json`, key `faq.items[n]`.
 
 ### Contact · `/contact` · `/vi/lien-he`
-- Title: Contact Refvlks · Meta: Questions about an order, a repair, a studio visit or corporate gifts? Send us a message and the Hanoi studio team will reply.
+- Title: Contact Refolks · Meta: Questions about an order, a repair, a studio visit or corporate gifts? Send us a message and the Hanoi studio team will reply.
 - Kênh: Phone/Zalo, Email, Instagram [CẦN BỔ SUNG; không render khi trống] · địa chỉ studio
 - Form: Name · Phone or email · Topic (Order / Studio visit / Repair / Corporate gifts / Press & partnerships / Something else) · Order number (chỉ khi Order hoặc Repair) · Message · Privacy consent
 - Nút: "Send message" / "Gửi tin nhắn" · Thành công: "Thanks. We'll get back to you soon." (khi CL-14 approved: "We reply within {x}.") · Lỗi: "Please write a message." · "Please add a phone number or email so we can reply."
@@ -455,10 +455,10 @@ Nội dung gốc tiếng Việt: `04a-POLICIES-VI.md`. Bản EN dịch từ đó
 
 | Trang | Title EN | Meta EN |
 |---|---|---|
-| Shipping & returns | Shipping, Inspection & Returns \| Refvlks | Delivery times and fees, how to inspect your bag before paying, and how exchanges, refunds and repairs work at Refvlks. |
-| Privacy | Privacy Policy \| Refvlks | What personal data Refvlks collects, why, who receives it and how to exercise your rights. |
-| Terms | Terms of Sale \| Refvlks | The terms that apply when you buy from Refvlks online or at our Hanoi studio. |
-| Payment | Payment Policy \| Refvlks | Cash on delivery, bank transfer and how we confirm your payment. Card payments are coming soon. |
+| Shipping & returns | Shipping, Inspection & Returns \| Refolks | Delivery times and fees, how to inspect your bag before paying, and how exchanges, refunds and repairs work at Refolks. |
+| Privacy | Privacy Policy \| Refolks | What personal data Refolks collects, why, who receives it and how to exercise your rights. |
+| Terms | Terms of Sale \| Refolks | The terms that apply when you buy from Refolks online or at our Hanoi studio. |
+| Payment | Payment Policy \| Refolks | Cash on delivery, bank transfer and how we confirm your payment. Card payments are coming soon. |
 
 ---
 

@@ -86,11 +86,11 @@ Mạng xã hội / nhóm expat / tìm kiếm
 
 ## 5. Menu
 
-**Desktop (≥ 1024px):** `[Refvlks]  Shop ▾  Craft  About  Visit the studio      EN | VI   Bag (2)`. Shop mở panel nhỏ: All bags · Heritage · Signature · Essential, mỗi mục kèm ảnh thẻ 1 mẫu.
+**Desktop (≥ 1024px):** `[Refolks]  Shop ▾  Craft  About  Visit the studio      EN | VI   Bag (2)`. Shop mở panel nhỏ: All bags · Heritage · Signature · Essential, mỗi mục kèm ảnh thẻ 1 mẫu.
 
-**Mobile (< 1024px):** `[☰]  [Refvlks]  [Bag (2)]`. Panel trượt từ trái: Shop (mở rộng 4 mục) · Craft & materials · About · Visit the studio · đường kẻ · Help · Contact · EN | VI.
+**Mobile (< 1024px):** `[☰]  [Refolks]  [Bag (2)]`. Panel trượt từ trái: Shop (mở rộng 4 mục) · Craft & materials · About · Visit the studio · đường kẻ · Help · Contact · EN | VI.
 
-**Footer:** 4 cột (Shop, Refvlks, Help, Legal) + dòng thông tin doanh nghiệp + phương thức thanh toán.
+**Footer:** 4 cột (Shop, Refolks, Help, Legal) + dòng thông tin doanh nghiệp + phương thức thanh toán.
 
 ## 6. UX blueprint theo breakpoint
 
@@ -120,7 +120,7 @@ Mạng xã hội / nhóm expat / tìm kiếm
 
 ## 8. CMS `/admin`
 
-Cấu trúc theo cách Shopify admin chia khu vực, giao diện theo design system Refvlks.
+Cấu trúc theo cách Shopify admin chia khu vực, giao diện theo design system Refolks.
 
 ```
 /admin

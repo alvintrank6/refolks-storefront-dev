@@ -29,6 +29,7 @@ export const orders = sqliteTable(
     shippingFee: integer("shipping_fee").notNull(),
     total: integer("total").notNull(),
     customerMarkedPaidAt: text("customer_marked_paid_at"),
+    userId: text("user_id"),
   },
   (table) => [
     uniqueIndex("orders_token_unique").on(table.token),
@@ -107,4 +108,30 @@ export const donationSignups = sqliteTable("donation_signups", {
   status: text("status").notNull(),
   createdAt: text("created_at").notNull(),
   ipHash: text("ip_hash"),
+});
+
+export const users = sqliteTable(
+  "users",
+  {
+    id: text("id").primaryKey(),
+    email: text("email").notNull(),
+    name: text("name").notNull(),
+    passwordHash: text("password_hash").notNull(),
+    role: text("role").notNull(),
+    failedLogins: integer("failed_logins").notNull().default(0),
+    lockedUntil: text("locked_until"),
+    createdAt: text("created_at").notNull(),
+    emailVerified: integer("email_verified").notNull().default(1),
+    googleId: text("google_id"),
+    /** JSON of the pending email code (see Otp in src/lib/data/account.ts). */
+    otp: text("otp"),
+  },
+  (table) => [uniqueIndex("users_email_unique").on(table.email)],
+);
+export const sessions = sqliteTable("sessions", {
+  tokenHash: text("token_hash").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  expiresAt: text("expires_at").notNull(),
 });

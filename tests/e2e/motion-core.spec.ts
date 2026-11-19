@@ -82,7 +82,7 @@ test("F5 Home remains readable and navigable without JavaScript", async ({
     viewport: { width: 1440, height: 900 },
   });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/en");
+  await page.goto("http://127.0.0.1:4175/en");
   await expect(page.locator(".hero h1")).toBeVisible();
   await expect(page.locator(".reveal-cards")).toBeVisible();
   await expect(page.locator(".reveal-card")).toHaveCount(3);

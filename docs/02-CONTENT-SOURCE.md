@@ -8,7 +8,7 @@ Trạng thái: **verified** (chủ dự án đã xác nhận) · **assumed** (gi
 
 | Trường | Giá trị | Trạng thái |
 |---|---|---|
-| Tên hiển thị | Refvlks | verified |
+| Tên hiển thị | Refolks | verified |
 | Cách đọc | "re·folks" | assumed |
 | Tagline | Quiet on the outside. A story on the inside. | assumed |
 | Người đại diện | Nguyễn Tùng Anh | verified |
@@ -21,7 +21,7 @@ Trạng thái: **verified** (chủ dự án đã xác nhận) · **assumed** (gi
 
 | Trường | Giá trị | Trạng thái |
 |---|---|---|
-| Tên hiển thị | Refvlks Studio | assumed |
+| Tên hiển thị | Refolks Studio | assumed |
 | Địa chỉ (VI) | 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội | verified |
 | Địa chỉ (EN) | 22 Le Quy Don, Hai Ba Trung Ward, Hanoi | verified |
 | Hình thức | Chỉ theo lịch hẹn | verified |
@@ -42,7 +42,7 @@ Trạng thái: **verified** (chủ dự án đã xác nhận) · **assumed** (gi
 | Nội dung chuyển khoản | Mã đơn, dạng `RV1024` | assumed |
 | Hạn chuyển khoản | 24 giờ | assumed |
 
-Hiển thị người thụ hưởng ở checkout và trang xác nhận đơn dạng: **NGUYEN TUNG ANH (Refvlks)**, kèm một dòng giải thích: tài khoản đứng tên người đại diện của Refvlks. Mục đích: khách không nghi ngờ khi tên người nhận khác tên thương hiệu.
+Hiển thị người thụ hưởng ở checkout và trang xác nhận đơn dạng: **NGUYEN TUNG ANH (Refolks)**, kèm một dòng giải thích: tài khoản đứng tên người đại diện của Refolks. Mục đích: khách không nghi ngờ khi tên người nhận khác tên thương hiệu.
 
 ## 4. Sản phẩm
 
@@ -134,7 +134,7 @@ Mọi câu khẳng định trên web có mã CL. Chỉ render khi `approved`. Tr
 | CL-18 | Every donated piece is checked by our team | DE-01, DE-02 | approved | Chủ dự án (D18) |
 | CL-19 | Needs are checked with local partners before each trip | DE-02 | pending | Có đối tác và quy trình hỏi nhu cầu |
 | CL-20 | Impact numbers: kg collected, pieces delivered, kg recycled | DE-01 | pending | Có số liệu chuyến đầu tiên |
-| CL-21 | Clothes unfit to wear become recovered textile in Refvlks bags | H-02, H-05, DE-01, DE-02, CR-02, AB-02 | approved | Chủ dự án (D18) |
+| CL-21 | Clothes unfit to wear become recovered textile in Refolks bags | H-02, H-05, DE-01, DE-02, CR-02, AB-02 | approved | Chủ dự án (D18) |
 | CL-22 | Drop-off at the studio during collection week | DE-02, ST-03 | pending | Chủ dự án xác nhận nhận đồ tại studio |
 | CL-23 | Destinations and results posted after every trip | DE-03 | pending | Đội ngũ cam kết đăng tổng kết |
 

@@ -6,7 +6,7 @@ Ký hiệu: **[CẦN BỔ SUNG]** dữ liệu chủ dự án sẽ cung cấp · 
 
 ## 1. Dự án trong một đoạn
 
-Refvlks (tên dự án nội bộ: Refolks) là thương hiệu túi đi làm phân khúc trung cao cấp tại Hà Nội. Túi có phom tối giản, thân bằng vải chuyên dụng mới (70%), các phần quai, nắp và phụ kiện như khăn làm từ vải tái chế (30%), và chi tiết thổ cẩm dệt tay. Website là kênh bán chính (D2C) và là nơi hẹn lịch đến studio thử túi.
+Refolks (tên dự án nội bộ: Refolks) là thương hiệu túi đi làm phân khúc trung cao cấp tại Hà Nội. Túi có phom tối giản, thân bằng vải chuyên dụng mới (70%), các phần quai, nắp và phụ kiện như khăn làm từ vải tái chế (30%), và chi tiết thổ cẩm dệt tay. Website là kênh bán chính (D2C) và là nơi hẹn lịch đến studio thử túi.
 
 ## 2. Mục tiêu website
 
@@ -26,7 +26,7 @@ KPI MVP [GIẢ ĐỊNH]: tỷ lệ chuyển đổi xem sản phẩm → đặt h
 
 ## 4. Định vị và giọng điệu
 
-- **Câu định vị:** Refvlks làm túi đi làm cho người làm việc ở đô thị: may đo và trầm lặng bên ngoài, mang thổ cẩm dệt tay Việt Nam ở bên trong.
+- **Câu định vị:** Refolks làm túi đi làm cho người làm việc ở đô thị: may đo và trầm lặng bên ngoài, mang thổ cẩm dệt tay Việt Nam ở bên trong.
 - **Tagline [GIẢ ĐỊNH]:** "Quiet on the outside. A story on the inside."
 - **Hướng thương hiệu:** Phương án A "Quiet Atelier" (đã duyệt), mượn từ phương án B nhãn kiểu hồ sơ bằng font mono và màu đỏ son làm điểm nhấn hiếm.
 - **Tính cách:** Tailored · Honest · Warm · Considered · Rooted.
@@ -36,7 +36,7 @@ KPI MVP [GIẢ ĐỊNH]: tỷ lệ chuyển đổi xem sản phẩm → đặt h
 
 | Mã | Quyết định | Nguồn |
 |---|---|---|
-| D01 | Tên hiển thị ra ngoài: **Refvlks**. Refolks chỉ là tên dự án nội bộ | Chủ dự án |
+| D01 | Tên hiển thị ra ngoài: **Refolks**. Refolks chỉ là tên dự án nội bộ | Chủ dự án |
 | D02 | Song ngữ: EN mặc định (`/en`), VI phụ (`/vi`) | Chủ dự án |
 | D03 | Thanh toán: COD (kiểm hàng trước khi trả tiền), chuyển khoản, trang thẻ chỉ là bản xem trước | Chủ dự án |
 | D04 | Tài khoản nhận chuyển khoản: người thụ hưởng NGUYEN TUNG ANH, số tài khoản 19070671343017, ngân hàng Techcombank (mã BIN 970407 theo danh sách của Ngân hàng Nhà nước) | Chủ dự án |

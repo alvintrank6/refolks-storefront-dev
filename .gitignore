@@ -50,3 +50,6 @@ yarn-error.log*
 
 # Local hosting connector metadata
 /.openai/
+
+# Local Claude Code settings (may hold tokens)
+.claude/settings.local.json

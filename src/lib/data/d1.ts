@@ -1,5 +1,4 @@
 import { products, productByHandle } from "../catalog";
-import { cartDetails } from "../cart";
 import { policy } from "../../content/policy";
 import { D1DonationRepository, type DonationSignup } from "./donation";
 import type {
@@ -31,9 +30,12 @@ export class D1StoreRepository implements StoreRepository {
   }
 
   async placeOrder(input: OrderDraft): Promise<OrderCreated> {
-    const rows = cartDetails(input.cart);
+    const rows = input.lines;
     if (!rows.length) throw new Error("EMPTY_CART");
-    const subtotal = rows.reduce((sum, row) => sum + row.total, 0);
+    const subtotal = rows.reduce(
+      (sum, row) => sum + row.unitPrice * row.qty,
+      0,
+    );
     const shipping =
       input.delivery === "pickup"
         ? 0
@@ -54,13 +56,13 @@ export class D1StoreRepository implements StoreRepository {
       rows.map((row) =>
         this.db
           .prepare("INSERT OR IGNORE INTO inventory (sku,stock) VALUES (?,?)")
-          .bind(row.variant.sku, row.variant.stock),
+          .bind(row.sku, row.stock),
       ),
     );
     await this.db.batch([
       this.db
         .prepare(
-          "INSERT INTO orders (id,token,number,created_at,locale,status,payment_method,delivery,customer_name,phone,email,address,city,subtotal,shipping_fee,total) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+          "INSERT INTO orders (id,token,number,created_at,locale,status,payment_method,delivery,customer_name,phone,email,address,city,subtotal,shipping_fee,total,user_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         )
         .bind(
           id,
@@ -79,6 +81,7 @@ export class D1StoreRepository implements StoreRepository {
           subtotal,
           shipping,
           total,
+          input.userId ?? null,
         ),
       ...rows.map((row) =>
         this.db
@@ -88,11 +91,11 @@ export class D1StoreRepository implements StoreRepository {
           .bind(
             crypto.randomUUID(),
             id,
-            row.variant.sku,
-            row.product.name[input.locale],
-            row.variant.colour[input.locale],
+            row.sku,
+            row.name,
+            row.colour,
             row.qty,
-            row.variant.priceVnd,
+            row.unitPrice,
           ),
       ),
     ]);

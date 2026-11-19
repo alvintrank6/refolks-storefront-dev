@@ -25,7 +25,8 @@ import {
 } from "lucide-react";
 import { StylingGuide, CareGuide } from "./RoundTwoSections";
 import { answerChat, chatCopy, type ChatStage } from "../services/chatService";
-import { authService, formService, orderService } from "../services/mockServices";
+import { AdminPanel, statusLabel } from "./AdminPanel";
+import type { Role } from "../lib/auth/roles";
 import {
   accordion,
   colours,
@@ -42,8 +43,8 @@ import "./refolks.css";
 import "./refolks-round-two.css";
 
 type CartItem = { id: string; qty: number; color: string; personal: boolean; variant?: string };
-type Account = { name: string; email: string };
-type Order = { id: string; date: string; total: number; items: CartItem[] };
+type Account = { name: string; email: string; role: Role };
+type Order = { number: string; createdAt: string; status: string; total: number; items: unknown[] };
 type Route = { page: string; id?: string };
 type ChatMessage = {role:"user"|"bot"; text:string; href?:string};
 const base = (lang: Lang) => `/${lang}`;
@@ -152,14 +153,40 @@ const ui = {
     continue: "Tiếp tục",
     shipping: "Phí giao hàng",
     total: "Tổng cộng",
-    placed: "Đơn hàng demo đã được ghi nhận.",
+    placed: "Đơn hàng đã được ghi nhận. Email xác nhận đã được gửi.",
+    orderFailed: "Chưa đặt được đơn. Vui lòng kiểm tra thông tin và thử lại.",
+    outOfStock: "Một sản phẩm trong giỏ đã hết hàng.",
     demoNotice:
       "Đây là bản demo. Không thu tiền và không gửi đơn hàng tới Refolks.",
-    demoAccount: "Tài khoản demo được lưu trên trình duyệt này.",
+    authCredentials: "Email hoặc mật khẩu không đúng.",
+    authExists: "Email này đã có tài khoản. Hãy đăng nhập.",
+    authLocked: "Đăng nhập sai quá nhiều lần. Thử lại sau 15 phút.",
+    authPassword: "Mật khẩu cần ít nhất 8 ký tự.",
+    authFailed: "Chưa xử lý được. Vui lòng thử lại.",
+    google: "Tiếp tục với Google",
+    forgot: "Quên mật khẩu?",
+    otpCode: "Mã 6 chữ số",
+    verifyTitle: "Kiểm tra email của bạn",
+    verifyIntro: "Chúng tôi đã gửi mã 6 chữ số tới",
+    verifyButton: "Xác minh",
+    resend: "Gửi lại mã",
+    resent: "Mã mới đang được gửi.",
+    forgotTitle: "Đặt lại mật khẩu",
+    forgotIntro: "Nhập email tài khoản, chúng tôi sẽ gửi mã cho bạn.",
+    sendCode: "Gửi mã",
+    newPassword: "Mật khẩu mới",
+    resetButton: "Lưu mật khẩu mới",
+    backToSignIn: "Quay lại đăng nhập",
+    authCode: "Mã không đúng hoặc đã hết hạn.",
+    authCooldown: "Vui lòng đợi một phút trước khi yêu cầu mã mới.",
+    authGoogleFailed: "Đăng nhập Google chưa hoàn tất. Vui lòng thử lại.",
+    emailUnavailable: "Hiện chưa gửi được mã qua email.",
+    admin: "Quản trị",
     region: "Khu vực giao hàng",
     hanoi: "Hà Nội · 30.000₫",
     otherRegion: "Tỉnh thành khác · 40.000₫",
     newsletterDone: "Cảm ơn bạn đã đăng ký nhận tin.",
+    requestFailed: "Chưa gửi được. Vui lòng thử lại sau.",
     signInFirst: "Đăng nhập để xem tài khoản.",
     customize: "Cá nhân hóa",
     zoom: "Phóng to ảnh",
@@ -256,14 +283,40 @@ const ui = {
     continue: "Continue",
     shipping: "Shipping",
     total: "Total",
-    placed: "Your demo order has been recorded.",
+    placed: "Your order has been recorded. A confirmation email is on its way.",
+    orderFailed: "We couldn't place the order. Please check your details and try again.",
+    outOfStock: "An item in your bag is out of stock.",
     demoNotice:
       "This is a demo. No payment is collected and no order is sent to Refolks.",
-    demoAccount: "Demo account details are stored in this browser.",
+    authCredentials: "Incorrect email or password.",
+    authExists: "This email already has an account. Please sign in.",
+    authLocked: "Too many failed sign-ins. Try again in 15 minutes.",
+    authPassword: "Password must be at least 8 characters.",
+    authFailed: "Something went wrong. Please try again.",
+    google: "Continue with Google",
+    forgot: "Forgot password?",
+    otpCode: "6-digit code",
+    verifyTitle: "Check your email",
+    verifyIntro: "We sent a 6-digit code to",
+    verifyButton: "Verify",
+    resend: "Send a new code",
+    resent: "A new code is on its way.",
+    forgotTitle: "Reset your password",
+    forgotIntro: "Enter your account email and we will send you a code.",
+    sendCode: "Send code",
+    newPassword: "New password",
+    resetButton: "Save new password",
+    backToSignIn: "Back to sign in",
+    authCode: "The code is wrong or has expired.",
+    authCooldown: "Please wait a minute before asking for another code.",
+    authGoogleFailed: "Google sign-in did not complete. Please try again.",
+    emailUnavailable: "Email codes are not available right now.",
+    admin: "Admin",
     region: "Shipping region",
     hanoi: "Hanoi · 30,000₫",
     otherRegion: "Other provinces · 40,000₫",
     newsletterDone: "Thank you for subscribing.",
+    requestFailed: "We couldn't send that. Please try again later.",
     signInFirst: "Sign in to see your account.",
     customize: "Personalise",
     zoom: "Zoom image",
@@ -298,6 +351,7 @@ function routeFromPath(path: string): Route {
     return { page: "journal", id: parts[1] };
   if (["account", "tai-khoan", "orders", "don-hang"].includes(first))
     return { page: "account" };
+  if (["admin", "quan-tri"].includes(first)) return { page: "admin" };
   if (["cart", "gio-hang"].includes(first)) return { page: "cart" };
   if (["checkout", "thanh-toan"].includes(first)) return { page: "checkout" };
   if (["huong-dan-phoi-do", "styling-guide"].includes(first)) return { page: "styling" };
@@ -337,12 +391,16 @@ export function RefolksExperience({
   const [orders, setOrders] = useState<Order[]>([]);
   const [didHydrate, setDidHydrate] = useState(false);
   const [account, setAccount] = useState<Account | null>(null);
-  const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
+  const [authMode, setAuthMode] = useState<"signin" | "signup" | "verify" | "forgot" | "reset">("signin");
+  const [authEmail, setAuthEmail] = useState("");
+  const [authFeatures, setAuthFeatures] = useState({ google: false, email: false });
   const [activeImage, setActiveImage] = useState(0);
   const [heroIndex, setHeroIndex] = useState(0);
   const [qty, setQty] = useState(1);
-  const [color, setColor] = useState(() => products.find((piece) => piece.id === route.id)?.colors[0] || "brown");
-  const [variant, setVariant] = useState("women-scarf");
+  const [selectedColor, setColor] = useState(() => products.find((piece) => piece.id === route.id)?.colors[0] || "brown");
+  const [selectedVariant, setVariant] = useState("women-scarf");
+  const color = selectedColor;
+  const variant = selectedVariant;
   const [personal, setPersonal] = useState(false);
   const [sort, setSort] = useState("recommended");
   const [availability, setAvailability] = useState(false);
@@ -353,6 +411,7 @@ export function RefolksExperience({
   const [filterPersonal, setFilterPersonal] = useState(false);
   const [readMore, setReadMore] = useState(false);
   const [toast, setToast] = useState("");
+  const [pending, setPending] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [shippingRegion, setShippingRegion] = useState<"hanoi" | "other">(
@@ -391,11 +450,26 @@ export function RefolksExperience({
     },
   ];
 
+  // Google sign-in returns with ?auth=google_failed when it did not complete; show it once.
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    if (query.get("auth") !== "google_failed") return;
+    query.delete("auth");
+    history.replaceState(history.state, "", location.pathname + (query.size ? `?${query}` : ""));
+    const frame = requestAnimationFrame(() => setToast(u.authGoogleFailed));
+    return () => cancelAnimationFrame(frame);
+  }, [u.authGoogleFailed]);
+
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
       setCart(readStorage<CartItem[]>("refolks-cart", []).filter((item) => products.some((p) => p.id === item.id)));
-      setOrders(readStorage("refolks-orders", []));
-      setAccount(readStorage("refolks-account", null));
+      type Me = { user: Account | null; features?: { google: boolean; email: boolean } };
+      fetch("/api/auth/me")
+        .then((res) => (res.ok ? (res.json() as Promise<Me>) : { user: null }))
+        .then((data: Me) => {
+          setAccount(data.user);
+          if (data.features) setAuthFeatures(data.features);
+        }, () => setAccount(null));
       requestAnimationFrame(() => {
         setDidHydrate(true);
         document.querySelector(".rf-site")?.setAttribute("data-ready", "true");
@@ -437,16 +511,11 @@ export function RefolksExperience({
   useEffect(() => { if (didHydrate) sessionStorage.setItem(`refolks-chat-${lang}`,JSON.stringify(chatMessages)); },[chatMessages,lang,didHydrate]);
   useEffect(() => { if(chatOpen) chatEndRef.current?.scrollIntoView({behavior:"smooth",block:"end"}); },[chatMessages,chatOpen,chatTyping]);
   useEffect(() => {
-    if (didHydrate)
-      localStorage.setItem("refolks-orders", JSON.stringify(orders));
-  }, [orders, didHydrate]);
-  useEffect(() => {
-    if (didHydrate) {
-      if (account)
-        localStorage.setItem("refolks-account", JSON.stringify(account));
-      else localStorage.removeItem("refolks-account");
-    }
-  }, [account, didHydrate]);
+    if (route.page !== "account" || !account) return;
+    fetch("/api/account/orders")
+      .then((res) => (res.ok ? (res.json() as Promise<{ orders: Order[] }>) : { orders: [] }))
+      .then((data: { orders: Order[] }) => setOrders(data.orders), () => setOrders([]));
+  }, [route.page, account]);
   useEffect(() => {
     const escape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -558,6 +627,10 @@ export function RefolksExperience({
     setChatStage(reply.stage);if(reply.gender)setChatGender(reply.gender);setChatTyping(false);
   };
   const addToBag = (p: Product, count = 1) => {
+    // Shop-grid quick add has no picker, so fall back to the product's own first colour/variant.
+    const productColors: readonly string[] = p.colors;
+    const color = productColors.includes(selectedColor) ? selectedColor : (productColors[0] ?? "");
+    const variant = p.variants.some((v) => v.key === selectedVariant) ? selectedVariant : p.variants[0]?.key;
     setCart((current) => {
       const key = current.findIndex(
         (item) =>
@@ -579,7 +652,7 @@ export function RefolksExperience({
       current.flatMap((item, i) =>
         i === index
           ? item.qty + change > 0
-            ? [{ ...item, qty: item.qty + change }]
+            ? [{ ...item, qty: Math.min(item.qty + change, 10) }]
             : []
           : [item],
       ),
@@ -756,6 +829,12 @@ export function RefolksExperience({
       </div>
     </article>
   );
+  const postRequest = (payload: Record<string, unknown>) =>
+    fetch("/api/requests", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...payload, locale: lang === "vi" ? "vi" : "en" }),
+    }).then((res) => res.ok, () => false);
   const field = (label: string, type = "text", required = true) => (
     <label className="rf-field" key={label}>
       <span>{label}</span>
@@ -1424,29 +1503,40 @@ export function RefolksExperience({
         </main>
       )}
 
+      {route.page === "admin" &&
+        (account && account.role !== "customer" ? (
+          <AdminPanel lang={lang} role={account.role} />
+        ) : (
+          <main className="rf-page rf-account-page">
+            <h1>{u.admin}</h1>
+            <p>{u.signInFirst}</p>
+            {!account && <button className="rf-button" onClick={() => setAccountOpen(true)}>{u.signIn}</button>}
+          </main>
+        ))}
       {route.page === "account" && (
         <main className="rf-page rf-account-page">
           <span className="rf-eyebrow">REFOLKS / ACCOUNT</span>
           <h1>{u.account}</h1>
-          <p>{translate("Account registration and order history are demo features.", lang)}</p>
+          {!account && <p>{u.signInFirst}</p>}
           {!account && <button className="rf-button" onClick={() => setAccountOpen(true)}>{u.signIn}<ArrowRight size={17}/></button>}
-          <section>
+          {account && <section>
             <h2>{u.orders}</h2>
             {orders.length ? (
               orders.map((order) => (
-                <div className="rf-order" key={order.id}>
-                  <strong>#{order.id.slice(-6)}</strong>
-                  <span>{order.date}</span>
+                <div className="rf-order" key={order.number}>
+                  <strong>#{order.number.slice(-6)}</strong>
+                  <span>{new Date(order.createdAt).toLocaleDateString(lang === "zh-CN" ? "zh-CN" : lang)}</span>
                   <span>
                     {order.items.length} {u.shown}
                   </span>
+                  <span>{statusLabel(order.status, lang)}</span>
                   <strong>{currency(order.total)}</strong>
                 </div>
               ))
             ) : (
               <p>{u.comingSoon}</p>
             )}
-          </section>
+          </section>}
         </main>
       )}
 
@@ -1537,22 +1627,41 @@ export function RefolksExperience({
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const order={
-                          id: String(Date.now()),
-                          date: new Date().toLocaleDateString(
-                            lang === "vi" ? "vi-VN" : lang === "ko" ? "ko-KR" : lang === "ja" ? "ja-JP" : lang === "zh-CN" ? "zh-CN" : "en-US",
-                          ),
-                          total: subtotal + shippingFee,
+                      if (pending) return;
+                      setPending(true);
+                      const data = new FormData(e.currentTarget);
+                      fetch("/api/checkout", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          locale: lang === "vi" ? "vi" : "en",
+                          name: data.get(u.name),
+                          email: data.get(u.email),
+                          phone: data.get(u.phone),
+                          address: data.get(u.address),
+                          region: shippingRegion,
                           items: cart,
-                        };
-                      orderService.place(order).then(()=>{setOrders((current)=>[order,...current]);setCart([]);setToast(u.placed);navigate(base(lang))});
+                        }),
+                      })
+                        .then(async (res) => {
+                          const result = (await res.json().catch(() => ({}))) as { number?: string; total?: number; error?: string };
+                          if (!res.ok || !result.number) {
+                            setToast(result.error === "stock" ? u.outOfStock : u.orderFailed);
+                            return;
+                          }
+                          setCart([]);
+                          setToast(u.placed);
+                          navigate(base(lang));
+                        })
+                        .catch(() => setToast(u.orderFailed))
+                        .finally(() => setPending(false));
                     }}
                   >
                     {field(u.name)}
                     {field(u.email, "email")}
                     {field(u.phone, "tel")}
                     {field(u.address)}
-                    <button className="rf-button" type="submit">
+                    <button className="rf-button" type="submit" disabled={pending}>
                       {u.checkout}
                     </button>
                   </form>
@@ -1607,7 +1716,7 @@ export function RefolksExperience({
               onSubmit={(e) => {
                 e.preventDefault();
                 const email=String(new FormData(e.currentTarget).get("email")||"");
-                formService.newsletter(email).then(()=>setToast(u.newsletterDone));
+                postRequest({ kind: "newsletter", email }).then((ok) => setToast(ok ? u.newsletterDone : u.requestFailed));
               }}
             >
               <input
@@ -1995,9 +2104,25 @@ export function RefolksExperience({
                 >
                   {u.orders}
                 </button>
+                {account.role !== "customer" && (
+                  <button
+                    className="rf-button"
+                    onClick={() => navigate(`${base(lang)}/admin`)}
+                  >
+                    {u.admin}
+                  </button>
+                )}
                 <button
                   className="rf-text-link"
-                  onClick={() => setAccount(null)}
+                  onClick={() => {
+                    fetch("/api/auth/logout", { method: "POST" })
+                      .then(() => {
+                        setAccount(null);
+                        setOrders([]);
+                        setAccountOpen(false);
+                      })
+                      .catch(() => setToast(u.authFailed));
+                  }}
                 >
                   {u.signOut}
                 </button>
@@ -2005,57 +2130,183 @@ export function RefolksExperience({
             ) : (
               <>
                 <h2>{u.signPrompt}</h2>
-                <p className="rf-demo-notice">{u.demoAccount}</p>
-                <div className="rf-tabs">
-                  <button
-                    className={authMode === "signin" ? "active" : ""}
-                    onClick={() => setAuthMode("signin")}
-                  >
-                    {u.signIn}
-                  </button>
-                  <button
-                    className={authMode === "signup" ? "active" : ""}
-                    onClick={() => setAuthMode("signup")}
-                  >
-                    {u.signUp}
-                  </button>
-                </div>
+                {(authMode === "signin" || authMode === "signup") && (
+                  <div className="rf-tabs">
+                    <button
+                      className={authMode === "signin" ? "active" : ""}
+                      onClick={() => setAuthMode("signin")}
+                    >
+                      {u.signIn}
+                    </button>
+                    <button
+                      className={authMode === "signup" ? "active" : ""}
+                      onClick={() => setAuthMode("signup")}
+                    >
+                      {u.signUp}
+                    </button>
+                  </div>
+                )}
+                {authMode === "verify" && (
+                  <p aria-live="polite">
+                    <strong>{u.verifyTitle}</strong>
+                    <br />
+                    {u.verifyIntro} {authEmail}
+                  </p>
+                )}
+                {authMode === "forgot" && (
+                  <p>
+                    <strong>{u.forgotTitle}</strong>
+                    <br />
+                    {u.forgotIntro}
+                  </p>
+                )}
+                {authMode === "reset" && (
+                  <p aria-live="polite">
+                    {u.verifyIntro} {authEmail}
+                  </p>
+                )}
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
+                    if (pending) return;
+                    setPending(true);
                     const data = new FormData(e.currentTarget);
-                    const email = String(data.get("email") || "");
-                    const name =
-                      authMode === "signup"
-                        ? String(data.get("name") || email.split("@")[0])
-                        : email.split("@")[0];
-                    (authMode === "signup" ? authService.register(name,email) : authService.signIn(name,email)).then((user)=>{
-                      setAccount(user);setAccountOpen(false);setToast(lang === "vi" ? `Xin chào, ${name}!` : `Welcome, ${name}!`);
-                    });
+                    const email = String(data.get("email") ?? authEmail);
+                    const action = authMode === "signin" ? "login" : authMode;
+                    fetch(`/api/auth/${action}`, {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        name: data.get("name"),
+                        email,
+                        password: data.get("password"),
+                        code: data.get("code"),
+                        locale: lang === "vi" ? "vi" : "en",
+                      }),
+                    })
+                      .then(async (res) => {
+                        const result = (await res.json().catch(() => ({}))) as {
+                          user?: Account;
+                          error?: string;
+                          verify?: boolean;
+                          ok?: boolean;
+                        };
+                        if (result.verify) {
+                          setAuthEmail(email);
+                          setAuthMode("verify");
+                          return;
+                        }
+                        if (authMode === "forgot" && result.ok) {
+                          setAuthEmail(email);
+                          setAuthMode("reset");
+                          return;
+                        }
+                        if (!res.ok || !result.user) {
+                          const messages: Record<string, string> = {
+                            credentials: u.authCredentials,
+                            exists: u.authExists,
+                            locked: u.authLocked,
+                            password: u.authPassword,
+                            code: u.authCode,
+                            cooldown: u.authCooldown,
+                            email_unavailable: u.emailUnavailable,
+                          };
+                          setToast(messages[result.error ?? ""] ?? u.authFailed);
+                          return;
+                        }
+                        setAccount(result.user);
+                        setAccountOpen(false);
+                        setAuthMode("signin");
+                        setToast(lang === "vi" ? `Xin chào, ${result.user.name}!` : `Welcome, ${result.user.name}!`);
+                      })
+                      .catch(() => setToast(u.authFailed))
+                      .finally(() => setPending(false));
                   }}
                 >
                   {authMode === "signup" && (
                     <label className="rf-field">
                       <span>{u.name}</span>
-                      <input name="name" required />
+                      <input name="name" required autoComplete="name" />
                     </label>
                   )}
-                  <label className="rf-field">
-                    <span>{u.email}</span>
-                    <input name="email" type="email" required />
-                  </label>
-                  <label className="rf-field">
-                    <span>{u.password}</span>
-                    <input name="password" type="password" required />
-                  </label>
-                  <label className="rf-check">
-                    <input type="checkbox" />
-                    {u.newsletter}
-                  </label>
-                  <button className="rf-button" type="submit">
-                    {authMode === "signin" ? u.signIn : u.signUp}
+                  {(authMode === "signin" || authMode === "signup" || authMode === "forgot") && (
+                    <label className="rf-field">
+                      <span>{u.email}</span>
+                      <input name="email" type="email" required autoComplete="email" defaultValue={authEmail} />
+                    </label>
+                  )}
+                  {(authMode === "verify" || authMode === "reset") && (
+                    <label className="rf-field">
+                      <span>{u.otpCode}</span>
+                      <input
+                        name="code"
+                        required
+                        inputMode="numeric"
+                        pattern="[0-9]{6}"
+                        maxLength={6}
+                        autoComplete="one-time-code"
+                      />
+                    </label>
+                  )}
+                  {(authMode === "signin" || authMode === "signup" || authMode === "reset") && (
+                    <label className="rf-field">
+                      <span>{authMode === "reset" ? u.newPassword : u.password}</span>
+                      <input
+                        name="password"
+                        type="password"
+                        required
+                        minLength={8}
+                        autoComplete={authMode === "signin" ? "current-password" : "new-password"}
+                      />
+                    </label>
+                  )}
+                  {authMode === "signup" && (
+                    <label className="rf-check">
+                      <input type="checkbox" />
+                      {u.newsletter}
+                    </label>
+                  )}
+                  <button className="rf-button" type="submit" disabled={pending}>
+                    {{ signin: u.signIn, signup: u.signUp, verify: u.verifyButton, forgot: u.sendCode, reset: u.resetButton }[authMode]}
                   </button>
                 </form>
+                {(authMode === "signin" || authMode === "signup") && authFeatures.google && (
+                  // Full-page navigation: the API route redirects to Google, so no fetch.
+                  <button
+                    className="rf-button rf-button-outline"
+                    type="button"
+                    onClick={() => location.assign(new URL("/api/auth/google", location.origin).href)}
+                  >
+                    {u.google}
+                  </button>
+                )}
+                {authMode === "signin" && authFeatures.email && (
+                  <button className="rf-text-link" type="button" onClick={() => setAuthMode("forgot")}>
+                    {u.forgot}
+                  </button>
+                )}
+                {authMode === "verify" && (
+                  <button
+                    className="rf-text-link"
+                    type="button"
+                    onClick={() => {
+                      fetch("/api/auth/resend", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email: authEmail, locale: lang === "vi" ? "vi" : "en" }),
+                      })
+                        .then((res) => setToast(res.ok ? u.resent : res.status === 429 ? u.authCooldown : u.authFailed))
+                        .catch(() => setToast(u.authFailed));
+                    }}
+                  >
+                    {u.resend}
+                  </button>
+                )}
+                {authMode !== "signin" && authMode !== "signup" && (
+                  <button className="rf-text-link" type="button" onClick={() => setAuthMode("signin")}>
+                    {u.backToSignIn}
+                  </button>
+                )}
               </>
             )}
           </div>
@@ -2080,7 +2331,7 @@ export function RefolksExperience({
             {modal === "zoom" ? (
               <img src={zoomImage} alt={productPhotoAlt(product, lang)} />
             ) : modal === "care" ? (
-              <><span className="rf-eyebrow">REFOLKS CARE</span><h2>{lang === "vi" ? "Đặt lịch bảo dưỡng" : translate("Book a care appointment", lang)}</h2><form onSubmit={(e)=>{e.preventDefault();formService.care(Object.fromEntries(new FormData(e.currentTarget))).then(()=>{setModal(null);setToast(lang==="vi"?"Đã ghi nhận yêu cầu bảo dưỡng (demo).":translate("Care request recorded (demo).", lang))})}}>{field(u.name)}{field(u.email,"email")}{field(u.phone,"tel")}<label className="rf-field"><span>{u.note}</span><textarea name="note" required rows={3}/></label><button type="submit" className="rf-button">{u.submit}</button></form></>
+              <><span className="rf-eyebrow">REFOLKS CARE</span><h2>{lang === "vi" ? "Đặt lịch bảo dưỡng" : translate("Book a care appointment", lang)}</h2><form onSubmit={(e)=>{e.preventDefault();if(pending)return;setPending(true);const data=new FormData(e.currentTarget);postRequest({kind:"care",name:data.get(u.name),email:data.get(u.email),phone:data.get(u.phone),note:data.get("note")}).then((ok)=>{if(!ok){setToast(u.requestFailed);return;}setModal(null);setToast(lang==="vi"?"Đã ghi nhận yêu cầu bảo dưỡng.":translate("Care request recorded.", lang))}).finally(()=>setPending(false))}}>{field(u.name)}{field(u.email,"email")}{field(u.phone,"tel")}<label className="rf-field"><span>{u.note}</span><textarea name="note" required rows={3}/></label><button type="submit" className="rf-button" disabled={pending}>{u.submit}</button></form></>
             ) : null}
           </div>
         </div>

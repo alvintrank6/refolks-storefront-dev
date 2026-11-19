@@ -20,7 +20,7 @@ export function ShopTiers({ locale }: { locale: Locale }) {
   return (
     <section className="section shop-tiers-section" data-section="S-03">
       <div className="container">
-        <Eyebrow>REFVLKS / 03</Eyebrow>
+        <Eyebrow>REFOLKS / 03</Eyebrow>
         <h2>{d.shop.tiers.title}</h2>
         <div className="shop-tiers-grid">
           {tiers.map((tier) => {

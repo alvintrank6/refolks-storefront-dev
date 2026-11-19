@@ -107,7 +107,7 @@ Tự hủy: `pending_payment` sau 24 giờ; `pending_confirmation` sau 24 giờ 
 | Phương thức | Cách làm |
 |---|---|
 | COD | Không thu gì online. Trang xác nhận nhắc kiểm hàng |
-| Chuyển khoản | Hiển thị ngân hàng Techcombank, người thụ hưởng `NGUYEN TUNG ANH (Refvlks)`, số tài khoản `19070671343017`, số tiền, nội dung `RV{number}`, nút Copy. **Mã VietQR** sinh tại server theo chuẩn EMVCo (`src/lib/vietqr.ts`: BIN `970407` + số tài khoản + số tiền + nội dung, CRC16) và vẽ thành SVG; không gọi dịch vụ ngoài. Unit test so payload với một mã mẫu quét được bằng app Techcombank |
+| Chuyển khoản | Hiển thị ngân hàng Techcombank, người thụ hưởng `NGUYEN TUNG ANH (Refolks)`, số tài khoản `19070671343017`, số tiền, nội dung `RV{number}`, nút Copy. **Mã VietQR** sinh tại server theo chuẩn EMVCo (`src/lib/vietqr.ts`: BIN `970407` + số tài khoản + số tiền + nội dung, CRC16) và vẽ thành SVG; không gọi dịch vụ ngoài. Unit test so payload với một mã mẫu quét được bằng app Techcombank |
 | Thẻ | Trang xem trước: các ô `disabled`, không có `name`, không nằm trong `<form>`, không có handler gửi dữ liệu; thẻ phương thức ở checkout có `aria-disabled` |
 | Đối soát | MVP thủ công: admin so tiền về với `transfer_reference` rồi bấm "Mark as paid". P2: webhook từ dịch vụ đối soát ngân hàng |
 
@@ -138,7 +138,7 @@ Tự hủy: `pending_payment` sau 24 giờ; `pending_confirmation` sau 24 giờ 
 - JSON-LD: `Organization` (toàn site); `Store` / `LocalBusiness` cho trang Studio (địa chỉ, `openingHours: Mo-Su 08:00-21:30`); `Product` + `Offer` (giá VND, availability) cho trang sản phẩm; `FAQPage` cho FAQ; `BreadcrumbList`.
 - `sitemap.ts` liệt kê mọi trang index được ở 2 locale; `robots.ts` như 05 mục 1. Trang 404 trả mã 404.
 - `og:image`: sinh bằng `next/og` (`opengraph-image.tsx`) với font trong `src/assets/fonts/`: nền Bone, wordmark SVG, tagline, ảnh sản phẩm. File tĩnh OG-01 là phương án dự phòng.
-- Favicon và icon: copy từ `public/brand/favicons/` sang `src/app/` theo quy ước Next.js (`favicon.ico`, `icon.svg`, `apple-icon.png`) và khai báo `manifest.webmanifest` (tên Refvlks, `theme_color` #4A2E1F, `background_color` #F4EFE6, icon 192, 512, maskable).
+- Favicon và icon: copy từ `public/brand/favicons/` sang `src/app/` theo quy ước Next.js (`favicon.ico`, `icon.svg`, `apple-icon.png`) và khai báo `manifest.webmanifest` (tên Refolks, `theme_color` #4A2E1F, `background_color` #F4EFE6, icon 192, 512, maskable).
 
 ## 10. Form
 

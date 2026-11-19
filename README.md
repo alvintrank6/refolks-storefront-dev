@@ -1,6 +1,6 @@
-# Refvlks V2 storefront
+# Refolks V2 storefront
 
-An English and Vietnamese storefront for Refvlks work bags, studio visits and the monthly clothes donation programme. The public Site is hosted at <https://refvlks-atelier-2026.alvintrank95.chatgpt.site>. The application runs on a Sites/Vinext Worker with Cloudflare D1; local development uses the file data adapter by default.
+An English and Vietnamese storefront for Refolks work bags, studio visits and the monthly clothes donation programme. The public Site is hosted at <https://refvlks-atelier-2026.alvintrank95.chatgpt.site>. The application runs on a Sites/Vinext Worker with Cloudflare D1; local development uses the file data adapter by default.
 
 ## Run locally
 

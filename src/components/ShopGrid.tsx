@@ -65,7 +65,7 @@ export function ShopGrid({
   );
 
   useEffect(() => {
-    document.title = `${applied.tier ? applied.tier[0].toUpperCase() + applied.tier.slice(1) : copy.title} | Refvlks`;
+    document.title = `${applied.tier ? applied.tier[0].toUpperCase() + applied.tier.slice(1) : copy.title} | Refolks`;
   }, [applied.tier, copy.title]);
 
   useEffect(() => {

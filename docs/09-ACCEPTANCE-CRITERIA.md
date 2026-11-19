@@ -19,7 +19,7 @@ Không slice nào được coi là xong khi chưa có bằng chứng (lệnh đ�
 
 - [ ] Giá, tên, mô tả, ảnh mỗi sản phẩm khớp 02-CONTENT-SOURCE và database.
 - [ ] Không có từ "leather" / "da" mô tả bất kỳ bộ phận nào; nhãn chất liệu từng mẫu khớp 02 mục 5.
-- [ ] Thông tin thanh toán hiển thị đúng: Techcombank, NGUYEN TUNG ANH (Refvlks), 19070671343017; VietQR có số tiền và nội dung đúng đơn.
+- [ ] Thông tin thanh toán hiển thị đúng: Techcombank, NGUYEN TUNG ANH (Refolks), 19070671343017; VietQR có số tiền và nội dung đúng đơn.
 - [ ] Địa chỉ studio đúng: 22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội; giờ 8:00 đến 21:30 hằng ngày; ghi rõ "theo lịch hẹn".
 - [ ] Footer có người đại diện Nguyễn Tùng Anh; trường pháp nhân còn thiếu không hiện chuỗi rỗng.
 - [ ] Trang thẻ: không ô nào nhập được; không có request mạng nào chứa dữ liệu thẻ.

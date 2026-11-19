@@ -122,7 +122,7 @@ Cả ba font đều là Google Fonts (OFL), đã kiểm có subset `vietnamese`.
 | `brand/identity/refvlks_brand_A01…A06.webp` | Ảnh tham chiếu bộ nhận diện (không đưa lên web) |
 | `brand/REF_BRAND_BOARD.webp` | Bảng tham chiếu màu, chữ, logo, motif |
 
-**Quy tắc logo** (theo A06): khoảng trống tối thiểu bằng chiều cao chữ R; rộng tối thiểu 24px trên màn hình, 20mm khi in; trên ảnh chỉ đặt vào vùng tường trống, không đè lên sản phẩm; không đổi font, không kéo giãn, không đổ bóng, không viết hoa toàn bộ. Header: wordmark cao 24px (mobile) và 28px (desktop), link về trang chủ, `aria-label="Refvlks home"`.
+**Quy tắc logo** (theo A06): khoảng trống tối thiểu bằng chiều cao chữ R; rộng tối thiểu 24px trên màn hình, 20mm khi in; trên ảnh chỉ đặt vào vùng tường trống, không đè lên sản phẩm; không đổi font, không kéo giãn, không đổ bóng, không viết hoa toàn bộ. Header: wordmark cao 24px (mobile) và 28px (desktop), link về trang chủ, `aria-label="Refolks home"`.
 
 **Phần của bộ nhận diện làm bằng code (thay cho ảnh Batch B đến E):**
 

@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     if (process.env.ORDER_NOTIFY_EMAIL)
       await sendTransactionalEmail({
         to: process.env.ORDER_NOTIFY_EMAIL,
-        subject: `Refvlks message: ${topic}`,
+        subject: `Refolks message: ${topic}`,
         text: `Name: ${name}\nContact: ${contact}\nTopic: ${topic}\nOrder: ${orderNumber}\nMessage: ${body}`,
         idempotencyKey: `message-${crypto.randomUUID()}`,
       }).catch((error) => console.error("Message notification failed", error));

@@ -129,7 +129,8 @@ export class SupabaseStoreRepository
           payment: input.payment,
           locale: input.locale,
         },
-        p_items: input.cart,
+        // shortcut: create_order prices SKUs from its own seeded catalogue, so round-two SKUs fail there; extend the RPC if Supabase is adopted.
+        p_items: input.lines.map(({ sku, qty }) => ({ sku, qty })),
       }),
       cache: "no-store",
     });

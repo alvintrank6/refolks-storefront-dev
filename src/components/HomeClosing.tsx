@@ -68,7 +68,7 @@ export function HomeCarried({ locale }: { locale: Locale }) {
         >
           <div className="carried-track">
             <div className="carried-panel carried-intro">
-              <Eyebrow>REFVLKS / 04</Eyebrow>
+              <Eyebrow>REFOLKS / 04</Eyebrow>
               <h2>{d.home.carried.title}</h2>
               <p className="lead">{d.home.carried.body}</p>
               <span className="carried-line" aria-hidden="true" />
@@ -92,7 +92,7 @@ export function HomeCarried({ locale }: { locale: Locale }) {
               </figure>
             ))}
             <div className="carried-panel carried-outro">
-              <Eyebrow>REFVLKS / 04</Eyebrow>
+              <Eyebrow>REFOLKS / 04</Eyebrow>
               <Claim id="CL-10">
                 <div>
                   <h3>{d.home.carried.inspectTitle}</h3>

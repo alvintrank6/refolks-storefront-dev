@@ -20,7 +20,7 @@ File này **ghi đè** các phần tương ứng của tài liệu cũ. Khi nộ
 | Mã | Quyết định | Nguồn |
 |---|---|---|
 | D17 | Website có nhiều animation, transition và hiệu ứng hơn (Motion v2). Đây là quyết định của chủ dự án, ghi đè giới hạn 2 đến 3 motif của SOP. Các luật an toàn của SOP vẫn giữ: không scroll-jacking, có bản reduced motion, nội dung hiện khi JS lỗi, ngân sách hiệu năng | Chủ dự án |
-| D18 | Thêm tab **Donation Event**: mỗi tháng một lần, đội ngũ Refvlks tổ chức quyên góp quần áo cũ lên Tây Bắc và các vùng đồng bào miền núi khác. Quần áo được lọc rồi vận chuyển đến người nhận; quần áo không đạt (rách, sờn màu, nhiều lỗ) được Refvlks tái sử dụng làm vải tái chế | Chủ dự án |
+| D18 | Thêm tab **Donation Event**: mỗi tháng một lần, đội ngũ Refolks tổ chức quyên góp quần áo cũ lên Tây Bắc và các vùng đồng bào miền núi khác. Quần áo được lọc rồi vận chuyển đến người nhận; quần áo không đạt (rách, sờn màu, nhiều lỗ) được Refolks tái sử dụng làm vải tái chế | Chủ dự án |
 | D19 | Độ dài trang: trang chủ 5 section; mỗi tab còn lại 3 section. Header và footer không tính. Trang hỗ trợ, pháp lý, giỏ hàng, thanh toán giữ cấu trúc cũ | Chủ dự án |
 | D20 | Nội dung Donation Event và nội dung các section mới do nhóm nội dung viết dựa trên mô tả của chủ dự án; con số, địa điểm, đối tác chỉ hiển thị khi có dữ liệu thật (claims mục 5) | Nhóm thiết kế |
 
@@ -41,7 +41,7 @@ VI: Cửa hàng · Thủ công · Sự kiện quyên góp · Về chúng tôi ·
 | About | `/en/about` | `/vi/ve-chung-toi` | 3 |
 | Visit the studio | `/en/studio` | `/vi/studio` | 3 |
 
-Footer cột "Refvlks" thêm link Donation Event. Mục P3 `/donate` trong 05 bị bỏ; Donation Event thay thế và là trang MVP.
+Footer cột "Refolks" thêm link Donation Event. Mục P3 `/donate` trong 05 bị bỏ; Donation Event thay thế và là trang MVP.
 
 **Luồng mới F5 · Người quyên góp:** Home H-05 hoặc menu → Donation Event → đọc cách hoạt động → form đăng ký → nhận tin nhắn ngày và điểm nhận đồ → gửi đồ → (nếu đồ không mặc được) trở thành vải tái chế, dẫn sang Shop.
 
@@ -165,7 +165,7 @@ Thanh tiến trình dưới dải ảnh là đường chỉ Cinnabar chạy ngan
 |---|---|---|
 | Trái · eyebrow | DONATION EVENT · EVERY MONTH | SỰ KIỆN QUYÊN GÓP · MỖI THÁNG |
 | Trái · H3 | Your old clothes, up the mountain. | Áo cũ của bạn, lên với vùng cao. |
-| Trái · body | Once a month we take sorted, wearable clothes to communities in the Northwest. Worn-out pieces become the recovered textile in our bags. | Mỗi tháng, chúng tôi mang quần áo đã phân loại, còn mặc tốt lên với bà con Tây Bắc. Áo đã quá cũ trở thành vải tái chế trong túi Refvlks. |
+| Trái · body | Once a month we take sorted, wearable clothes to communities in the Northwest. Worn-out pieces become the recovered textile in our bags. | Mỗi tháng, chúng tôi mang quần áo đã phân loại, còn mặc tốt lên với bà con Tây Bắc. Áo đã quá cũ trở thành vải tái chế trong túi Refolks. |
 | Trái · CTA | Join the next drive | Tham gia chuyến tới |
 | Phải · eyebrow | THE STUDIO · BY APPOINTMENT | STUDIO · THEO LỊCH HẸN |
 | Phải · H3 | Come and carry one. | Đến và đeo thử một chiếc. |
@@ -228,7 +228,7 @@ Accordion: Delivery, Payment, Returns, Care, Questions (nội dung 04 P-05 đế
 
 | | EN | VI |
 |---|---|---|
-| Title | Craft & Materials: Inside Every Refvlks Bag | Thủ công & vật liệu: bên trong túi Refvlks |
+| Title | Craft & Materials: Inside Every Refolks Bag | Thủ công & vật liệu: bên trong túi Refolks |
 | Meta | 70% new technical textile, 30% recovered textile from handles to scarves, part of it from donated clothes too worn to give. | 70% vải chuyên dụng mới, 30% vải tái chế từ quai đến khăn, một phần từ quần áo quyên góp đã quá cũ. |
 | H1 | Seventy, thirty. | Bảy mươi, ba mươi. |
 
@@ -236,7 +236,7 @@ Accordion: Delivery, Payment, Returns, Care, Questions (nội dung 04 P-05 đế
 
 | Phần tử | EN | VI |
 |---|---|---|
-| Lead | Every Refvlks bag is built from two kinds of cloth, each where it works best. | Mỗi chiếc túi Refvlks làm từ hai loại vải, mỗi loại ở đúng chỗ của nó. |
+| Lead | Every Refolks bag is built from two kinds of cloth, each where it works best. | Mỗi chiếc túi Refolks làm từ hai loại vải, mỗi loại ở đúng chỗ của nó. |
 | Khối 70% | **70%** New technical textile for the body: dense jacquard canvas and 3 mm felt that hold their shape and take daily wear. | **70%** Vải chuyên dụng mới cho thân túi: canvas jacquard dày và nỉ 3 mm, giữ phom và chịu được mài mòn hằng ngày. |
 | Khối 30% | **30%** Recovered cotton, denim and synthetics for handles, flaps, straps and scarves, finished with a matte water-based coating so they stay smooth and easy to wipe. | **30%** Cotton, jeans và vải tổng hợp tái chế cho quai, nắp, dải quai và khăn, phủ lớp hoàn thiện mờ gốc nước để mịn và dễ lau. |
 | Ghi chú | Measured by textile weight. Every part is listed on each product page. | Tính theo khối lượng vải. Từng bộ phận được ghi trên trang sản phẩm. |
@@ -267,8 +267,8 @@ Accordion: Delivery, Payment, Returns, Care, Questions (nội dung 04 P-05 đế
 
 | | EN | VI |
 |---|---|---|
-| Title (≤60) | Donation Event: Clothes to the Mountains \| Refvlks | Sự kiện quyên góp áo quần lên vùng cao \| Refvlks |
-| Meta (≤155) | Once a month, Refvlks takes sorted, wearable clothes to mountain communities in the Northwest. Worn-out pieces become recovered textile. | Mỗi tháng, Refvlks mang quần áo đã phân loại lên với bà con vùng cao Tây Bắc. Áo quá cũ được tái chế thành vải cho túi. |
+| Title (≤60) | Donation Event: Clothes to the Mountains \| Refolks | Sự kiện quyên góp áo quần lên vùng cao \| Refolks |
+| Meta (≤155) | Once a month, Refolks takes sorted, wearable clothes to mountain communities in the Northwest. Worn-out pieces become recovered textile. | Mỗi tháng, Refolks mang quần áo đã phân loại lên với bà con vùng cao Tây Bắc. Áo quá cũ được tái chế thành vải cho túi. |
 | H1 | Once a month, we take clothes to the mountains. | Mỗi tháng một lần, chúng tôi mang áo quần lên vùng cao. |
 
 Giọng văn: tôn trọng, ngang hàng, cụ thể. Không dùng từ ngữ thương hại ("người nghèo khổ", "poor tribes"), không phóng đại tác động, không dùng ảnh trẻ em nhận diện được khi chưa có đồng ý của người giám hộ.
@@ -279,7 +279,7 @@ Giọng văn: tôn trọng, ngang hàng, cụ thể. Không dùng từ ngữ th�
 |---|---|---|
 | Eyebrow | DONATION EVENT · EVERY MONTH | SỰ KIỆN QUYÊN GÓP · MỖI THÁNG |
 | H1 | Once a month, we take clothes to the mountains. | Mỗi tháng một lần, chúng tôi mang áo quần lên vùng cao. |
-| Sub | Bring us the clothes you no longer wear. We check every piece, take the wearable ones to communities in the Northwest and other mountain regions, and turn the rest into the recovered textile in our bags. | Hãy gửi chúng tôi những bộ quần áo bạn không còn mặc. Chúng tôi kiểm từng chiếc, mang những chiếc còn mặc tốt lên với bà con Tây Bắc và các vùng núi khác, phần còn lại trở thành vải tái chế trong túi Refvlks. |
+| Sub | Bring us the clothes you no longer wear. We check every piece, take the wearable ones to communities in the Northwest and other mountain regions, and turn the rest into the recovered textile in our bags. | Hãy gửi chúng tôi những bộ quần áo bạn không còn mặc. Chúng tôi kiểm từng chiếc, mang những chiếc còn mặc tốt lên với bà con Tây Bắc và các vùng núi khác, phần còn lại trở thành vải tái chế trong túi Refolks. |
 | CTA chính | Join the next drive → `#join` | Đăng ký tham gia |
 | CTA phụ | How it works → `#how` | Cách hoạt động |
 | Marquee | MONTHLY TRIPS · EVERY PIECE CHECKED · WORN-OUT PIECES RECYCLED · NOTHING GOES TO WASTE · | MỖI THÁNG MỘT CHUYẾN · KIỂM TỪNG CHIẾC · ÁO QUÁ CŨ ĐƯỢC TÁI CHẾ · KHÔNG CHIẾC NÀO BỊ BỎ PHÍ · |
@@ -321,14 +321,14 @@ Form `donation.form`:
 | amount (khi chọn quyên góp) | Roughly how much? One bag / Two to three bags / More than three bags | Khoảng bao nhiêu? Một túi / Hai đến ba túi / Hơn ba túi | |
 | note | Note (optional) | Ghi chú | ≤ 300 ký tự |
 | consentPrivacy | I agree to the Privacy Policy | Tôi đồng ý với Chính sách bảo mật | bắt buộc |
-| consentRecycle | I understand that clothes unfit to wear may be recycled into textile for Refvlks products. | Tôi hiểu rằng quần áo không còn mặc được có thể được tái chế thành vải cho sản phẩm của Refvlks. | bắt buộc khi quyên góp |
+| consentRecycle | I understand that clothes unfit to wear may be recycled into textile for Refolks products. | Tôi hiểu rằng quần áo không còn mặc được có thể được tái chế thành vải cho sản phẩm của Refolks. | bắt buộc khi quyên góp |
 
 Câu hỏi nhanh (accordion, 3 câu):
 
 | Q (EN) | A (EN) | Q (VI) | A (VI) | Điều kiện |
 |---|---|---|---|---|
 | Can I donate torn or faded clothes? | Yes. They won't go up the mountain, but they will become recovered textile in our bags. | Tôi có thể gửi quần áo rách hoặc bạc màu không? | Có. Chúng sẽ không được mang lên vùng cao, nhưng sẽ trở thành vải tái chế trong túi của chúng tôi. | |
-| Do you sell the clothes we donate? | No. Wearable clothes are given away for free. Only pieces too worn to wear are recycled into fabric, and that fabric is used in Refvlks bags. | Refvlks có bán quần áo quyên góp không? | Không. Quần áo còn mặc được đều được tặng miễn phí. Chỉ những chiếc quá cũ mới được tái chế thành vải, và vải đó được dùng trong túi Refvlks. | |
+| Do you sell the clothes we donate? | No. Wearable clothes are given away for free. Only pieces too worn to wear are recycled into fabric, and that fabric is used in Refolks bags. | Refolks có bán quần áo quyên góp không? | Không. Quần áo còn mặc được đều được tặng miễn phí. Chỉ những chiếc quá cũ mới được tái chế thành vải, và vải đó được dùng trong túi Refolks. | |
 | Where do the clothes go? | Each drive goes to a community in the Northwest or another mountain region. After every trip we post where we went and what we delivered. | Quần áo được mang đi đâu? | Mỗi chuyến đến một cộng đồng ở Tây Bắc hoặc vùng núi khác. Sau mỗi chuyến, chúng tôi đăng nơi đã đến và những gì đã trao. | Ẩn khi CL-23 pending |
 
 ### 3.6 ABOUT (3 section) · `/en/about` · `/vi/ve-chung-toi`
@@ -339,7 +339,7 @@ SEO giữ như 04 mục 5.
 
 | EN | VI |
 |---|---|
-| H1: Why we started Refvlks. | Vì sao chúng tôi làm Refvlks. |
+| H1: Why we started Refolks. | Vì sao chúng tôi làm Refolks. |
 | Two things kept coming up. Donated clothes left in piles by the roadside in Ky Son, Nghe An, because nobody had asked what was needed. And skilled weavers with fewer orders every year. We could not fix either alone, but we could make something people actually want to carry, and build it from both. | Có hai điều cứ lặp lại. Quần áo quyên góp bị bỏ thành đống bên đường ở Kỳ Sơn, Nghệ An, vì không ai hỏi người dân thực sự cần gì. Và những người thợ dệt giỏi có ít đơn hàng hơn mỗi năm. Chúng tôi không thể tự giải quyết cả hai, nhưng có thể làm ra thứ người ta thật sự muốn mang theo, và làm nó từ cả hai. |
 | Nguồn (link nhỏ): Doãn Hòa, 2022 | |
 
@@ -415,7 +415,7 @@ Bản đồ: ảnh tĩnh vẽ bằng SVG cách điệu (đường phố dạng W
 | CL-18 | Every donated piece is checked by our team | approved | Chủ dự án (D18) |
 | CL-19 | Needs are checked with local partners before each trip | pending | Có đối tác và quy trình hỏi nhu cầu |
 | CL-20 | Impact numbers (kg collected, pieces delivered, kg recycled) | pending | Có số liệu chuyến đầu tiên |
-| CL-21 | Clothes unfit to wear become recovered textile in Refvlks bags | approved | Chủ dự án (D18) |
+| CL-21 | Clothes unfit to wear become recovered textile in Refolks bags | approved | Chủ dự án (D18) |
 | CL-22 | Drop-off at the studio during collection week | pending | Chủ dự án xác nhận nhận đồ tại studio |
 | CL-23 | Destinations and results posted after every trip | pending | Đội ngũ cam kết đăng tổng kết |
 

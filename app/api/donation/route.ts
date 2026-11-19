@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     if (process.env.DONATION_NOTIFY_EMAIL)
       await sendTransactionalEmail({
         to: process.env.DONATION_NOTIFY_EMAIL,
-        subject: `Refvlks donation signup: ${input.role}`,
+        subject: `Refolks donation signup: ${input.role}`,
         text: `Name: ${input.name}\nPhone: ${input.phone}\nEmail: ${input.email ?? ""}\nRole: ${input.role}\nAmount: ${input.amount ?? ""}\nNote: ${input.note ?? ""}`,
         idempotencyKey: `donation-${input.id}`,
       }).catch((error) => console.error("Donation notification failed", error));

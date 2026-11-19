@@ -56,6 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "thanh-toan",
     "gio-hang",
     "don-hang",
+    "admin",
+    "quan-tri",
   ].includes(section);
   return {
     title: `${title} | Refolks`,
@@ -86,7 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params, searchParams }: Props) {
   const { locale, slug = [] } = await params;
   if (!isLocale(locale)) notFound();
-  const known = new Set(["shop","cua-hang","women","men","collections","gifts","accessories","products","san-pham","community","cong-dong","donation-event","su-kien-quyen-gop","about","ve-chung-toi","craft","thu-cong","journal","news","tin-tuc","account","tai-khoan","orders","don-hang","cart","gio-hang","checkout","thanh-toan","huong-dan-phoi-do","styling-guide","huong-dan-bao-quan","care-guide","contact","lien-he"]);
+  const known = new Set(["shop","cua-hang","women","men","collections","gifts","accessories","products","san-pham","community","cong-dong","donation-event","su-kien-quyen-gop","about","ve-chung-toi","craft","thu-cong","journal","news","tin-tuc","account","tai-khoan","orders","don-hang","cart","gio-hang","checkout","thanh-toan","huong-dan-phoi-do","styling-guide","huong-dan-bao-quan","care-guide","contact","lien-he","admin","quan-tri"]);
   if (slug[0] && !known.has(slug[0])) notFound();
   if (["products","san-pham"].includes(slug[0]) && !products.some((p)=>p.id===slug[1])) notFound();
   if (slug[0]==="collections" && slug[1]!=="heritage-in-motion") notFound();

@@ -21,7 +21,7 @@ export const CLAIMS = {
   "CL-18": "approved", // every donated piece is checked by our team
   "CL-19": "pending", // needs checked with local partners before each trip
   "CL-20": "pending", // impact numbers
-  "CL-21": "approved", // clothes unfit to wear become recovered textile in Refvlks bags
+  "CL-21": "approved", // clothes unfit to wear become recovered textile in Refolks bags
   "CL-22": "pending", // drop-off at the studio during collection week
   "CL-23": "pending", // destinations and results posted after every trip
 } as const satisfies Record<string, ClaimStatus>;

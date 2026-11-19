@@ -26,7 +26,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
 }
 
 test("F10 Craft has five process cards and hides pending hand-weaver claims", async ({ page }) => {
-  await page.goto("/en/craft");
+  await page.goto("http://127.0.0.1:4175/en/craft");
   await expect(page.locator('[data-section="CR-02"] .story-stack-card')).toHaveCount(5);
   await expect(page.getByText("What we don't claim yet.")).toBeVisible();
   await expect(page.getByText(/Woven by hand by/)).toHaveCount(0);
@@ -43,7 +43,7 @@ test("F10 About links the source and donation event", async ({ page }) => {
 test("F10 content remains visible without JavaScript", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/en/craft");
+  await page.goto("http://127.0.0.1:4175/en/craft");
   await expect(page.getByRole("heading", { name: "From cloth to bag." })).toBeVisible();
   await expect(page.locator('.ratio-number[data-count="70"]')).toHaveText("70%");
   await context.close();

@@ -1,7 +1,7 @@
-# Refvlks V2 · Local handoff
+# Refolks V2 · Local handoff
 
 **Date:** 31 October 2026  
-**Mode:** retrofit of the existing private Refvlks Site source  
+**Mode:** retrofit of the existing private Refolks Site source  
 **Scope:** F1–F14 in `docs/10-UPDATE-V2.md`  
 **Release state:** local branch only; no push or deployment. The hosted private Site remains on V1.
 

@@ -3,6 +3,7 @@ import { mkdir, mkdtemp, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { LocalStoreRepository } from "./local";
 import { products } from "../catalog";
+import { orderLines } from "../cart";
 
 let directory: string;
 let repository: LocalStoreRepository;
@@ -27,7 +28,7 @@ describe("local store adapter", () => {
   it("reserves stock atomically and refuses the next order", async () => {
     const sku = products[0].variants[0].sku;
     const draft = {
-      cart: [{ sku, qty: 10 }],
+      lines: orderLines([{ sku, qty: 10 }], "en"),
       locale: "en" as const,
       name: "Test Customer",
       phone: "0900000000",
@@ -40,7 +41,10 @@ describe("local store adapter", () => {
     const placed = await repository.placeOrder(draft);
     expect(placed.subtotal).toBe(products[0].variants[0].priceVnd * 10);
     await expect(
-      repository.placeOrder({ ...draft, cart: [{ sku, qty: 1 }] }),
+      repository.placeOrder({
+        ...draft,
+        lines: orderLines([{ sku, qty: 1 }], "en"),
+      }),
     ).rejects.toThrow("OUT_OF_STOCK");
     const store = JSON.parse(
       await readFile(join(directory, "store.json"), "utf8"),

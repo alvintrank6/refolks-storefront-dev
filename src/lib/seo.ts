@@ -27,7 +27,7 @@ export function seoSchemas(locale: Locale, kind: string, slug: string[], stock?:
   const url = absoluteUrl(seoPath(locale, kind, slug));
   const p = paths(locale);
   const schemas: Record<string, unknown>[] = [];
-  const name = (locale === "vi" ? "Refvlks" : "Refvlks");
+  const name = "Refolks";
   if (kind === "studio") {
     schemas.push({
       "@context": "https://schema.org",

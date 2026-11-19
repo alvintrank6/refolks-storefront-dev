@@ -85,7 +85,7 @@
     "invite": {
       "donationEyebrow": "SỰ KIỆN QUYÊN GÓP · MỖI THÁNG",
       "donationTitle": "Áo cũ của bạn, lên với vùng cao.",
-      "donationBody": "Mỗi tháng, chúng tôi mang quần áo đã phân loại, còn mặc tốt lên với bà con Tây Bắc. Áo đã quá cũ trở thành vải tái chế trong túi Refvlks.",
+      "donationBody": "Mỗi tháng, chúng tôi mang quần áo đã phân loại, còn mặc tốt lên với bà con Tây Bắc. Áo đã quá cũ trở thành vải tái chế trong túi Refolks.",
       "donationCta": "Tham gia chuyến tới",
       "studioEyebrow": "STUDIO · THEO LỊCH HẸN",
       "studioTitle": "Đến và đeo thử một chiếc.",
@@ -253,7 +253,7 @@
     "markedDone": "Đã ghi nhận thông báo. Chúng tôi sẽ xác nhận khi nhận được tiền."
   },
   "studio": {
-    "eyebrow": "REFVLKS STUDIO · HÀ NỘI",
+    "eyebrow": "REFOLKS STUDIO · HÀ NỘI",
     "title": "Đeo thử rồi hãy quyết định.",
     "intro": "22 Lê Quý Đôn, phường Hai Bà Trưng, Hà Nội. Mở cửa hằng ngày, 8:00 đến 21:30, theo lịch hẹn.",
     "bring": "Mang theo laptop và đồ dùng hằng ngày.",
@@ -290,13 +290,13 @@
     "body": "Thân túi kết hợp canvas jacquard hoặc nỉ kỹ thuật dày với vật liệu tái chế ở quai, nắp, dải quai và khăn. Chất liệu từng phần được ghi trên mỗi trang sản phẩm."
   },
   "about": {
-    "eyebrow": "VỀ REFVLKS",
+    "eyebrow": "VỀ REFOLKS",
     "title": "Túi đi làm, với một câu chuyện khác bên trong.",
-    "intro": "Refvlks là thương hiệu túi đi làm ở Hà Nội, được tạo nên cho nhịp sống thành phố. Phom dáng may đo đi cùng chi tiết dệt, để bạn khám phá khi nhìn gần.",
+    "intro": "Refolks là thương hiệu túi đi làm ở Hà Nội, được tạo nên cho nhịp sống thành phố. Phom dáng may đo đi cùng chi tiết dệt, để bạn khám phá khi nhìn gần.",
     "cta": "Tìm chiếc túi của bạn"
   },
   "contact": {
-    "title": "Liên hệ Refvlks",
+    "title": "Liên hệ Refolks",
     "intro": "Bạn muốn hỏi về túi, đơn hàng hoặc lịch ghé studio? Hãy gửi tin nhắn ở đây.",
     "topic": "Chủ đề",
     "order": "Đơn hàng",
@@ -330,14 +330,14 @@
   "donation": {
     "eyebrow": "SỰ KIỆN QUYÊN GÓP · MỖI THÁNG",
     "title": "Mỗi tháng một lần, chúng tôi mang áo quần lên vùng cao.",
-    "intro": "Hãy gửi chúng tôi những bộ quần áo bạn không còn mặc. Chúng tôi kiểm từng chiếc, mang những chiếc còn mặc tốt lên với bà con Tây Bắc và các vùng núi khác, phần còn lại trở thành vải tái chế trong túi Refvlks."
+    "intro": "Hãy gửi chúng tôi những bộ quần áo bạn không còn mặc. Chúng tôi kiểm từng chiếc, mang những chiếc còn mặc tốt lên với bà con Tây Bắc và các vùng núi khác, phần còn lại trở thành vải tái chế trong túi Refolks."
   },
   "ui": {
     "skip": "Đến nội dung chính",
     "openMenu": "Mở menu",
     "mainNav": "Điều hướng chính",
     "mobileNav": "Điều hướng di động",
-    "logoHome": "Trang chủ Refvlks",
+    "logoHome": "Trang chủ Refolks",
     "itemCount": "{n} sản phẩm"
   }
 }

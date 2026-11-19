@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "cloudflare-api": {
+      "type": "http",
+      "url": "https://mcp.cloudflare.com/mcp"
+    },
+    "cf-observability": {
+      "type": "http",
+      "url": "https://observability.mcp.cloudflare.com/mcp"
+    },
+    "resend": {
+      "type": "http",
+      "url": "https://mcp.resend.com/mcp"
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching%2Cfeedback%2Cnotebooks"
+    }
+  }
+}

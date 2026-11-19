@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
     if (process.env.ORDER_NOTIFY_EMAIL)
       await sendTransactionalEmail({
         to: process.env.ORDER_NOTIFY_EMAIL,
-        subject: `Refvlks studio visit: ${date} ${time}`,
+        subject: `Refolks studio visit: ${date} ${time}`,
         text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nDate: ${date}\nTime: ${time}\nBag: ${bag}\nNote: ${note}`,
         idempotencyKey: `visit-${date}-${time}`,
       }).catch((error) => console.error("Visit notification failed", error));

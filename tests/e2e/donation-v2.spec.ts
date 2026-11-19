@@ -73,7 +73,7 @@ test("F11 volunteer signup works without recycling consent and without JavaScrip
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/vi/su-kien-quyen-gop");
+  await page.goto("http://127.0.0.1:4175/vi/su-kien-quyen-gop");
   await page.locator("#donation-name").fill("Nguyen Tester");
   await page.locator("#donation-phone").fill("0912345678");
   await page.locator('input[name="role"][value="volunteer"]').check();

@@ -1,9 +1,18 @@
 import type { Product, Locale } from "../catalog";
-import type { CartLine } from "../cart";
 import type { DonationRepository } from "./donation";
 
+/** Server-priced line. `stock` seeds inventory the first time a SKU is sold. */
+export type OrderLine = {
+  sku: string;
+  name: string;
+  colour: string;
+  qty: number;
+  unitPrice: number;
+  stock: number;
+};
+
 export type OrderDraft = {
-  cart: CartLine[];
+  lines: OrderLine[];
   locale: Locale;
   name: string;
   phone: string;
@@ -12,6 +21,8 @@ export type OrderDraft = {
   city: "hanoi" | "other";
   delivery: "ship" | "pickup";
   payment: "cod" | "transfer";
+  /** Signed-in customer, so the order shows in their account. */
+  userId?: string | null;
 };
 
 export type OrderCreated = {
