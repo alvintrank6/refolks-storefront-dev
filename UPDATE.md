@@ -124,6 +124,17 @@ Dự án chưa từng deploy bản này. Có hai kiểu host; hỏi người dù
 6. Host phải có **HTTPS** (cookie đăng nhập dùng `Secure` khi chạy production).
 7. Kiểm tra: `https://<tên-miền>/api/auth/me` → có `features`; làm lại 4.11, 4.13–4.15 trên tên miền thật.
 
+### 5A-Vercel. Host đã chọn: Vercel
+
+> Hướng dẫn từng bước đầy đủ (Atlas, Gmail, Google, Vercel, tên miền, admin): **`DEPLOY-VERCEL.md`**.
+
+1. Vercel deploy từ nhánh `main` trên GitHub: **phải push** các commit backend lên `origin/main` trước (hoặc đặt Production Branch là nhánh chứa backend).
+2. Project Settings → General: Framework = Next.js, Install = `npm ci`, Build = `npm run build`, Node.js = 22.x trở lên (`vercel.json` đã có `framework: nextjs` và redirect `www.refolks.store` → `refolks.store`).
+3. Project Settings → Environment Variables (Production, và Preview nếu dùng): `MONGODB_URI`, `MONGODB_DB`, `NEXT_PUBLIC_SITE_ORIGIN` (vd. `https://refolks.store`; bỏ trống thì dùng tên miền production của Vercel), `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_USER` + `GMAIL_APP_PASSWORD` (hoặc `RESEND_API_KEY` + `EMAIL_FROM`), `ORDER_NOTIFY_EMAIL`, `DONATION_NOTIFY_EMAIL`, `RATE_LIMIT_SALT`, `BANK_*` nếu cần. **Không** đặt `DATA_SOURCE=local`, `SEED_PASSWORD`. Đổi biến xong phải Redeploy.
+4. Không có `MONGODB_URI` thì API trên Vercel trả lỗi (ổ đĩa Vercel chỉ đọc, không dùng được `.data/`).
+5. Atlas Network Access: `0.0.0.0/0` (Vercel không có IP cố định). Google redirect URI: `https://<tên-miền>/api/auth/google/callback` cho từng tên miền dùng đăng nhập Google (Preview URL đổi mỗi lần deploy nên Google chỉ chạy ổn trên tên miền cố định).
+6. Kiểm tra như bước 7 của 5A.
+
 ### 5B. Cloudflare Worker (Vinext / Sites — cấu hình trong `vite.config.ts`) — **chưa kiểm chứng**
 
 - Cần file `.openai/hosting.json` (bị `.gitignore`, phải lấy từ người giữ dự án; xem HANDOVER.md).

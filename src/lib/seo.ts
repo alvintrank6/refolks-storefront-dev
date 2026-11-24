@@ -10,7 +10,12 @@ import {
 } from "./catalog";
 import { faqItems } from "../components/HelpLegalV2";
 
-export const siteOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN || "https://refvlks-atelier-2026.alvintrank95.chatgpt.site";
+// Vercel sets VERCEL_PROJECT_PRODUCTION_URL (no scheme) when NEXT_PUBLIC_SITE_ORIGIN is not configured.
+export const siteOrigin =
+  process.env.NEXT_PUBLIC_SITE_ORIGIN ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://refvlks-atelier-2026.alvintrank95.chatgpt.site");
 export const absoluteUrl = (path: string) => new URL(path, siteOrigin).toString();
 export const jsonLd = (value: unknown) =>
   JSON.stringify(value).replace(/</g, "\\u003c");

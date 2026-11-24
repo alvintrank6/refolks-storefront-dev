@@ -47,7 +47,11 @@ let nodeClient: Promise<MongoClient> | undefined;
  */
 async function connect(uri: string, worker: boolean) {
   if (worker) return new MongoClient(uri, { maxPoolSize: 1 }).connect();
-  nodeClient ??= new MongoClient(uri).connect();
+  // A failed connect (Atlas timeout, IP not allowed) must not stay cached for the life of a serverless instance.
+  nodeClient ??= new MongoClient(uri).connect().catch((error) => {
+    nodeClient = undefined;
+    throw error;
+  });
   return nodeClient;
 }
 
