@@ -1,9 +1,12 @@
-import { beforeAll, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { mkdir, mkdtemp, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { LocalStoreRepository } from "./local";
+import { storeRepository } from "./index";
 import { products } from "../catalog";
 import { orderLines } from "../cart";
+
+afterEach(() => vi.unstubAllEnvs());
 
 let directory: string;
 let repository: LocalStoreRepository;
@@ -82,5 +85,20 @@ describe("local store adapter", () => {
         .trim()
         .split("\n"),
     ).toHaveLength(1);
+  });
+});
+
+describe("Mongo-backed store adapter", () => {
+  it("serves the static catalogue in production without legacy DATA_SOURCE", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("MONGODB_URI", "mongodb+srv://unused.invalid/");
+    vi.stubEnv("MONGODB_DB", "refolks");
+    vi.stubEnv("DATA_SOURCE", "");
+
+    const mongoStore = await storeRepository();
+    expect(await mongoStore.getProducts()).toHaveLength(4);
+    expect(await mongoStore.getProduct(products[0].handle)).toEqual(
+      products[0],
+    );
   });
 });

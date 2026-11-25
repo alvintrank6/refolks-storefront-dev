@@ -37,9 +37,13 @@ async function mongoRepository() {
 export async function storeRepository(
   db?: D1Database,
 ): Promise<StoreRepository> {
-  const base = await baseStoreRepository(db);
-  if (!process.env.MONGODB_URI) return base;
-  // Catalogue and donation event stay static; every write goes to MongoDB, connecting on first use.
+  if (!process.env.MONGODB_URI) return baseStoreRepository(db);
+
+  // In Mongo mode the catalogue and donation event stay static, while every
+  // write goes to MongoDB. Avoid initializing a legacy production adapter
+  // first: Vercel has no D1 binding, and DATA_SOURCE is intentionally unset.
+  const { LocalStoreRepository } = await import("./local");
+  const base = new LocalStoreRepository();
   const mongo = async () => (await mongoRepository())!;
   return Object.assign(Object.create(base) as StoreRepository, {
     placeOrder: async (draft: OrderDraft) => (await mongo()).placeOrder(draft),
