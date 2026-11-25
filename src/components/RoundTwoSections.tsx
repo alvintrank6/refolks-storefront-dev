@@ -1,6 +1,16 @@
 "use client";
 
-import { BriefcaseBusiness, Leaf, Package, Scissors, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  HeartHandshake,
+  Leaf,
+  Package,
+  Scissors,
+  ShieldCheck,
+  Sparkles,
+  Ticket,
+  Wrench,
+} from "lucide-react";
 import { localize, translate, type Lang } from "../refolks/data";
 
 const image = (name: string) => `/images/refolks/${name}.webp`;
@@ -50,5 +60,171 @@ export function CareGuide({lang,compact=false,onBook}:{lang:Lang;compact?:boolea
   const icons=[ShieldCheck,Scissors,Sparkles,Package,Leaf,Wrench];
   const items = lang === "vi" ? care.vi : lang === "en" ? care.en : localize(care.en, lang);
   return <section className={`rf-section rf-care-guide ${compact ? "rf-guide-compact" : ""}`} id="care"><div className="rf-section-head"><div><span className="rf-eyebrow">REFOLKS CARE</span>{compact ? <h2>{lang === "vi" ? "Hướng dẫn bảo quản" : translate("Product care guide", lang)}</h2> : <h1>{lang === "vi" ? "Hướng dẫn bảo quản" : translate("Product care guide", lang)}</h1>}</div></div><div className="rf-care-grid">{items.map(([title,body],i)=>{const Icon=icons[i];return <article key={title}><Icon size={32} strokeWidth={1.5}/><h3>{title}</h3><p>{body}</p>{i===5&&<button className="rf-text-link rf-care-book-link" onClick={onBook}>{lang === "vi" ? "Đặt lịch bảo dưỡng" : translate("Book a care appointment", lang)}</button>}</article>})}</div></section>;
+}
+
+type MemberOrder = { total: number; status?: string };
+type MemberAccount = { name: string; email: string } | null;
+
+const englishTiers = [
+  ["Member", "Register an account", "15% voucher for first order"],
+  ["Silver", "From 2,000,000₫", "5% off every order"],
+  ["Gold", "From 5,000,000₫", "10% off + priority Refolks Care"],
+  ["Platinum", "From 10,000,000₫", "15% off + early invitations"],
+];
+
+const vietnameseTiers = [
+  ["Thành viên", "Đăng ký tài khoản", "Voucher 15% cho đơn đầu tiên"],
+  ["Bạc", "Từ 2.000.000₫", "Giảm 5% mọi đơn"],
+  ["Vàng", "Từ 5.000.000₫", "Giảm 10% + ưu tiên Refolks Care"],
+  ["Bạch kim", "Từ 10.000.000₫", "Giảm 15% + mời sớm workshop, BST mới"],
+];
+
+export function MemberBenefits({
+  lang,
+  account,
+  orders,
+  onSignIn,
+  onCopy,
+}: {
+  lang: Lang;
+  account: MemberAccount;
+  orders: MemberOrder[];
+  onSignIn: () => void;
+  onCopy: (code: string) => void;
+}) {
+  const spend = orders
+    .filter((order) => order.status !== "cancelled")
+    .reduce((sum, order) => sum + order.total, 0);
+  const tiers =
+    lang === "vi"
+      ? vietnameseTiers
+      : lang === "en"
+        ? englishTiers
+        : localize(englishTiers, lang);
+  const current = spend >= 10_000_000 ? 3 : spend >= 5_000_000 ? 2 : spend >= 2_000_000 ? 1 : 0;
+  const next = [2_000_000, 5_000_000, 10_000_000][current];
+  const numberLocale =
+    lang === "vi"
+      ? "vi-VN"
+      : lang === "ko"
+        ? "ko-KR"
+        : lang === "ja"
+          ? "ja-JP"
+          : lang === "zh-CN"
+            ? "zh-CN"
+            : "en-US";
+  const donationStatus =
+    lang === "vi" ? "Chưa bắt đầu" : translate("Get started", lang);
+  const memberTitle =
+    lang === "vi" ? "Refolks Member" : translate("Refolks Member", lang);
+
+  return (
+    <div className="rf-benefits">
+      {!account && (
+        <div className="rf-benefits-preview">
+          <p>
+            {lang === "vi"
+              ? "Đăng nhập / Đăng ký để xem quyền lợi"
+              : translate("Sign in or register to see your benefits", lang)}
+            .
+          </p>
+          <button className="rf-button" onClick={onSignIn}>
+            {lang === "vi"
+              ? "Đăng nhập / Đăng ký"
+              : translate("Sign in / Register", lang)}
+          </button>
+        </div>
+      )}
+
+      <div className="rf-benefits-card">
+        <div className="rf-avatar">
+          {account?.name.charAt(0).toUpperCase() || "R"}
+        </div>
+        <div>
+          <h3>{account?.name || memberTitle}</h3>
+          <p>{account?.email || "—"}</p>
+          <strong>{tiers[current][0]} ★</strong>
+          {next !== undefined && (
+            <>
+              <div className="rf-progress">
+                <span
+                  style={{
+                    width: `${Math.min(100, Math.round((spend / next) * 100))}%`,
+                  }}
+                />
+              </div>
+              <small>
+                {lang === "vi"
+                  ? `Còn ${new Intl.NumberFormat("vi-VN").format(Math.max(0, next - spend))}₫ để lên hạng ${tiers[current + 1][0]}`
+                  : `${new Intl.NumberFormat(numberLocale).format(Math.max(0, next - spend))}₫ to ${tiers[current + 1][0]}`}
+              </small>
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="rf-benefits-card">
+        <h3>
+          {lang === "vi" ? "Bảng hạng thành viên" : translate("Membership tiers", lang)}
+        </h3>
+        <div className="rf-tier-table">
+          <div className="rf-tier-head">
+            <span>{lang === "vi" ? "Hạng" : translate("Tier", lang)}</span>
+            <span>{lang === "vi" ? "Điều kiện" : translate("Requirement", lang)}</span>
+            <span>{lang === "vi" ? "Quyền lợi" : translate("Benefits", lang)}</span>
+          </div>
+          {tiers.map((tier, index) => (
+            <div
+              key={tier[0]}
+              className={current === index ? "current" : ""}
+            >
+              {tier.map((cell) => (
+                <span key={cell}>{cell}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="rf-benefits-card">
+        <h3>{lang === "vi" ? "Kho voucher" : translate("Your vouchers", lang)}</h3>
+        <button className="rf-voucher" onClick={() => onCopy("NEW15")}>
+          <Ticket size={25} strokeWidth={1.5} />
+          <span>
+            <strong>NEW15</strong>
+            <small>
+              {lang === "vi"
+                ? "Khách mới –15%"
+                : translate("New customer –15%", lang)}
+            </small>
+          </span>
+          <span>
+            {lang === "vi" ? "Sao chép mã" : translate("Copy code", lang)}
+          </span>
+        </button>
+      </div>
+
+      <div className="rf-benefits-card">
+        <h3>{lang === "vi" ? "Mức độ quyên góp" : translate("Donation impact", lang)}</h3>
+        <div className="rf-impact">
+          <HeartHandshake size={34} strokeWidth={1.5} />
+          <strong>0 kg</strong>
+          <span>
+            {lang === "vi"
+              ? `0 lần quyên góp · ${donationStatus}`
+              : `0 ${translate("donations", lang)} · ${donationStatus}`}
+          </span>
+        </div>
+        <div className="rf-progress">
+          <span style={{ width: "0%" }} />
+        </div>
+        <p>
+          {lang === "vi"
+            ? "Mầm xanh 1–2 kg · Cây non 3–9 kg · Cánh rừng từ 10 kg"
+            : translate("Green seed 1–2 kg · Sapling 3–9 kg · Forest 10 kg+", lang)}
+        </p>
+      </div>
+    </div>
+  );
 }
 

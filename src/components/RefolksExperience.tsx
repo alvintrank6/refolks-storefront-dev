@@ -23,7 +23,7 @@ import {
   RefreshCw,
   Laptop,
 } from "lucide-react";
-import { StylingGuide, CareGuide } from "./RoundTwoSections";
+import { MemberBenefits, StylingGuide, CareGuide } from "./RoundTwoSections";
 import { answerChat, chatCopy, type ChatStage } from "../services/chatService";
 import { AdminPanel, statusLabel } from "./AdminPanel";
 import type { Role } from "../lib/auth/roles";
@@ -126,6 +126,9 @@ const ui = {
     newsletter: "Nhận tin tức và ưu đãi",
     orders: "Đơn hàng",
     profile: "Hồ sơ",
+    vouchers: "Kho voucher cho bạn",
+    copied: "Đã sao chép mã",
+    copyFailed: "Không sao chép được mã. Vui lòng thử lại.",
     phone: "Số điện thoại",
     address: "Địa chỉ",
     note: "Ghi chú",
@@ -256,6 +259,9 @@ const ui = {
     newsletter: "Receive news and offers",
     orders: "Orders",
     profile: "Profile",
+    vouchers: "Your vouchers",
+    copied: "Code copied",
+    copyFailed: "Couldn't copy the code. Please try again.",
     phone: "Phone",
     address: "Address",
     note: "Notes",
@@ -511,7 +517,8 @@ export function RefolksExperience({
   useEffect(() => { if (didHydrate) sessionStorage.setItem(`refolks-chat-${lang}`,JSON.stringify(chatMessages)); },[chatMessages,lang,didHydrate]);
   useEffect(() => { if(chatOpen) chatEndRef.current?.scrollIntoView({behavior:"smooth",block:"end"}); },[chatMessages,chatOpen,chatTyping]);
   useEffect(() => {
-    if (route.page !== "account" || !account) return;
+    if (route.page !== "account" && route.page !== "community") return;
+    if (!account) return;
     fetch("/api/account/orders")
       .then((res) => (res.ok ? (res.json() as Promise<{ orders: Order[] }>) : { orders: [] }))
       .then((data: { orders: Order[] }) => setOrders(data.orders), () => setOrders([]));
@@ -846,6 +853,16 @@ export function RefolksExperience({
       />
     </label>
   );
+  const copyVoucher = (code: string) => {
+    if (!navigator.clipboard) {
+      setToast(u.copyFailed);
+      return;
+    }
+    void navigator.clipboard.writeText(code).then(
+      () => setToast(u.copied),
+      () => setToast(u.copyFailed),
+    );
+  };
   const closeOverlays = () => {
     setMobile(false);
     setFilterOpen(false);
@@ -1487,10 +1504,18 @@ export function RefolksExperience({
       {route.page === "community" && (
         <main className="rf-page rf-community">
           <div className="rf-community-hero">
-            <span className="rf-eyebrow">REFOLKS / COMMUNITY</span>
-            <h1>{c.communityTitle}</h1>
-            <p>{c.communitySub}</p>
+            <span className="rf-eyebrow">01 / COMMUNITY</span>
+            <h1>{u.account} &amp; {u.vouchers}</h1>
           </div>
+          <section id="account" className="rf-section rf-community-account">
+            <MemberBenefits
+              lang={lang}
+              account={account}
+              orders={orders}
+              onSignIn={() => setAccountOpen(true)}
+              onCopy={copyVoucher}
+            />
+          </section>
           <section id="donation" className="rf-section rf-donation">
             <div className="rf-section-head">
               <div>
@@ -1519,7 +1544,15 @@ export function RefolksExperience({
           <h1>{u.account}</h1>
           {!account && <p>{u.signInFirst}</p>}
           {!account && <button className="rf-button" onClick={() => setAccountOpen(true)}>{u.signIn}<ArrowRight size={17}/></button>}
-          {account && <section>
+          {account && <>
+            <MemberBenefits
+              lang={lang}
+              account={account}
+              orders={orders}
+              onSignIn={() => setAccountOpen(true)}
+              onCopy={copyVoucher}
+            />
+            <section>
             <h2>{u.orders}</h2>
             {orders.length ? (
               orders.map((order) => (
@@ -1536,7 +1569,8 @@ export function RefolksExperience({
             ) : (
               <p>{u.comingSoon}</p>
             )}
-          </section>}
+            </section>
+          </>}
         </main>
       )}
 

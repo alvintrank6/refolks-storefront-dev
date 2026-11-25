@@ -78,6 +78,31 @@ html:lang(ko) .rf-site,html:lang(ja) .rf-site,html:lang(zh-CN) .rf-site{font-fam
 .rf-chat-panel{width:min(390px,calc(100vw - 30px));padding:0;display:flex;flex-direction:column;max-height:min(70vh,610px)}.rf-chat-panel>div:first-child{padding:14px 18px;background:var(--rf-primary);color:#fff}.rf-chat-panel>div:first-child button{color:#fff}.rf-chat-messages{overflow-y:auto;min-height:150px;padding:15px;flex:1}.rf-chat-messages p{margin:4px 0;padding:10px 12px;font-size:.8rem}.rf-chat-user p{background:#e9d6cd;margin-left:35px}.rf-chat-bot p,.rf-chat-messages>p{background:var(--rf-surface);margin-right:35px}.rf-chat-bot button{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--rf-primary);color:var(--rf-primary);padding:5px 8px;font-size:.75rem}.rf-chat-quick{display:flex;gap:6px;flex-wrap:wrap;padding:10px 15px;border-top:1px solid #33221a22}.rf-chat-panel .rf-chat-quick button{border:1px solid #33221a55;border-radius:15px;padding:5px 8px;font-size:.69rem}.rf-chat-form{display:flex;border-top:1px solid #33221a33}.rf-chat-form input{min-width:0;flex:1;padding:12px;border:0;font-size:.86rem}.rf-chat-form button{width:46px;color:var(--rf-primary)}
 .rf-simple-page{min-height:70vh;padding:150px clamp(22px,8vw,140px)}
 .rf-shop-toolbar label{white-space:nowrap;flex:0 0 auto}
+@media(min-width:1001px){.rf-header-inner{height:3.25rem;padding:0 clamp(1.375rem,2.8vw,2.5rem) 0 clamp(1.375rem,2.8vw,2.5rem);padding-right:3.5rem;gap:.75rem}.rf-header .rf-logo{width:8rem;margin-left:-1rem}.rf-desktop-nav{gap:clamp(.65rem,1vw,1rem);transform:translateX(2.3rem)}.rf-desktop-nav button{gap:.2rem;padding:.5rem .05rem;font-size:.5rem;letter-spacing:.04em}.rf-desktop-nav svg{width:.5rem;height:.5rem}.rf-header-actions{gap:clamp(.55rem,.9vw,.8rem)}.rf-icon{width:2rem;height:2.25rem}.rf-lang{gap:.0625rem;font-size:.52rem}.rf-lang button{padding-right:1px;padding-left:1px}.rf-mega{top:3.25rem}.rf-page{padding-top:3.25rem}}
+.rf-page.rf-community{max-width:86.25rem;margin:0 auto;background:#fff;min-height:100vh}
+.rf-page.rf-community .rf-community-hero{max-width:none;margin:0;text-align:left;background:transparent;padding:0 clamp(1.375rem,4.3vw,3.75rem) 1.375rem}
+.rf-page.rf-community .rf-community-hero .rf-eyebrow{color:var(--rf-primary);font-size:.62rem;letter-spacing:.12em}
+.rf-page.rf-community .rf-community-hero h1{max-width:none;margin:.125rem 0 0;font-size:clamp(1.5rem,2vw,1.875rem);line-height:1.25;letter-spacing:-.02em}
+.rf-page.rf-community .rf-community-account.rf-section{max-width:none;margin:0;padding:0 clamp(1.375rem,4.3vw,3.75rem) 4.375rem;background:transparent}
+.rf-page.rf-community .rf-benefits{gap:.875rem}
+.rf-page.rf-community .rf-benefits-card{padding:1.1875rem 1.25rem}
+.rf-page.rf-community .rf-benefits-card:nth-child(-n+2){min-height:12.8125rem}
+.rf-page.rf-community .rf-benefits-card:nth-child(n+3){min-height:8.125rem}
+.rf-page.rf-community .rf-benefits-card h3{margin-bottom:.5rem;font-size:1rem;line-height:1.25}
+.rf-page.rf-community .rf-benefits-card p{font-size:.72rem;line-height:1.5}
+.rf-page.rf-community .rf-benefits .rf-avatar{width:2.5rem;height:2.5rem;flex-basis:2.5rem;font-size:1.2rem}
+.rf-page.rf-community .rf-tier-table{font-size:.68rem}
+.rf-page.rf-community .rf-tier-table>div{grid-template-columns:.75fr 1.55fr 2.3fr;gap:.5rem;padding:.25rem .375rem}
+.rf-page.rf-community .rf-voucher{min-height:3.125rem;padding:.5rem;gap:.75rem}
+.rf-page.rf-community .rf-voucher svg{width:1.25rem;height:1.25rem}
+.rf-page.rf-community .rf-voucher strong{font-size:.75rem}
+.rf-page.rf-community .rf-voucher small{font-size:.62rem}
+.rf-page.rf-community .rf-voucher>span:last-child{font-size:.65rem;color:var(--rf-ink);white-space:nowrap}
+.rf-page.rf-community .rf-benefits .rf-progress{height:4px;margin:12px 0 7px}
+.rf-page.rf-community .rf-impact svg{width:1.5rem;height:1.5rem}
+.rf-page.rf-community .rf-impact strong{font-size:1.25rem}
+.rf-page.rf-community .rf-impact span{font-size:.68rem}
+@media(max-width:850px){.rf-page.rf-community .rf-benefits{grid-template-columns:1fr}.rf-page.rf-community .rf-benefits-card{min-height:0}.rf-page.rf-community .rf-tier-table>div{grid-template-columns:.8fr 1.3fr 1.7fr}}
 .rf-collection-visual{margin:0 clamp(22px,5vw,90px) 42px;overflow:hidden;background:#e8ddd0}.rf-collection-visual img{display:block;width:100%;max-height:620px;aspect-ratio:16/9;object-fit:cover}
 @media(max-width:1000px){.rf-desktop-nav button{font-size:.62rem}.rf-logo{width:155px;margin-left:-20px}.rf-motif-grid,.rf-guide-grid,.rf-care-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:850px){.rf-header-inner{grid-template-columns:auto 1fr auto}.rf-logo{grid-column:1;grid-row:1;margin-left:-18px;width:145px}.rf-header-actions{grid-column:2;grid-row:1}.rf-mobile-menu{grid-column:3;grid-row:1}.rf-desktop-nav{display:none}.rf-hero-slides img{object-position:65% center}.rf-about-split{grid-template-columns:1fr}.rf-about-split>img{height:360px}.rf-benefits{grid-template-columns:1fr}}
