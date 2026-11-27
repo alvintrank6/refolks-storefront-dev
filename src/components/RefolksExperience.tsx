@@ -596,6 +596,10 @@ export function RefolksExperience({
   };
   const navigate = (path: string) => {
     const next = new URL(path, location.origin);
+    if (next.origin !== location.origin) {
+      window.location.assign(next.href);
+      return;
+    }
     const nextRoute = routeFromPath(next.pathname);
     history.replaceState({ ...(history.state || {}), scrollY: window.scrollY }, "", location.href);
     history.pushState({}, "", next.pathname + next.search + next.hash);
@@ -708,7 +712,7 @@ export function RefolksExperience({
     sort,
   ]);
   const navItems = [
-    { key: "about", label: c.nav[0], href: `${base(lang)}/about` },
+    { key: "about", label: c.nav[0], href: "https://refolks.space/" },
     { key: "women", label: c.nav[1], href: `${base(lang)}/shop?gender=women` },
     { key: "men", label: c.nav[2], href: `${base(lang)}/shop?gender=men` },
     { key: "collections", label: c.nav[3], href: `${base(lang)}/collections/heritage-in-motion` },
@@ -897,7 +901,7 @@ export function RefolksExperience({
           </nav>
           <button
             className="rf-logo"
-            onClick={() => navigate(base(lang))}
+            onClick={() => navigate("https://refolks.space/")}
             aria-label="Refolks home"
           >
             <img src="/images/refolks/logo-red-motif.png" alt="Refolks" />
@@ -1099,7 +1103,7 @@ export function RefolksExperience({
               ))}
               <button
                 className="rf-text-link"
-                onClick={() => navigate(`${base(lang)}/about`)}
+                onClick={() => navigate("https://refolks.space/")}
               >
                 {u.discover}
                 <ArrowRight size={18} />
@@ -1713,7 +1717,9 @@ export function RefolksExperience({
       <footer id="contact" className="rf-footer">
         <div className="rf-footer-top">
           <div>
-            <img src="/images/refolks/logo-light.png" alt="Refolks" />
+            <a href="https://refolks.space/" aria-label="Refolks">
+              <img src="/images/refolks/logo-light.png" alt="Refolks" />
+            </a>
             <p>{u.footerThanks}</p>
             <div className="rf-social">
               <Camera size={18} />
@@ -1733,7 +1739,7 @@ export function RefolksExperience({
           </div>
           <div>
             <h3>{u.information}</h3>
-            <button onClick={() => navigate(`${base(lang)}/about`)}>
+            <button onClick={() => navigate("https://refolks.space/")}>
               {u.aboutUs}
             </button>
             <button onClick={() => navigate(`${base(lang)}/huong-dan-phoi-do`)}>{u.lookbook}</button>

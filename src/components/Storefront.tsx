@@ -149,18 +149,18 @@ export function Header({
               <a href={p.shop}>{d.nav.shop}</a>
               <a href={p.craft}>{d.nav.craft}</a>
               <a href={p.donation}>{d.nav.donation}</a>
-              <a href={p.about}>{d.nav.about}</a>
+              <a href="https://refolks.space/">{d.nav.about}</a>
               <a href={p.studio}>{d.nav.studio}</a>
             </nav>
           </details>
-          <a className="logo-link" href={p.home} aria-label={d.ui.logoHome}>
+          <a className="logo-link" href="https://refolks.space/" aria-label={d.ui.logoHome}>
             <Logo />
           </a>
           <nav className="desktop-nav" aria-label={d.ui.mainNav}>
             <RollingLink href={p.shop} text={d.nav.shop} />
             <RollingLink href={p.craft} text={d.nav.craft} />
             <RollingLink href={p.donation} text={d.nav.donation} />
-            <RollingLink href={p.about} text={d.nav.about} />
+            <RollingLink href="https://refolks.space/" text={d.nav.about} />
             <RollingLink href={p.studio} text={d.nav.studio} />
           </nav>
           <div className="header-actions">
@@ -191,7 +191,7 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="site-footer">
       <div className="container footer-top">
         <div>
-          <a href={p.home} aria-label={d.ui.logoHome}>
+          <a href="https://refolks.space/" aria-label={d.ui.logoHome}>
             <Logo reversed />
           </a>
           <p className="footer-tagline">{d.footer.tagline}</p>
@@ -217,7 +217,7 @@ export function Footer({ locale }: { locale: Locale }) {
             <h2>Refolks</h2>
             <RollingLink href={p.craft} text={d.nav.craft} />
             <RollingLink href={p.donation} text={d.nav.donation} />
-            <RollingLink href={p.about} text={d.nav.about} />
+            <RollingLink href="https://refolks.space/" text={d.nav.about} />
             <RollingLink href={p.studio} text={d.nav.studio} />
           </div>
           <div>
