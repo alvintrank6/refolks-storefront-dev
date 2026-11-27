@@ -1,6 +1,5 @@
 import { expect, test } from "@playwright/test";
 
-test.use({ baseURL: "http://127.0.0.1:3000" });
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
     localStorage.setItem("refolks-member-dismissed", String(Date.now()));
@@ -12,13 +11,14 @@ test("collection, accessories, product and demo checkout", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/vi/shop");
-  await expect(page.locator(".rf-shop-grid .rf-product-card")).toHaveCount(5);
-  await expect(page.locator(".rf-shop-grid")).toContainText("Móc khóa Voi");
-  await expect(page.locator(".rf-shop-grid")).toContainText("2.190.000₫");
+  await expect(page.locator(".rf-shop-grid .rf-product-card")).toHaveCount(6);
+  await expect(page.locator(".rf-shop-grid")).toContainText("The Sower");
+  await expect(page.locator(".rf-shop-grid")).toContainText("1.890.000₫");
   await page.goto("/vi/accessories");
   await expect(page.locator(".rf-shop-grid .rf-product-card")).toHaveCount(5);
-  await expect(page.locator(".rf-shop-grid")).toContainText("Cardholder");
-  await expect(page.locator(".rf-coming-card")).toHaveCount(3);
+  await expect(page.locator(".rf-shop-grid")).toContainText("The Pathfinder");
+  await expect(page.locator(".rf-shop-grid")).toContainText("Coming soon");
+  await expect(page.locator(".rf-shop-grid .rf-card-bottom button:disabled")).toHaveCount(5);
   await page.goto("/vi/products/the-vanguard");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("The Vanguard");
   await page.getByLabel("Phiên bản").selectOption("men-cardholder");
@@ -45,7 +45,7 @@ test("navigation, guides, chatbot and friendly 404", async ({ page }) => {
   await page.goto("/vi/huong-dan-bao-quan");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Hướng dẫn bảo quản");
   await page.getByRole("button", { name: "Chat" }).click();
-  await page.getByRole("button", { name: "Giá & khuyến mãi" }).click();
+  await page.getByRole("button", { name: "Giá sản phẩm" }).click();
   await expect(page.locator(".rf-chat-messages")).toContainText("1.890.000₫");
   const response = await page.goto("/vi/not-a-page");
   expect(response?.status()).toBe(404);
@@ -75,33 +75,24 @@ test("mobile menu and responsive pages", async ({ page }) => {
   }
 });
 
-test("member dashboard, donation voucher and workshop registration", async ({ page }) => {
+test("member dashboard shows account, voucher and donation status", async ({ page }) => {
   await page.goto("/vi/community");
   await expect(page.locator(".rf-site")).toHaveAttribute("data-ready", "true");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Tài khoản & Kho voucher cho bạn",
+  );
   await page.getByRole("button", { name: "Đăng nhập / Đăng ký" }).click();
   const account = page.getByRole("dialog", { name: "Tài khoản" });
   await account.getByRole("button", { name: "Tạo tài khoản" }).first().click();
   await account.getByLabel("Họ và tên").fill("Mai Anh");
-  await account.getByLabel("Email").fill("mai@example.com");
+  await account.getByLabel("Email").fill(`community-${Date.now()}@example.test`);
   await account.getByLabel("Mật khẩu").fill("demo-password");
   await account.getByRole("button", { name: "Tạo tài khoản" }).last().click();
   await expect(page.locator(".rf-benefits-card")).toHaveCount(4);
   await expect(page.locator(".rf-benefits")).toContainText("Mai Anh");
   await expect(page.locator(".rf-benefits")).toContainText("NEW15");
-  const donation = page.locator(".rf-donation-form form");
-  await donation.getByLabel("Họ và tên").fill("Mai Anh");
-  await donation.getByLabel("Số điện thoại").fill("0900000000");
-  await donation.getByLabel("Email").fill("mai@example.com");
-  await donation.getByLabel("Số lượng/kg ước tính").fill("2");
-  await donation.getByLabel("Ngày hẹn").fill("2026-11-15");
-  await donation.getByRole("button", { name: "Gửi thông tin" }).click();
-  await expect(page.locator(".rf-benefits")).toContainText("DONATE15");
-  await page.getByRole("button", { name: /Đăng Ký Chỗ Ngồi/i }).click();
-  const event = page.getByRole("dialog").last();
-  await event.getByLabel("Họ và tên").fill("Mai Anh");
-  await event.getByLabel("Số điện thoại").fill("0900000000");
-  await event.getByLabel("Email").fill("mai@example.com");
-  await event.getByLabel("Số người").fill("1");
-  await event.getByRole("button", { name: "Đăng ký tham gia" }).click();
-  await expect(page.getByRole("status")).toContainText("Đã ghi nhận đăng ký");
+  await expect(page.locator(".rf-benefits")).toContainText("0 kg");
+  await expect(page.locator(".rf-donation")).toContainText(
+    "Vải tái chế trong thiết kế",
+  );
 });

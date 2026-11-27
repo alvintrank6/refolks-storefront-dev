@@ -2,7 +2,7 @@
 
 File này được sinh tự động từ `src/content/assets.json` bằng `python3 scripts/build-asset-manifest.py`. Không sửa tay bảng ảnh.
 
-Tổng: **37 ảnh nguồn** → **47 biến thể** (mỗi biến thể có AVIF + WebP; ảnh OG là JPG). Nguồn: `refvlks_tat-ca-anh-san-pham-va-mau.zip` do chủ dự án cung cấp. Toàn bộ ảnh do AI tạo (origin = AI-generated).
+Tổng: **73 ảnh nguồn** → **83 biến thể**. Nguồn: `refvlks_tat-ca-anh-san-pham-va-mau.zip` và các gói ảnh feedback lần 3 do chủ dự án cung cấp. Ảnh gốc được tạo bằng AI; 36 ảnh feedback bổ sung do chủ dự án cung cấp ngày 27/11/2026.
 
 ## 1. Quy ước
 
@@ -101,3 +101,45 @@ Chi tiết cách dùng: 06-DESIGN-SYSTEM mục 6.
 | `brand/identity/` | `refvlks_brand_A01_logo-exploration.webp`, `refvlks_brand_A02_logo-primary.webp`, `refvlks_brand_A03_logo-reversed.webp`, `refvlks_brand_A04_monogram.webp`, `refvlks_brand_A05_lockup-tagline.webp`, `refvlks_brand_A06_logo-usage.webp` |
 | `src/assets/fonts/` | `BeVietnamPro-Regular.ttf`, `Fraunces-Display.ttf`, `IBMPlexMono-Medium.ttf`, `OFL-BeVietnamPro.txt`, `OFL-Fraunces.txt`, `OFL-IBMPlexMono.txt` |
 
+## 7. Ảnh sản phẩm cập nhật theo feedback lần 3
+
+Ảnh do chủ dự án cung cấp trong các gói ZIP ngày 27/11/2026; bản WebP được tối ưu từ ảnh gốc và giữ nguyên nội dung, màu sắc, bố cục.
+
+| ID | Sản phẩm | Vai trò | Kích thước | WebP KB | File | Alt (EN) |
+|---|---|---|---|---:|---|---|
+| F3-THE-HERALD-01 | The Herald | Product gallery 01 | 1200×1200 | 262 | `/public/images/refolks/products-2026-11/the-herald-01.webp` | The Herald, product photo 1. |
+| F3-THE-CURATOR-01 | The Curator | Product gallery 01 | 1200×1200 | 197 | `/public/images/refolks/products-2026-11/the-curator-01.webp` | The Curator, product photo 1. |
+| F3-THE-VANGUARD-01 | The Vanguard | Product gallery 01 | 1200×1200 | 301 | `/public/images/refolks/products-2026-11/the-vanguard-01.webp` | The Vanguard, product photo 1. |
+| F3-THE-NAVIGATOR-01 | The Navigator | Product gallery 01 | 1200×1200 | 134 | `/public/images/refolks/products-2026-11/the-navigator-01.webp` | The Navigator, product photo 1. |
+| F3-THE-WEAVER-01 | The Weaver | Product gallery 01 | 1448×1086 | 189 | `/public/images/refolks/products-2026-11/the-weaver-01.webp` | The Weaver, product photo 1. |
+| F3-THE-WEAVER-02 | The Weaver | Product gallery 02 | 1448×1086 | 179 | `/public/images/refolks/products-2026-11/the-weaver-02.webp` | The Weaver, product photo 2. |
+| F3-THE-WEAVER-03 | The Weaver | Product gallery 03 | 1448×1086 | 178 | `/public/images/refolks/products-2026-11/the-weaver-03.webp` | The Weaver, product photo 3. |
+| F3-THE-WEAVER-04 | The Weaver | Product gallery 04 | 1448×1086 | 302 | `/public/images/refolks/products-2026-11/the-weaver-04.webp` | The Weaver, product photo 4. |
+| F3-THE-WEAVER-05 | The Weaver | Product gallery 05 | 1448×1086 | 121 | `/public/images/refolks/products-2026-11/the-weaver-05.webp` | The Weaver, product photo 5. |
+| F3-THE-SOWER-01 | The Sower | Product gallery 01 | 1280×1600 | 229 | `/public/images/refolks/products-2026-11/the-sower-01.webp` | The Sower, product photo 1. |
+| F3-THE-SOWER-02 | The Sower | Product gallery 02 | 1600×1463 | 161 | `/public/images/refolks/products-2026-11/the-sower-02.webp` | The Sower, product photo 2. |
+| F3-THE-SOWER-03 | The Sower | Product gallery 03 | 1463×1600 | 152 | `/public/images/refolks/products-2026-11/the-sower-03.webp` | The Sower, product photo 3. |
+| F3-THE-SOWER-04 | The Sower | Product gallery 04 | 1600×1066 | 248 | `/public/images/refolks/products-2026-11/the-sower-04.webp` | The Sower, product photo 4. |
+| F3-THE-SOWER-05 | The Sower | Product gallery 05 | 1600×800 | 154 | `/public/images/refolks/products-2026-11/the-sower-05.webp` | The Sower, product photo 5. |
+| F3-THE-TRAILBLAZER-01 | The Trailblazer | Product gallery 01 | 1448×1086 | 294 | `/public/images/refolks/products-2026-11/the-trailblazer-01.webp` | The Trailblazer, product photo 1. |
+| F3-THE-TRAILBLAZER-02 | The Trailblazer | Product gallery 02 | 1448×1086 | 386 | `/public/images/refolks/products-2026-11/the-trailblazer-02.webp` | The Trailblazer, product photo 2. |
+| F3-THE-TRAILBLAZER-03 | The Trailblazer | Product gallery 03 | 1448×1086 | 270 | `/public/images/refolks/products-2026-11/the-trailblazer-03.webp` | The Trailblazer, product photo 3. |
+| F3-THE-TRAILBLAZER-04 | The Trailblazer | Product gallery 04 | 1448×1086 | 259 | `/public/images/refolks/products-2026-11/the-trailblazer-04.webp` | The Trailblazer, product photo 4. |
+| F3-THE-TRAILBLAZER-05 | The Trailblazer | Product gallery 05 | 1448×1086 | 263 | `/public/images/refolks/products-2026-11/the-trailblazer-05.webp` | The Trailblazer, product photo 5. |
+| F3-THE-GUARDIAN-01 | The Guardian | Product gallery 01 | 1536×1024 | 207 | `/public/images/refolks/products-2026-11/the-guardian-01.webp` | The Guardian, product photo 1. |
+| F3-THE-GUARDIAN-02 | The Guardian | Product gallery 02 | 1536×1024 | 167 | `/public/images/refolks/products-2026-11/the-guardian-02.webp` | The Guardian, product photo 2. |
+| F3-THE-GUARDIAN-03 | The Guardian | Product gallery 03 | 1536×1024 | 195 | `/public/images/refolks/products-2026-11/the-guardian-03.webp` | The Guardian, product photo 3. |
+| F3-THE-GUARDIAN-04 | The Guardian | Product gallery 04 | 1536×1024 | 241 | `/public/images/refolks/products-2026-11/the-guardian-04.webp` | The Guardian, product photo 4. |
+| F3-THE-GUARDIAN-05 | The Guardian | Product gallery 05 | 1536×1024 | 140 | `/public/images/refolks/products-2026-11/the-guardian-05.webp` | The Guardian, product photo 5. |
+| F3-THE-PATHFINDER-01 | The Pathfinder | Product gallery 01 | 1254×1254 | 252 | `/public/images/refolks/products-2026-11/the-pathfinder-01.webp` | The Pathfinder, product photo 1. |
+| F3-THE-PATHFINDER-02 | The Pathfinder | Product gallery 02 | 1254×1254 | 230 | `/public/images/refolks/products-2026-11/the-pathfinder-02.webp` | The Pathfinder, product photo 2. |
+| F3-THE-PATHFINDER-03 | The Pathfinder | Product gallery 03 | 1254×1254 | 247 | `/public/images/refolks/products-2026-11/the-pathfinder-03.webp` | The Pathfinder, product photo 3. |
+| F3-THE-PATHFINDER-04 | The Pathfinder | Product gallery 04 | 1254×1254 | 261 | `/public/images/refolks/products-2026-11/the-pathfinder-04.webp` | The Pathfinder, product photo 4. |
+| F3-THE-PATHFINDER-05 | The Pathfinder | Product gallery 05 | 1254×1254 | 238 | `/public/images/refolks/products-2026-11/the-pathfinder-05.webp` | The Pathfinder, product photo 5. |
+| F3-THE-ENVOY-01 | The Envoy | Product gallery 01 | 1254×1254 | 199 | `/public/images/refolks/products-2026-11/the-envoy-01.webp` | The Envoy, product photo 1. |
+| F3-THE-ENVOY-02 | The Envoy | Product gallery 02 | 1254×1254 | 191 | `/public/images/refolks/products-2026-11/the-envoy-02.webp` | The Envoy, product photo 2. |
+| F3-THE-ENVOY-03 | The Envoy | Product gallery 03 | 1254×1254 | 206 | `/public/images/refolks/products-2026-11/the-envoy-03.webp` | The Envoy, product photo 3. |
+| F3-THE-ENVOY-04 | The Envoy | Product gallery 04 | 1254×1254 | 201 | `/public/images/refolks/products-2026-11/the-envoy-04.webp` | The Envoy, product photo 4. |
+| F3-THE-ENVOY-05 | The Envoy | Product gallery 05 | 1254×1254 | 172 | `/public/images/refolks/products-2026-11/the-envoy-05.webp` | The Envoy, product photo 5. |
+| F3-THE-STORYTELLER-01 | The Storyteller | Product gallery 01 | 380×308 | 51 | `/public/images/refolks/products-2026-11/the-storyteller-01.webp` | The Storyteller, product photo 1. |
+| F3-THE-STORYTELLER-02 | The Storyteller | Product gallery 02 | 265×250 | 30 | `/public/images/refolks/products-2026-11/the-storyteller-02.webp` | The Storyteller, product photo 2. |

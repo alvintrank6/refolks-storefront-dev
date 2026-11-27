@@ -18,7 +18,13 @@ export function roundTwoLines(
   const lines: OrderLine[] = [];
   for (const raw of items as Partial<CheckoutItem>[]) {
     const product = products.find((p) => p.id === raw?.id);
-    if (!product || !Number.isInteger(raw.qty) || raw.qty! < 1 || raw.qty! > 10)
+    if (
+      !product ||
+      product.price === null ||
+      !Number.isInteger(raw.qty) ||
+      raw.qty! < 1 ||
+      raw.qty! > 10
+    )
       return null;
     const productColors: readonly string[] = product.colors;
     const colorOk = productColors.length

@@ -1,13 +1,15 @@
 {
   "version": 1,
-  "generated": "2026-10-30",
-  "note": "Generated from refvlks_tat-ca-anh-san-pham-va-mau.zip. Do not edit by hand; edit assets_map and re-export.",
+  "generated": "2026-11-27",
+  "note": "Original brand assets plus 36 owner-supplied product photos from the November 27, 2026 feedback bundle.",
   "assets": [
     {
       "id": "HOME-01",
       "product": "SP01",
       "role": "Hero desktop (L0, parallax 5%)",
-      "sections": ["H-01"],
+      "sections": [
+        "H-01"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_editorial_3x2.png",
       "origin": "AI-generated",
       "alt": {
@@ -38,7 +40,9 @@
       "id": "HOME-02",
       "product": "SP01",
       "role": "Hero mobile (crop 4:5 bằng CSS)",
-      "sections": ["H-01"],
+      "sections": [
+        "H-01"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_editorial_2x3.png",
       "origin": "AI-generated",
       "alt": {
@@ -69,7 +73,10 @@
       "id": "REVEAL-01",
       "product": "SP01",
       "role": "Khung 1/8 chuỗi H-02",
-      "sections": ["H-02", "H-02 mobile"],
+      "sections": [
+        "H-02",
+        "H-02 mobile"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_01.png",
       "origin": "AI-generated",
       "alt": {
@@ -100,7 +107,9 @@
       "id": "REVEAL-02",
       "product": "SP01",
       "role": "Khung 2/8 chuỗi H-02",
-      "sections": ["H-02"],
+      "sections": [
+        "H-02"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_02_SQ-A-02.png",
       "origin": "AI-generated",
       "alt": {
@@ -131,7 +140,9 @@
       "id": "REVEAL-03",
       "product": "SP01",
       "role": "Khung 3/8 chuỗi H-02",
-      "sections": ["H-02"],
+      "sections": [
+        "H-02"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_03_SQ-A-03.png",
       "origin": "AI-generated",
       "alt": {
@@ -162,7 +173,9 @@
       "id": "REVEAL-04",
       "product": "SP01",
       "role": "Khung 4/8 chuỗi H-02",
-      "sections": ["H-02"],
+      "sections": [
+        "H-02"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_04_SQ-A-04.png",
       "origin": "AI-generated",
       "alt": {
@@ -193,7 +206,10 @@
       "id": "REVEAL-05",
       "product": "SP01",
       "role": "Khung 5/8 chuỗi H-02",
-      "sections": ["H-02", "H-02 mobile"],
+      "sections": [
+        "H-02",
+        "H-02 mobile"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_05_SQ-A-05.png",
       "origin": "AI-generated",
       "alt": {
@@ -224,7 +240,9 @@
       "id": "REVEAL-06",
       "product": "SP01",
       "role": "Khung 6/8 chuỗi H-02",
-      "sections": ["H-02"],
+      "sections": [
+        "H-02"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_06_SQ-A-06.png",
       "origin": "AI-generated",
       "alt": {
@@ -255,7 +273,9 @@
       "id": "REVEAL-07",
       "product": "SP01",
       "role": "Khung 7/8 chuỗi H-02",
-      "sections": ["H-02"],
+      "sections": [
+        "H-02"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_07_SQ-A-07.png",
       "origin": "AI-generated",
       "alt": {
@@ -286,7 +306,10 @@
       "id": "REVEAL-08",
       "product": "SP01",
       "role": "Khung 8/8 chuỗi H-02",
-      "sections": ["H-02", "H-02 mobile"],
+      "sections": [
+        "H-02",
+        "H-02 mobile"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_sequence_frame_08_SQ-A-08.png",
       "origin": "AI-generated",
       "alt": {
@@ -317,7 +340,11 @@
       "id": "SP01-01",
       "product": "SP01",
       "role": "Ảnh thẻ + ảnh 1 gallery",
-      "sections": ["H-03", "S-03", "P-01"],
+      "sections": [
+        "H-03",
+        "S-03",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_weft-structured-tote_01_front.png",
       "origin": "AI-generated",
       "alt": {
@@ -365,7 +392,9 @@
       "id": "SP01-02",
       "product": "SP01",
       "role": "Gallery ảnh 2 (góc 3/4)",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_studio_right_35deg_closed_2x3.png",
       "origin": "AI-generated",
       "alt": {
@@ -396,7 +425,10 @@
       "id": "SP01-03",
       "product": "SP01",
       "role": "Ảnh hover thẻ + gallery ảnh 3",
-      "sections": ["H-03 hover", "P-01"],
+      "sections": [
+        "H-03 hover",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_weft-structured-tote_03_inside.png",
       "origin": "AI-generated",
       "alt": {
@@ -444,7 +476,9 @@
       "id": "SP01-04",
       "product": "SP01",
       "role": "Gallery ảnh 4 (người mẫu)",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_product_weft-structured-tote_04_model-nm03-half.png",
       "origin": "AI-generated",
       "alt": {
@@ -475,7 +509,11 @@
       "id": "SP01-05",
       "product": "SP01",
       "role": "Gallery ảnh 5 (chi tiết) + H-05",
-      "sections": ["P-01", "H-05", "CR-02"],
+      "sections": [
+        "P-01",
+        "H-05",
+        "CR-02"
+      ],
       "source": "Anh_san_pham/refvlks_product_weft-structured-tote_05_detail-buckle.png",
       "origin": "AI-generated",
       "alt": {
@@ -506,7 +544,10 @@
       "id": "SP01-06",
       "product": "SP01",
       "role": "Gallery ảnh 6 (tay cầm) + H-04",
-      "sections": ["P-01", "H-04"],
+      "sections": [
+        "P-01",
+        "H-04"
+      ],
       "source": "Mau_cam_san_pham/refvlks_product_weft-structured-tote_06_hand-nm03.png",
       "origin": "AI-generated",
       "alt": {
@@ -537,7 +578,11 @@
       "id": "SP01-07",
       "product": "SP01",
       "role": "P-04 Open it + H-06 (tạm thay ảnh nghệ nhân)",
-      "sections": ["P-04", "H-06", "CR-03"],
+      "sections": [
+        "P-04",
+        "H-06",
+        "CR-03"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_studio_portrait_open_2x3.png",
       "origin": "AI-generated",
       "alt": {
@@ -568,7 +613,9 @@
       "id": "SP01-08",
       "product": "SP01",
       "role": "Dự phòng (Size & fit)",
-      "sections": ["SF-03"],
+      "sections": [
+        "SF-03"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_studio_portrait_2x3.png",
       "origin": "AI-generated",
       "alt": {
@@ -599,7 +646,11 @@
       "id": "SP02F-01",
       "product": "SP02",
       "role": "Ảnh thẻ + gallery (Forest)",
-      "sections": ["H-03", "S-03", "P-01"],
+      "sections": [
+        "H-03",
+        "S-03",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_loom-flap-tote-forest_01_front.png",
       "origin": "AI-generated",
       "alt": {
@@ -647,7 +698,10 @@
       "id": "SP02F-02",
       "product": "SP02",
       "role": "Gallery (Forest) + hover thẻ",
-      "sections": ["H-03 hover", "P-01"],
+      "sections": [
+        "H-03 hover",
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_product_loom-flap-tote-forest_04_model-nm04-half.png",
       "origin": "AI-generated",
       "alt": {
@@ -695,7 +749,9 @@
       "id": "SP02F-03",
       "product": "SP02",
       "role": "Gallery (Forest)",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_nm05-updated_sp02-forest.png",
       "origin": "AI-generated",
       "alt": {
@@ -726,7 +782,11 @@
       "id": "SP02W-01",
       "product": "SP02",
       "role": "Ảnh thẻ + gallery (Wine)",
-      "sections": ["H-03", "S-03", "P-01"],
+      "sections": [
+        "H-03",
+        "S-03",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_loom-flap-tote-wine_01_front.png",
       "origin": "AI-generated",
       "alt": {
@@ -774,7 +834,11 @@
       "id": "SP02W-02",
       "product": "SP02",
       "role": "Gallery (Wine) + H-04",
-      "sections": ["H-03 hover", "P-01", "H-04"],
+      "sections": [
+        "H-03 hover",
+        "P-01",
+        "H-04"
+      ],
       "source": "Mau_cam_san_pham/refvlks_nm05-updated_sp02-wine.png",
       "origin": "AI-generated",
       "alt": {
@@ -822,7 +886,11 @@
       "id": "SP03-01",
       "product": "SP03",
       "role": "Ảnh thẻ + gallery",
-      "sections": ["H-03", "S-03", "P-01"],
+      "sections": [
+        "H-03",
+        "S-03",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_loom-carryall_01_front.png",
       "origin": "AI-generated",
       "alt": {
@@ -870,7 +938,10 @@
       "id": "SP03-02",
       "product": "SP03",
       "role": "Gallery + hover thẻ",
-      "sections": ["H-03 hover", "P-01"],
+      "sections": [
+        "H-03 hover",
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_product_loom-carryall_04_model-nm01-half.png",
       "origin": "AI-generated",
       "alt": {
@@ -918,7 +989,9 @@
       "id": "SP03-03",
       "product": "SP03",
       "role": "Gallery",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_nm05-updated_sp03.png",
       "origin": "AI-generated",
       "alt": {
@@ -949,7 +1022,11 @@
       "id": "SP04-01",
       "product": "SP04",
       "role": "Ảnh thẻ + gallery",
-      "sections": ["H-03", "S-03", "P-01"],
+      "sections": [
+        "H-03",
+        "S-03",
+        "P-01"
+      ],
       "source": "Anh_san_pham/refvlks_product_tram-shopper_01_front.png",
       "origin": "AI-generated",
       "alt": {
@@ -997,7 +1074,10 @@
       "id": "SP04-02",
       "product": "SP04",
       "role": "Gallery + hover thẻ",
-      "sections": ["H-03 hover", "P-01"],
+      "sections": [
+        "H-03 hover",
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_nm05-updated_sp04.png",
       "origin": "AI-generated",
       "alt": {
@@ -1045,7 +1125,10 @@
       "id": "LIFE-01",
       "product": "SP01",
       "role": "Gallery SP01 + AB-01",
-      "sections": ["P-01", "AB-01"],
+      "sections": [
+        "P-01",
+        "AB-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_weft-structured-tote_nm03-street.png",
       "origin": "AI-generated",
       "alt": {
@@ -1076,7 +1159,9 @@
       "id": "LIFE-02",
       "product": "SP02",
       "role": "Gallery SP02 Forest",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-flap-tote-forest_nm04-street.png",
       "origin": "AI-generated",
       "alt": {
@@ -1107,7 +1192,9 @@
       "id": "LIFE-03",
       "product": "SP02",
       "role": "Gallery SP02 Forest",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-flap-tote-forest_nm02-courtyard.png",
       "origin": "AI-generated",
       "alt": {
@@ -1138,7 +1225,9 @@
       "id": "LIFE-04",
       "product": "SP02",
       "role": "Gallery SP02 Wine",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-flap-tote-wine_nm02-street.png",
       "origin": "AI-generated",
       "alt": {
@@ -1169,7 +1258,10 @@
       "id": "LIFE-05",
       "product": "SP03",
       "role": "Gallery SP03 + H-04",
-      "sections": ["P-01", "H-04"],
+      "sections": [
+        "P-01",
+        "H-04"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-carryall_nm01-bookshop.png",
       "origin": "AI-generated",
       "alt": {
@@ -1200,7 +1292,9 @@
       "id": "LIFE-06",
       "product": "SP03",
       "role": "Gallery SP03",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-carryall_nm01-campus.png",
       "origin": "AI-generated",
       "alt": {
@@ -1231,7 +1325,9 @@
       "id": "LIFE-07",
       "product": "SP03",
       "role": "Gallery SP03",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_loom-carryall_nm02-boulevard.png",
       "origin": "AI-generated",
       "alt": {
@@ -1262,7 +1358,9 @@
       "id": "LIFE-08",
       "product": "SP04",
       "role": "Gallery SP04",
-      "sections": ["P-01"],
+      "sections": [
+        "P-01"
+      ],
       "source": "Mau_cam_san_pham/refvlks_lifestyle_tram-shopper_nm04-park.png",
       "origin": "AI-generated",
       "alt": {
@@ -1293,7 +1391,9 @@
       "id": "OG-01",
       "product": "SP01",
       "role": "Ảnh chia sẻ mạng xã hội 1200×630",
-      "sections": ["SEO"],
+      "sections": [
+        "SEO"
+      ],
       "source": "Anh_san_pham/refvlks_sp01_editorial_3x2.png",
       "origin": "AI-generated",
       "alt": {
@@ -1313,6 +1413,1122 @@
           },
           "q": {
             "jpg": 88
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-HERALD-01",
+      "product": "the-herald",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/LB1 TÚI TRONG SUỐT.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Herald, product photo 1.",
+        "vi": "The Herald, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1200,
+          "h": 1200,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-herald-01.webp"
+          },
+          "kb": {
+            "webp": 262
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-CURATOR-01",
+      "product": "the-curator",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/LB2 TÚI TRONG SUỐT.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Curator, product photo 1.",
+        "vi": "The Curator, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1200,
+          "h": 1200,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-curator-01.webp"
+          },
+          "kb": {
+            "webp": 197
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-VANGUARD-01",
+      "product": "the-vanguard",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/LB3 TÚI TRONG SUỐT.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Vanguard, product photo 1.",
+        "vi": "The Vanguard, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1200,
+          "h": 1200,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-vanguard-01.webp"
+          },
+          "kb": {
+            "webp": 301
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-NAVIGATOR-01",
+      "product": "the-navigator",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/LB4 TÚI FINAL.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Navigator, product photo 1.",
+        "vi": "The Navigator, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1200,
+          "h": 1200,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-navigator-01.webp"
+          },
+          "kb": {
+            "webp": 134
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-WEAVER-01",
+      "product": "the-weaver",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi khăn Piêu-20261127T022238Z-1-001.zip :: Túi khăn Piêu/Ảnh ChatGPT 14_39_10 24 thg 11, 2026-1.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Weaver, product photo 1.",
+        "vi": "The Weaver, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-weaver-01.webp"
+          },
+          "kb": {
+            "webp": 189
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-WEAVER-02",
+      "product": "the-weaver",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi khăn Piêu-20261127T022238Z-1-001.zip :: Túi khăn Piêu/Ảnh ChatGPT 14_39_12 24 thg 11, 2026-2.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Weaver, product photo 2.",
+        "vi": "The Weaver, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-weaver-02.webp"
+          },
+          "kb": {
+            "webp": 179
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-WEAVER-03",
+      "product": "the-weaver",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi khăn Piêu-20261127T022238Z-1-001.zip :: Túi khăn Piêu/Ảnh ChatGPT 14_39_15 24 thg 11, 2026-3.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Weaver, product photo 3.",
+        "vi": "The Weaver, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-weaver-03.webp"
+          },
+          "kb": {
+            "webp": 178
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-WEAVER-04",
+      "product": "the-weaver",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi khăn Piêu-20261127T022238Z-1-001.zip :: Túi khăn Piêu/Ảnh ChatGPT 14_39_16 24 thg 11, 2026-4.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Weaver, product photo 4.",
+        "vi": "The Weaver, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-weaver-04.webp"
+          },
+          "kb": {
+            "webp": 302
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-WEAVER-05",
+      "product": "the-weaver",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi khăn Piêu-20261127T022238Z-1-001.zip :: Túi khăn Piêu/Mặt đáy túi xách đen dệt текстured.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Weaver, product photo 5.",
+        "vi": "The Weaver, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-weaver-05.webp"
+          },
+          "kb": {
+            "webp": 121
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-SOWER-01",
+      "product": "the-sower",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi lúa-20261127T022241Z-1-001.zip :: Túi lúa/Túi lúa thêu satin màu kem.jpg",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Sower, product photo 1.",
+        "vi": "The Sower, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1280,
+          "h": 1600,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-sower-01.webp"
+          },
+          "kb": {
+            "webp": 229
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-SOWER-02",
+      "product": "the-sower",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi lúa-20261127T022241Z-1-001.zip :: Túi lúa/0218f5e9-8b0e-485f-9470-6a022704cf2b.jpg",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Sower, product photo 2.",
+        "vi": "The Sower, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1600,
+          "h": 1463,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-sower-02.webp"
+          },
+          "kb": {
+            "webp": 161
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-SOWER-03",
+      "product": "the-sower",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi lúa-20261127T022241Z-1-001.zip :: Túi lúa/1bf67401-8c20-42c9-bc3d-fd2cc1d0123a.jpg",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Sower, product photo 3.",
+        "vi": "The Sower, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1463,
+          "h": 1600,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-sower-03.webp"
+          },
+          "kb": {
+            "webp": 152
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-SOWER-04",
+      "product": "the-sower",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi lúa-20261127T022241Z-1-001.zip :: Túi lúa/Túi Refolks nội thất đơn giản.jpg",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Sower, product photo 4.",
+        "vi": "The Sower, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1600,
+          "h": 1066,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-sower-04.webp"
+          },
+          "kb": {
+            "webp": 248
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-SOWER-05",
+      "product": "the-sower",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Túi lúa-20261127T022241Z-1-001.zip :: Túi lúa/Túi dệt màu be nhìn từ đáy-3.jpg",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Sower, product photo 5.",
+        "vi": "The Sower, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1600,
+          "h": 800,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-sower-05.webp"
+          },
+          "kb": {
+            "webp": 154
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-TRAILBLAZER-01",
+      "product": "the-trailblazer",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví ngang-20261127T022254Z-1-001.zip :: Ví ngang/Ảnh ChatGPT 13_21_59 24 thg 11, 2026-1.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Trailblazer, product photo 1.",
+        "vi": "The Trailblazer, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-trailblazer-01.webp"
+          },
+          "kb": {
+            "webp": 294
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-TRAILBLAZER-02",
+      "product": "the-trailblazer",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví ngang-20261127T022254Z-1-001.zip :: Ví ngang/Ví da Refolks mở phẳng hoàn hảo.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Trailblazer, product photo 2.",
+        "vi": "The Trailblazer, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-trailblazer-02.webp"
+          },
+          "kb": {
+            "webp": 386
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-TRAILBLAZER-03",
+      "product": "the-trailblazer",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví ngang-20261127T022254Z-1-001.zip :: Ví ngang/Ảnh ChatGPT 13_22_02 24 thg 11, 2026-2.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Trailblazer, product photo 3.",
+        "vi": "The Trailblazer, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-trailblazer-03.webp"
+          },
+          "kb": {
+            "webp": 270
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-TRAILBLAZER-04",
+      "product": "the-trailblazer",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví ngang-20261127T022254Z-1-001.zip :: Ví ngang/Ảnh ChatGPT 13_22_04 24 thg 11, 2026-3.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Trailblazer, product photo 4.",
+        "vi": "The Trailblazer, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-trailblazer-04.webp"
+          },
+          "kb": {
+            "webp": 259
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-TRAILBLAZER-05",
+      "product": "the-trailblazer",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví ngang-20261127T022254Z-1-001.zip :: Ví ngang/Ảnh ChatGPT 13_22_09 24 thg 11, 2026-5.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Trailblazer, product photo 5.",
+        "vi": "The Trailblazer, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1448,
+          "h": 1086,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-trailblazer-05.webp"
+          },
+          "kb": {
+            "webp": 263
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-GUARDIAN-01",
+      "product": "the-guardian",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví khóa-20261127T022253Z-1-001.zip :: Ví khóa/Ví đựng khóa kéo họa tiết hình học-1.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Guardian, product photo 1.",
+        "vi": "The Guardian, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1536,
+          "h": 1024,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-guardian-01.webp"
+          },
+          "kb": {
+            "webp": 207
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-GUARDIAN-02",
+      "product": "the-guardian",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví khóa-20261127T022253Z-1-001.zip :: Ví khóa/Ví đựng đồ họa tiết thổ cẩm nâu-3.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Guardian, product photo 2.",
+        "vi": "The Guardian, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1536,
+          "h": 1024,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-guardian-02.webp"
+          },
+          "kb": {
+            "webp": 167
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-GUARDIAN-03",
+      "product": "the-guardian",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví khóa-20261127T022253Z-1-001.zip :: Ví khóa/Túi đựng nâu họa tiết hình học-4.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Guardian, product photo 3.",
+        "vi": "The Guardian, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1536,
+          "h": 1024,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-guardian-03.webp"
+          },
+          "kb": {
+            "webp": 195
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-GUARDIAN-04",
+      "product": "the-guardian",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví khóa-20261127T022253Z-1-001.zip :: Ví khóa/Túi nâu Refolks với logo pixel đỏ.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Guardian, product photo 4.",
+        "vi": "The Guardian, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1536,
+          "h": 1024,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-guardian-04.webp"
+          },
+          "kb": {
+            "webp": 241
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-GUARDIAN-05",
+      "product": "the-guardian",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Ví khóa-20261127T022253Z-1-001.zip :: Ví khóa/Ví vải nâu họa tiết hình học-5.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Guardian, product photo 5.",
+        "vi": "The Guardian, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1536,
+          "h": 1024,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-guardian-05.webp"
+          },
+          "kb": {
+            "webp": 140
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-PATHFINDER-01",
+      "product": "the-pathfinder",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_36 24 thg 11, 2026-6.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Pathfinder, product photo 1.",
+        "vi": "The Pathfinder, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-pathfinder-01.webp"
+          },
+          "kb": {
+            "webp": 252
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-PATHFINDER-02",
+      "product": "the-pathfinder",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_41 24 thg 11, 2026-10.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Pathfinder, product photo 2.",
+        "vi": "The Pathfinder, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-pathfinder-02.webp"
+          },
+          "kb": {
+            "webp": 230
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-PATHFINDER-03",
+      "product": "the-pathfinder",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_40 24 thg 11, 2026-9.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Pathfinder, product photo 3.",
+        "vi": "The Pathfinder, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-pathfinder-03.webp"
+          },
+          "kb": {
+            "webp": 247
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-PATHFINDER-04",
+      "product": "the-pathfinder",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_37 24 thg 11, 2026-7.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Pathfinder, product photo 4.",
+        "vi": "The Pathfinder, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-pathfinder-04.webp"
+          },
+          "kb": {
+            "webp": 261
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-PATHFINDER-05",
+      "product": "the-pathfinder",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_38 24 thg 11, 2026-8.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Pathfinder, product photo 5.",
+        "vi": "The Pathfinder, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-pathfinder-05.webp"
+          },
+          "kb": {
+            "webp": 238
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-ENVOY-01",
+      "product": "the-envoy",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_33 24 thg 11, 2026-2.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Envoy, product photo 1.",
+        "vi": "The Envoy, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-envoy-01.webp"
+          },
+          "kb": {
+            "webp": 199
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-ENVOY-02",
+      "product": "the-envoy",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_32 24 thg 11, 2026-1.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Envoy, product photo 2.",
+        "vi": "The Envoy, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-envoy-02.webp"
+          },
+          "kb": {
+            "webp": 191
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-ENVOY-03",
+      "product": "the-envoy",
+      "role": "Product gallery 03",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_34 24 thg 11, 2026-3.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Envoy, product photo 3.",
+        "vi": "The Envoy, ảnh sản phẩm góc 3."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-envoy-03.webp"
+          },
+          "kb": {
+            "webp": 206
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-ENVOY-04",
+      "product": "the-envoy",
+      "role": "Product gallery 04",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_35 24 thg 11, 2026-4.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Envoy, product photo 4.",
+        "vi": "The Envoy, ảnh sản phẩm góc 4."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-envoy-04.webp"
+          },
+          "kb": {
+            "webp": 201
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-ENVOY-05",
+      "product": "the-envoy",
+      "role": "Product gallery 05",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "Cardholder-20261127T022305Z-1-001.zip :: Cardholder/Ảnh ChatGPT 12_30_36 24 thg 11, 2026-5.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Envoy, product photo 5.",
+        "vi": "The Envoy, ảnh sản phẩm góc 5."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 1254,
+          "h": 1254,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-envoy-05.webp"
+          },
+          "kb": {
+            "webp": 172
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-STORYTELLER-01",
+      "product": "the-storyteller",
+      "role": "Product gallery 01",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/CHARM RỒNG NHỒI BÔNG_.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Storyteller, product photo 1.",
+        "vi": "The Storyteller, ảnh sản phẩm góc 1."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 380,
+          "h": 308,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-storyteller-01.webp"
+          },
+          "kb": {
+            "webp": 51
+          },
+          "q": {
+            "webp": 89
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3-THE-STORYTELLER-02",
+      "product": "the-storyteller",
+      "role": "Product gallery 02",
+      "sections": [
+        "Shop product card",
+        "Product detail gallery"
+      ],
+      "source": "TỔNG HỢP 10 SP-20261127T022323Z-1-001.zip :: TỔNG HỢP 10 SP/CHARM HOA CỌ BẠC.png",
+      "origin": "Owner-supplied product photograph",
+      "alt": {
+        "en": "The Storyteller, product photo 2.",
+        "vi": "The Storyteller, ảnh sản phẩm góc 2."
+      },
+      "variants": [
+        {
+          "kind": "full",
+          "w": 265,
+          "h": 250,
+          "files": {
+            "webp": "/public/images/refolks/products-2026-11/the-storyteller-02.webp"
+          },
+          "kb": {
+            "webp": 30
+          },
+          "q": {
+            "webp": 89
           }
         }
       ]

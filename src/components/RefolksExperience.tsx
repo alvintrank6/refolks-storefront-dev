@@ -52,11 +52,10 @@ const persistLocale = (lang: Lang) => {
   document.documentElement.setAttribute("lang", lang);
   document.cookie = `refolks-lang=${lang};path=/;max-age=31536000;SameSite=Lax`;
 };
-const currency = (n: number) => `${new Intl.NumberFormat("vi-VN").format(n)}₫`;
+const currency = (n: number | null) =>
+  n === null ? "Coming soon" : `${new Intl.NumberFormat("vi-VN").format(n)}₫`;
 const productPhotoAlt = (p: Product, lang: Lang) => {
-  if (p.id === "thai-motif-scarf") return lang === "vi" ? "Khăn họa tiết dệt thắt trên quai túi The Vanguard" : translate("A patterned scarf tied to the handle of The Vanguard bag", lang);
-  if (p.id === "small-pouch") return lang === "vi" ? "Túi nhỏ có khóa kéo treo bên túi The Vanguard" : translate("A small zipped pouch hanging from The Vanguard bag", lang);
-  if (p.id === "elephant-keychain") return lang === "vi" ? "Ảnh tham khảo: móc khóa rồng gắn trên túi" : translate("Reference photo: dragon keychain on a bag", lang);
+  if (p.id === "the-storyteller") return lang === "vi" ? "Charm rồng và charm hoa cọ bạc của The Storyteller" : "The Storyteller dragon and silver palm-flower charms";
   return p.name[lang];
 };
 const readStorage = <T,>(key: string, fallback: T): T => {
@@ -100,7 +99,7 @@ const ui = {
     highLow: "Giá cao đến thấp",
     newest: "Mới nhất",
     recommended: "Nổi bật",
-    priceSoon: "Giá demo",
+    priceSoon: "Coming soon",
     details: "Xem chi tiết",
     add: "Thêm vào giỏ",
     quantity: "Số lượng",
@@ -233,7 +232,7 @@ const ui = {
     highLow: "Price: high to low",
     newest: "Newest",
     recommended: "Featured",
-    priceSoon: "Demo price",
+    priceSoon: "Coming soon",
     details: "View details",
     add: "Add to bag",
     quantity: "Quantity",
@@ -435,9 +434,7 @@ export function RefolksExperience({
   );
   const shippingFee = shippingRegion === "hanoi" ? 30000 : 40000;
   const product = products.find((p) => p.id === route.id) || products[0];
-  const galleryImages = product.id === "the-vanguard" && variant === "men-cardholder"
-    ? [product.images[5], ...product.images.slice(1, 5), product.images[0]]
-    : product.images;
+  const galleryImages = product.images;
   // Journal entries only use currently confirmed brand information.
   const journalItems = [
     {
@@ -672,8 +669,8 @@ export function RefolksExperience({
       const category = query.get("category");
       const searchTerm = query.get("q");
       return (
-        (route.id === "accessories" ? p.category === "accessory" : route.id === "collection" ? p.category === "work-shoulder-bag" : p.id !== "cardholder") &&
-        (!gender || (p.category === "work-shoulder-bag" && (p.gender as readonly string[]).includes(gender))) &&
+        (route.id === "accessories" ? p.category === "accessory" : route.id === "collection" ? p.category === "work-shoulder-bag" : p.category !== "accessory") &&
+        (!gender || (p.category !== "accessory" && (p.gender as readonly string[]).includes(gender))) &&
         (!collection || p.collection === collection) &&
         (!category || p.category === category) &&
         (!searchTerm ||
@@ -757,10 +754,9 @@ export function RefolksExperience({
               lang === "vi" ? "Tất cả phụ kiện" : translate("All accessories", lang),
               `${base(lang)}/accessories`,
             ],
-            [products.find((p) => p.id === "cardholder")!.name[lang], `${base(lang)}/products/cardholder`],
-            [lang === "vi" ? "Móc khóa Voi" : translate("Elephant Keychain", lang), `${base(lang)}/products/elephant-keychain`],
-            [products.find((p) => p.id === "thai-motif-scarf")!.name[lang], `${base(lang)}/products/thai-motif-scarf`],
-            [products.find((p) => p.id === "small-pouch")!.name[lang], `${base(lang)}/products/small-pouch`],
+            ...products
+              .filter((p) => p.category === "accessory")
+              .map((p) => [p.name[lang], `${base(lang)}/products/${p.id}`]),
           ],
         ],
       ];
@@ -812,7 +808,7 @@ export function RefolksExperience({
           <img className="rf-card-main" src={p.images[0]} alt={productPhotoAlt(p, lang)} loading="lazy" />
           <img className="rf-card-hover" src={p.lifestyle} alt="" loading="lazy" />
         </> : <span className="rf-image-pending">{u.comingSoon}</span>}
-        {p.images.length > 0 && <span className="rf-card-badge">{p.id === "elephant-keychain" ? (lang === "vi" ? "Ảnh tham khảo" : translate("Reference photo", lang)) : u.new}</span>}
+        {p.images.length > 0 && <span className="rf-card-badge">{u.new}</span>}
       </button>
       <div className="rf-card-meta">
         <button className="rf-card-name" onClick={() => showProduct(p)}>
@@ -1035,17 +1031,17 @@ export function RefolksExperience({
               {[
                 [
                   lang === "vi" ? "Túi nữ" : translate("Women's bags", lang),
-                  "the-herald",
+                  "products-2026-11/the-herald-01",
                   "?gender=women",
                 ],
                 [
                   lang === "vi" ? "Túi nam" : translate("Men's bags", lang),
-                  "tote-01-front",
+                  "products-2026-11/the-curator-01",
                   "?gender=men",
                 ],
                 [
                   lang === "vi" ? "Phụ kiện & Quà tặng" : translate("Accessories & gifts", lang),
-                  "thai-motif-scarf",
+                  "products-2026-11/the-storyteller-01",
                   "?category=accessory",
                 ],
               ].map(([label, image, query], i) => (
@@ -1065,8 +1061,8 @@ export function RefolksExperience({
                         lang === "vi" ? "Túi công sở đeo vai" : translate("Work shoulder bag", lang),
                         lang === "vi" ? "Túi công sở đeo vai" : translate("Work shoulder bag", lang),
                         lang === "vi"
-                          ? "Khăn họa tiết · Túi nhỏ"
-                          : translate("Silk scarf · Small pouch", lang),
+                          ? "Ví · Ví thẻ · Charm"
+                          : "Wallets · Cardholders · Charms",
                       ][i]
                     }
                   </small>
@@ -1092,7 +1088,7 @@ export function RefolksExperience({
           </section>
           <section className="rf-section rf-products-home">
             <div className="rf-section-head"><div><span className="rf-eyebrow">03 / {u.explore}</span><h2>{c.nav[4]}</h2></div><button className="rf-text-link" onClick={() => navigate(`${base(lang)}/accessories`)}>{u.viewAll}<ArrowRight size={17}/></button></div>
-            <div className="rf-product-grid">{products.filter((p) => p.id === "thai-motif-scarf" || p.id === "small-pouch").map(productCard)}</div>
+            <div className="rf-product-grid">{products.filter((p) => p.category === "accessory").slice(0, 2).map(productCard)}</div>
           </section>
           <section className="rf-story">
             <div className="rf-story-copy">
@@ -1340,7 +1336,7 @@ export function RefolksExperience({
       )}
 
       {route.page === "product" && (
-        <main className={`rf-page rf-pdp rf-${product.id}${product.id === "elephant-keychain" ? " rf-keychain-pdp" : ""}`}>
+        <main className={`rf-page rf-pdp rf-${product.id}`}>
           <div className="rf-breadcrumb">
             <button onClick={() => navigate(base(lang))}>{u.home}</button> /{" "}
             <button onClick={() => showShop()}>{u.shop}</button> /{" "}

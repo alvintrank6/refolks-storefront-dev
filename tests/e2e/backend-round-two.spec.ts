@@ -34,7 +34,7 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) {
       expect(response.status()).toBe(200);
       expect(await response.json()).toMatchObject({
         number: expect.stringMatching(/^RV\d+$/),
-        total: 1_820_000,
+        total: 1_620_000,
       });
       await expect(page.getByRole("status")).toContainText(
         "Đơn hàng đã được ghi nhận",

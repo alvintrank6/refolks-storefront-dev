@@ -4,6 +4,7 @@ import { roundTwoLines } from "./order";
 
 const herald = products.find((p) => p.id === "the-herald")!;
 const vanguard = products.find((p) => p.id === "the-vanguard")!;
+const storyteller = products.find((p) => p.id === "the-storyteller")!;
 
 describe("roundTwoLines", () => {
   it("prices items from the server catalogue", () => {
@@ -58,5 +59,14 @@ describe("roundTwoLines", () => {
       ),
     ).toBeNull();
     expect(roundTwoLines([], "en")).toBeNull();
+  });
+
+  it("rejects products whose price is still coming soon", () => {
+    expect(
+      roundTwoLines(
+        [{ id: storyteller.id, qty: 1, color: "brown", personal: false }],
+        "vi",
+      ),
+    ).toBeNull();
   });
 });
